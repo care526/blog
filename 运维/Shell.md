@@ -5,13 +5,25 @@
   交互Shell：等待用户输入命令的Shell  
   非交互Shell：读取某个脚本文件，直接执行  
 
-
 ## 格式
 ```
 #! /bin/bash  #表示用什么来执行该脚本
 echo 123 #我是注释
 ```
 - 同一行的多个命令中间用；分隔
+
+## 执行脚本的两种方式
+- 在脚本第一行指名执行的解释器，并赋予脚本可执行权限
+```
+#!/bin/bash
+xxx
+xxx
+ps: 上面三行是a.sh的内容
+
+chmod 755 a.sh
+```
+JS脚本(使用node解释器)
+`#!/home/care/config/node/bin/node`
   
 ## 常用的命令
 - set 查看环境变量列表  
@@ -43,6 +55,7 @@ echo 123 #我是注释
 ## 变量
 care=10   #定义变量care，=两边不能有空格  
 echo $care   #使用变量care，用\$  
+echo ${care}  # 也可以
 
 - \` 反引号，用于得到命令的输出值　care=\`ls\`  
 - \> 输出重定向，如：date > tes，date的输出信息保存在tes文件中，如果文件存在，将会被覆盖
@@ -53,6 +66,15 @@ echo $care   #使用变量care，用\$
 局部变量定义(在函数中使用)
 `local care`
 
+## 重要的环境变量
+HOME  用户的主目录（即家目录）
+SHELL  用户在使用的Shell解释器名称
+PATH  定义解释器搜索用户执行命令的路径
+RANDOM  生成一个随机数字
+LANG  系统语言、语系名称
+PS1  	Bash解释器的提示符
+HISTSIZE  history命令可显示的命令条数
+HISTFILESIZE  可以保存记录的命令的条数
 
 
 ## 流程语句
@@ -158,3 +180,8 @@ read还可以读取文件的数据
 . ./b  # 使用./source 表示在ａ脚本的上下文中运行ｂcat
 func1
 ```
+
+## 其他
+ll && ls  # 如果ll执行不成功，ls不会执行
+ll || ls  # 如果ll执行不成功，ls也会执行
+ll ; ls  # 同上
