@@ -1,7 +1,7 @@
 # Git配置
 ssh-keygen -t rsa -C "71073534@qq.com"　生成SSH Key    
 id_rsa是私匙 id_rsa.pub是公匙（公匙和私匙的作用，属于密码学，百度！）   
-git config --global user.name "care526"　配置user.name   
+git config --global user.name "care526Lj"　配置user.name   
 git config --global user.email "710783534@qq.com"　配置user.email   
 
 # 项目初始化
