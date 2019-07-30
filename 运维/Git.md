@@ -59,6 +59,8 @@ git rm filename　　删除某个文件，之后再commit就行了（如果用rm
 创建分支的目的是在不影响主分支的情况下进行开发，在分支完成的时候将分支的内容和主分支合并即可   
 git branch dev　　创建dev分支   
 git checkout dev　　切换到dev分支   
+git checkout filePath   还原未提交的该文件到上次提交   
+git checkout .   还原未提交的所有文件到上次提交  
 git checkout -b dev　　创建dev分支，并切换到该分支（等于上面两个命令之和）   
 git branch　　查看当前分支   
 git branch -a　　查看所有分支   
@@ -87,4 +89,6 @@ git checkout -b dev origin/dev　　拉取远程库的分支到本地并切换
 git push origin dev　　推送分支到远程库   
 git pull　　抓取远程库的新提交   
 git branch --set-upstream dev origin/dev　　建立远程库分支与本地分支的关联   
-当其他人对你要用的分支做了提交，远程库的分支领先于你的本地分支，要先拉取远程库的分支与本地合并，再做开发。如果拉取的分支和当前有冲突，要先解决冲突。   
+当其他人对你要用的分支做了提交，远程库的分支领先于你的本地分支，要先拉取远程库的分支与本地合并，再做开发。如果拉取的分支和当前有冲突，要先解决冲突。 
+
+合并分支的时候，发生冲突，解决完冲突后，已经合并，只需要commit一下就ok了
