@@ -1,33 +1,12 @@
-SQL关键字总是大写，以示突出，表名和列名均使用小写
 
-连接服务器
-mysql -h host -u user -p dataName(数据库的名字,可省略)
-Enter passwd: xxxxxx
-如果mysql就在本计算机上的话，可以省略-h host
 
-断开shell的连接
-quit(虽然不分大小写，大写也可以，文档上是大写的，但是小写的看着更舒服)
-快捷键(部分生效)：ctrl D
+
 
 查询当前服务器存在的数据库
 show databases;
 如果在分号前回车，shell会保存之前的命令，接着打就好了，只有几个命令是不用分号结尾的
 
-创建数据库
-create database dataName;
 
-选择数据库
-use dataName
-
-展示当前数据库存在的表
-show tables;
-
-新建表并添加一些项
-CREATE TABLE pet (name VARCHAR(20), owner VARCHAR(20),
-species VARCHAR(20), sex CHAR(1), birth DATE, death DATE);
-
-展示表的项和项的属性
-describe tableName;
 
 
 3.3.3将数据记载到表中
