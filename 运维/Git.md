@@ -29,6 +29,7 @@ git add xxx　　添加某文件到暂存区，可使用多次添加多个文件
 git add .　　添加所有文件   
 git commit -m "xxx"　　将添加到暂存区的文件更新同步到版本库   
 git push -u origin master　　将本地库的内容推送到远程库（第一次提交要加-u,之后可以省略）  
+git push -f XXXXXX   强制将本地代码覆盖远端的代码
 
 git status　　查看当前的修改了那些文件    
 git diff filename　　查看具体修改了什么内容， filename是文件名  
