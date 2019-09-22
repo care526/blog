@@ -1,3 +1,9 @@
+## block元素
+div | p
+
+## inline-block元素
+img | span | b
+
 ## 所有标签
 ```
 <!DOCTYPE html>　　<!-- 渲染模式：标准渲染 -->

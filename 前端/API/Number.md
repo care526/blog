@@ -6,7 +6,7 @@ Number构造函数
 value 为只包含数字的字符串时，返回同等的数字   
 value 为其他时，返回NaN 
 
-## tostring()
+## toString()
 将数字转化为字符串
 
 ## toFixed(value)
