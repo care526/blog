@@ -69,3 +69,12 @@ Writable - 可写入数据的流（例如 fs.createWriteStream()）。
 Readable - 可读取数据的流（例如 fs.createReadStream()）。
 Duplex - 可读又可写的流（例如 net.Socket）。
 Transform - 在读写过程中可以修改或转换数据的 Duplex 流（例如 zlib.createDeflate()）。
+
+## 接收参数
+`node a.js a=1 b=2 c=3`
+```
+// node a.js a=1 b=2 c=3
+// a.js
+console.log(process.argv.splice(2))
+// ['a=1', 'b=2', 'c=3']
+```
