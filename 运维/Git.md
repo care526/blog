@@ -13,6 +13,11 @@ git init　　初始化版本库
 build/　　  #忽略build目录下的所有文件  
 doc/*.txt   #忽略doc目录下的所有以 .txt 结尾的所有文件  
 
+当某个文件已经添加到git了，中途又添加到忽略文件中，一下代码让忽略文件重新生效
+git rm -r –cached .
+git add .
+git commit -m "Refresh adding .gitignore file"
+
 # 远程仓库
 git remote add origin git@github.com:care526/learnGit.git　  
 为当前仓库添加远程仓库，后面的一长串是该远程仓库的地址  

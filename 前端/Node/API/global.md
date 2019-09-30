@@ -1,13 +1,13 @@
-- __dirname
-  当前模块的目录名
-- __filename
-  当前文件的文件名
 - console
 - global
   相当于浏览器的window
-- module
-- exports
-- process
+- process  # 当前node进程的对象
+- - process.argv  # 命令行参数数组
+    ```
+    node argv.js 1991 name=byvoid --v "Carbo Kuo"
+    // ['node', '/home/byvoid/argv.js', '1991', 'name=byvoid', '--v', 'Carbo Kuo']
+   
+    ```
 - require()
 - setTimeout(callback, delay[, ...args])
 - clearTimeout(timeoutObject)

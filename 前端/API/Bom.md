@@ -44,3 +44,51 @@ encodeURIComponent
 decodeURIComponent
 
 参考文章：https://www.cnblogs.com/tanxiang6690/p/7079876.html
+
+
+
+
+
+temp:
+
+计时器
+var timer1 = setTimeout(function(){}, time);
+clearTimeout(timer1);
+var timer2 = setInterval(function(){}, time);
+clearInterval(timer2);
+由于历史的原因，以上两个函数的第一个参数可以传入字符串，相当于执行eval()进行求值运算
+浏览器的定位和导航
+window.location === document.location;
+Window对象的location属性引用的是Location对象
+Document对象的location属性也引用到了Location对象
+Location对象的href属性是一个字符串，包含了URL的完整文本
+还有其他属性protocol host hostname port pathname search
+载入新的文档
+location.assign(newHref) 载入新的文档，可以通过后退按钮返回上一个文档
+newHref 是一个字符串，是相对于当前文档的目录的　如“care.html” (就是当前目录下的care.html文档)
+location.replace(newHref)　 同上，但会把当前文档从浏览历史中删除
+location.reload()　　　让浏览器重新载入当前文档
+还有几种方式是：
+location = ''care.html''; 相对路径　直接赋值给location对象
+location = ''http://www.baidu.com''; 直接赋值新的URL
+location = "#top" 会跳转到当前文档上ID为top的元素上，如果没有，就到达文档头部，也可以传其他ID
+location.search = "?value=5" 载入其他界面，在当前文档上跳转
+浏览器历史
+Window对象的history属性引用的是该窗口的History对象
+History.length 保存的是用户的浏览历史的元素数量，但脚本不能直接访问以保存的URL
+History.back(); 后退到上一个文档
+History.forward();　 前进到下一个文档
+History.go(X); 接受一个整数，向前（正）或者向后（负）跳转任意多页
+浏览器和屏幕信息
+浏览器的信息见权威指南的346页
+Window对象的screen属性引用的是Screen对象
+screen.width 　　　以像素为单位的窗口的宽
+screen.height 　　 以像素为单位的窗口的高
+screen.colorDepth　 显示的BPP值
+screen.availWidth　 以像素为单位的窗口的实际可用的宽
+screen.availHeight 　以像素为单位的窗口的实际可用的高
+对话框
+alert(); 向用户显示一条信息的等待用户关闭的对话框
+confirm(); 也是显示一条信息，要求用户点击“确定”或“取消”，并返回一个bool值
+prompt(); 显示一条消息，等待用户输入字符串，并返回那个字符串
+三种方法会产生代码阻塞

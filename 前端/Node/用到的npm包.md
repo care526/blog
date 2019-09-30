@@ -1,2 +1,14 @@
+## 常用的npm包
+
 - good-storage
   更好的使用localStorage和sessionStorage
+
+- qs
+  将对象转化为由key=value组合的字符串
+  用于封装get请求，输入对象转化为字符串拼接在url的后面
+
+- better-scroll
+  移动端的滚动库
+
+- prompts
+  node命令行的输入库
