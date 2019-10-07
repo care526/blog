@@ -1,24 +1,35 @@
-## sessionStorage
-```
-sessionStorage.setItem('xxx', 'yyy');  //xxx是键值，yyy是属性值
-let yyy = sessionStorage.getItem('xxx');  //获取xxx的值
-sessionStorage.removeItem（‘xxx'）;  //清除某一项
-sessionStorage.clear()  //清除所有
-```
+## URL
+- history
+  history.length  # 存的是用户的浏览历史的元素数量，但脚本不能直接访问以保存的URL
+  history.state  # 
+  history.back()  # 返回前一页
+  history.go(n);  # 跳转到当前页面的第几页(前几页/后几页)
+  history.forward()  # 
+  history . pushState(data, title [, url ] )
+  history . replaceState(data, title [, url ] )
+  window . history . scrollRestoration [ = value ]
 
-## localStorage
-```
-localStorage.setItem('xxx', 'yyy');  //xxx是键值，yyy是属性值
-let yyy = localStorage.getItem('xxx');  //获取xxx的值
-localStorage.removeItem（‘xxx'）;  //清除某一项
-localStorage.clear()  //清除所有
-```
+## 加载
+- window.ready  # 页面的DOM结构已经加载完毕，不包括媒体元素
+- window.onload  # 页面全部都加载完毕
+- window.onbeforeunload  # 
+- window.onunload  # 
 
-## history
-```
-history.back()  //返回前一页
-history.go(n);  //跳转到当前页面的第几页(前几页/后几页)
-```
+## 储存
+- sessionStorage
+  ```
+  sessionStorage.setItem('xxx', 'yyy')  //xxx是键值，yyy是属性值
+  let yyy = sessionStorage.getItem('xxx')  //获取xxx的值
+  sessionStorage.removeItem(‘xxx')  //清除某一项
+  sessionStorage.clear()  //清除所有
+  ```
+- localStorage
+  ```
+  localStorage.setItem('xxx', 'yyy');  //xxx是键值，yyy是属性值
+  let yyy = localStorage.getItem('xxx');  //获取xxx的值
+  localStorage.removeItem（‘xxx'）;  //清除某一项
+  localStorage.clear()  //清除所有
+  ```
 
 ## 视窗
 - window.innerHeight
@@ -26,24 +37,37 @@ history.go(n);  //跳转到当前页面的第几页(前几页/后几页)
 - window.innerWidth
   当前浏览器窗口的视口宽度(只读属性)
 
-## window.getComputedStyle(DOM)
-得到该DOM元素的style属性
+## 样式
+- window.getComputedStyle(DOM)  # 得到该DOM元素的style属性
+
 
 ## 编解码
 - escape
   编码字符串，得到的是字符串
 - unescape
   解码字符串，得到字符串
-
 - encodeURI
   对URI进行编码，不对下列字符进行编码：“:”、“/”、“;”和“?”
 - decodeURI
   解码URI，返回字符串
-
-encodeURIComponent
-decodeURIComponent
+- encodeURIComponent
+  编码URI，会对所有字符编码，发往服务器是无效的
+- decodeURIComponent
+  对应的解码方法
 
 参考文章：https://www.cnblogs.com/tanxiang6690/p/7079876.html
+
+## 定时器
+- setTimeout
+  ```
+  var timer = setTimeout(function(){}, time)
+  clearTimeout(timer)
+  ```
+- setInterval
+  ```
+  var timer = setInterval(function(){}, time);
+  clearInterval(timer)
+  ```
 
 
 
@@ -51,11 +75,6 @@ decodeURIComponent
 
 temp:
 
-计时器
-var timer1 = setTimeout(function(){}, time);
-clearTimeout(timer1);
-var timer2 = setInterval(function(){}, time);
-clearInterval(timer2);
 由于历史的原因，以上两个函数的第一个参数可以传入字符串，相当于执行eval()进行求值运算
 浏览器的定位和导航
 window.location === document.location;
