@@ -12,3 +12,6 @@
 
 - prompts
   node命令行的输入库
+
+- fs-extra
+  提供了比原生fs更多的方法，同时继承了原生fs的所有写法，api是promise的
