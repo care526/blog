@@ -14,9 +14,11 @@ build/　　  #忽略build目录下的所有文件
 doc/*.txt   #忽略doc目录下的所有以 .txt 结尾的所有文件  
 
 当某个文件已经添加到git了，中途又添加到忽略文件中，一下代码让忽略文件重新生效
-git rm -r –cached .
+git rm -r –-cached .
 git add .
 git commit -m "Refresh adding .gitignore file"
+
+git rm -rf --cache 文件/文件夹
 
 # 远程仓库
 git remote add origin git@github.com:care526/learnGit.git　  
@@ -34,7 +36,7 @@ git add xxx　　添加某文件到暂存区，可使用多次添加多个文件
 git add .　　添加所有文件   
 git commit -m "xxx"　　将添加到暂存区的文件更新同步到版本库   
 git push -u origin master　　将本地库的内容推送到远程库（第一次提交要加-u,之后可以省略）  
-git push -f XXXXXX   强制将本地代码覆盖远端的代码
+git push -f XXXXXX   强制将本地代码覆盖远端的代码，会将之前的提交记录都清除，所以在实际开发中是不要使用的
 
 git status　　查看当前的修改了那些文件    
 git diff filename　　查看具体修改了什么内容， filename是文件名  
@@ -98,3 +100,18 @@ git branch --set-upstream dev origin/dev　　建立远程库分支与本地分�
 当其他人对你要用的分支做了提交，远程库的分支领先于你的本地分支，要先拉取远程库的分支与本地合并，再做开发。如果拉取的分支和当前有冲突，要先解决冲突。 
 
 合并分支的时候，发生冲突，解决完冲突后，已经合并，只需要commit一下就ok了
+
+
+
+
+# 分支策略
+- 开发/测试/线上 三个分支的方式
+  每个人的所有开发都在master(线上)分支上拉取本地分支开发
+  本地开发完成，将分支代码合入UAT(测试)分支供测试
+  测试完成，检测是否可以自动合入master分支，如果不可以，用本地分支merge master分支，解决冲突，解冲突的过程中，询问冲突代码的之前开发人员，避免多次上线代码被冲掉，合入master
+  分支开发完成，删除远程分支，本地分支保留一小段时间再删除，避免上线有问题，代码回滚，可立即重新上线
+  UAT分支定期删除，从master分支拉取本地UAT分支，推送到远端
+  ps: 本地开发的小技巧，前提是不需要和后端对接口的开发可以这样做
+  如果后端使用cookie保存登录状态
+  只要本地的域名配置为和代理（测试服/正式服）的域名一致，那么本地就可以访问代理的接口了
+  hosts不要忘记配置了

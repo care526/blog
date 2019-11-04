@@ -90,3 +90,29 @@ document.getElementsByTagName("span")
 通过CSS类选取元素(class)  
 document.getElementsByClassName("class")  
 ```
+
+### 创建DOM节点的几种方式
+1. createElement
+   创建节点，并添加到文档上
+2. innerHTM
+   `DOM.innerHTML = 'XXX'`
+3. cloneNode
+   克隆节点，并添加到文档上
+   `DOM.cloneNode`
+4. DocumentFragment
+   将创建的节点先添加到fragment对象上，再将fragment对象添加到文档上
+   `document.createDocumentFragment();`
+
+### 其他
+- DOM.scrollIntoView()
+  滚动DOM的顶端到滚动可视区的顶端
+  ```
+  DOM.scrollIntoView(true)  // 等同于不传
+  DOM.scrollIntoView(false)  // 同上，底端
+  DOM.scrollIntoView({
+    block:    "start" | "end",  // 定义滚动到顶部还是底部
+    behavior: "auto"  | "instant" | "smooth"  // 定义动画效果
+  })
+  ```
+- DOM.scrollTop = Number
+  指定滚动条到距顶端number的位置，如果数值过大，就到底部了
