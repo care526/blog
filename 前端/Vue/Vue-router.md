@@ -87,8 +87,6 @@ router.push({ path: '/user', params: { userId }}) // -> /user
 }
 ```
 
-
-
 ### router-link
 ```
 <!-- 字符串 -->
