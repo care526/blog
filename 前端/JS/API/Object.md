@@ -79,3 +79,17 @@ Object.prototype.isPrototypeOf(o); // true
 propname：对象指定属性名的字符串
 ps：那些内置对象的预定义的属性（如方法）通常不可枚举，由JS代码添加的属性是可枚举的
 没有可用于测试继承属性的可枚举型的直接方法
+
+## 检测是否是对象
+```
+obj instanceof Array  // 数组的构造函数
+arr.constructor === Object  // 对象的构造函数
+Object.prototype.toString.call(obj)  // '[object Object]'
+```
+
+## 检测是否是空对象
+```
+JSON.stringify(obj) === '{}'
+Object.getOwnPropertyNames(obj).length === 0
+Object.keys(obj).length
+```
