@@ -173,3 +173,24 @@ ctx.request.body.name  // 某个body键
     // 部分代码
   })
   ```
+
+
+## 异常处理
+- 定义全局错误处理函数
+```
+app.on('error', () => {
+  // xxx
+})
+```
+- try / catch
+里面不要写异步，捕获不到异步里面的错误
+- ctx.throw(code)
+```
+ctx.throw(400)  // ctx.body会自动填充内容
+ctx.throw(500)  // ctx.body会自动填充内容
+```
+- 自己设置错误code
+```
+  ctx.response.status = 404
+  ctx.response.body = 'Page Not Found'  // 可以自己设置ctx.body
+```
