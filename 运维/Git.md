@@ -40,11 +40,9 @@ git push -f XXXXXX   强制将本地代码覆盖远端的代码，会将之前�
 
 git status　　查看当前的修改了那些文件    
 git diff filename　　查看具体修改了什么内容， filename是文件名  
-
 git log　　查看版本推送更迭历史记录   
 git log --pretty=oneline　　同上，简化输出    
 git log --graph --pretty=oneline --abbrev-commit　　同上，还可以看到分支的合并情况    
-
 git log --stat --summary　查看每一次版本的大致变动情况       
 git show dfb02e6e4f2f7b573337763e5c0013802e392818（版本号）　查看该版本的更新信息，也可以只写该版本的前几位dfb02e   
 git show HEAD^ # 查看 HEAD 的父版本更新细节   
@@ -57,6 +55,9 @@ git reset --hard HEAD^　　回退到上个版本
 git reset --hard HEAD^^　 回退到上上个版本（^的个数以此类推）   
 git reset --hard HEAD~10 回退到上10个版本（免得 ^ 写的太长）   
 git reset --hard commit_id 回退到指定版本，commit_id是某个版本号（版本号很长，可以只写前面几位）   
+// reset 会使会退版本之后的都清除
+git revert -n 版本号
+// revert 只会将该版本的修改从分支中去掉，保留其他版本的变动，然后生成一个最新的版本，其他版本都在该版本之后
 
 git checkout -- a.txt　　将a.txt的修改撤销，a.txt会自动回到修改前的状态   
 两种情况，如果已经add了，那么将会回到暂存区里的文件内容，如果没有，将回到工作区修改前的状态，总之，就是回到最近的一次的git commit 或 git add的状态   
@@ -100,9 +101,6 @@ git branch --set-upstream dev origin/dev　　建立远程库分支与本地分�
 当其他人对你要用的分支做了提交，远程库的分支领先于你的本地分支，要先拉取远程库的分支与本地合并，再做开发。如果拉取的分支和当前有冲突，要先解决冲突。 
 
 合并分支的时候，发生冲突，解决完冲突后，已经合并，只需要commit一下就ok了
-
-
-
 
 # 分支策略
 - 开发/测试/线上 三个分支的方式
