@@ -185,7 +185,9 @@ value：要插入的值
 还有DOM操作返回的NodeList对象集合
 只要是部署了lterator接口的，都可以转化
 
-## includes()
+## includes() <返回一个boolean值>
+判断待检测值是否存在于数组中
+`[1,2,3].includes(2)  // true`
 
 ## Array.of() <返回一个数组>
 将一组数值转化为数组,将参数集合为一个数组，没有参数返回空数组

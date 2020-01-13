@@ -21,6 +21,6 @@ window.onresize = care(() => {
 ## 深拷贝
 ```
 var dog = {};
-var cat = JSON.p(JSON.Stringify(dog))
+var cat = JSON.parse(JSON.Stringify(dog))
 ```
 第二种方法，使用递归赋值对象的非引用类型的数据完成,具体代码以后再写
