@@ -28,8 +28,20 @@
 
 ## MetaCSS
 原子类，无语义的类，适合类的组合
+经过我学习，对于这种无语义类的使用还是应该是谨慎
+对于多人开发不是很友好，前期开发是很快，写的css代码会少一些
+后期的维护性不是很好
 ```
 .fl { float: left; }
 .lh-24 { line-height: 24px; }
 .font-12 { font-size: 12px; }
+```
+
+## 设置hash的唯一标示 （这是最好的解决方案）
+```
+<p data-v-hjk12y9n class="name">asdahsjgdkhasd</p>
+.name[data-v-hjk12y9n] {
+  color: red;
+  font-size: 14px;
+}
 ```

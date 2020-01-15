@@ -1,5 +1,3 @@
-# 阿斯顿
-
 ## 引入核心库
 ```
 import VueRouter from 'vue-router';

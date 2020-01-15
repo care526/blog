@@ -38,6 +38,7 @@ xhr.ontimeout = function () {
 
 ### send()  
 发送HTTP请求
+是可以直接发送Blob对象
 
 ### setRequestHeader(header, value)  
 设置请求头，只能在readyState为1的时候调用(open之后，send之前)
