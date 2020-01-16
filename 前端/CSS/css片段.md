@@ -1,0 +1,9 @@
+## 三角形
+原理：将盒子的高宽设为0，然后将border的某三个方向的边框颜色设置为无
+```
+border: 10px solid red;
+border-top-color: rgba(0,0,0,0);
+border-left-color: rgba(0,0,0,0);
+border-right-color: rgba(0,0,0,0);
+```
+同时可以利用伪类来设置三角形
