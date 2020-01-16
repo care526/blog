@@ -1,0 +1,115 @@
+/* 定位相关 */
+.pot {
+  &-Re {
+    position: relative;
+  }
+  &-As {
+    position: absolute;
+  }
+  &-fx {
+    position: fixed;
+  }
+}
+.dis {
+  &-in {
+    display: inline;
+  }
+  &-b {
+    display: block;
+  }
+  &-inb {
+    display: inline-block;
+  }
+  &-fx {
+    display: flex;
+  }
+}
+.fl {
+  float: left;
+}
+.fr {
+  float: right;
+}
+/* 盒子 */
+
+/* 外观 */
+// border
+.bor {
+  // 三部分组成，粗细+样式+颜色
+  &-1s6 {
+    border: 1px solid #666;
+  }
+}
+// background
+
+// 文字
+.ft {
+  // 大小
+  &12 {
+    font-size: 12px;
+  }
+  &14 {
+    font-size: 14px;
+  }
+  &16 {
+    font-size: 16px;
+  }
+  &18 {
+    font-size: 18px;
+  }
+  &20 {
+    font-size: 20px;
+  }
+  &22 {
+    font-size: 22px;
+  }
+  &24 {
+    font-size: 24px;
+  }
+  // 粗细
+  &-w {
+    font-weight: bold;
+  }
+  &-wer {
+    font-weight: bolder;
+  }
+}
+.lh {
+  &12 {
+    line-height: 12px;
+  }
+  &14 {
+    line-height: 14px;
+  }
+  &16 {
+    line-height: 16px;
+  }
+  &18 {
+    line-height: 18px;
+  }
+  &20 {
+    line-height: 20px;
+  }
+  &22 {
+    line-height: 22px;
+  }
+  &24 {
+    line-height: 24px;
+  }
+}
+// 系统常用的颜色
+// 6位相同的使用-x，每两位相同的使用-xx，6位都不同的使用全拼-xxxxxx,rgb的转16进制，透明度使用-6/1(代表 #666666, 0.1)
+.co {
+  &-3 {
+    color: #333;
+  }
+  &-6 {
+    color: #666;
+  }
+  &-9 {
+    color: #999;
+  }
+  &-f7 {
+    color: #f7f7f7;
+  }
+}
