@@ -7,3 +7,12 @@ border-left-color: rgba(0,0,0,0);
 border-right-color: rgba(0,0,0,0);
 ```
 同时可以利用伪类来设置三角形
+
+## 绝对定位时铺满父元素
+```
+position: absolute | fixed;
+top: 0;
+bottom: 0;
+left: 0;
+right: 0;
+```
