@@ -14,8 +14,8 @@ module.exports = {
 ```
 module.exports = {
   output: {
-    filename: '[name].js',
-    path: __dirname + '/dist'
+    filename: '[name].js',  // 设置输出文件名
+    path: __dirname + '/dist'  // 指定输出目录
   }
 }
 ```

@@ -3,9 +3,9 @@
 ### 单入口模式
 ```
 module.exports = {
-  entry: './path/to/my/entry/file.js'
-}
-module.exports = {
+  entry: './path/to/my/entry/file.js',
+
+
   entry: {
     main: './path/to/my/entry/file.js'
   }
