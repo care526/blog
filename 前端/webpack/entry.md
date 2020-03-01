@@ -7,6 +7,7 @@ module.exports = {
 
 
   entry: {
+    // 如果没有output，main就是输出文件名
     main: './path/to/my/entry/file.js'
   }
 }

@@ -4,6 +4,7 @@
 ```
 module.exports = {
   output: {
+    publicPath: 'www.cdn.com',  // 打包出的文件指定上传的cdn的地址
     filename: 'bundle.js',
     path: '/home/proj/public/assets'
   }

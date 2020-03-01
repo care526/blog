@@ -62,6 +62,9 @@ nextElementSibling 该节点的下一个兄弟Element节点
 previousElementSibling 该节点的上一个兄弟Element节点   
 ```
 
+## 层级
+parentDom.contains.(childDom) === true 检查childDom是否是parentDom的子孙节点
+
 ## 删除节点
 ```
 parent.removeChild(node) 删除parent下的node子节点  
