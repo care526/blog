@@ -16,3 +16,12 @@ bottom: 0;
 left: 0;
 right: 0;
 ```
+
+## 文本三行省略
+```
+overflow: hidden;
+text-overflow: ellipsis;
+display: -webkit-box;
+-webkit-line-clamp: 3;
+-webkit-box-orient: vertical;
+```
