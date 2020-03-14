@@ -6,6 +6,8 @@
   用于封装get请求，输入对象转化为字符串拼接在url的后面
 - better-scroll
   移动端的滚动库
+- dayjs
+  日期相关的库，不大
 
 ## 本地依赖
 - prompts

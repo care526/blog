@@ -12,6 +12,9 @@ yarn add [package]@[tag]
 
 yarn add [package] --dev
 
+### 全局安装
+yarn global add ...
+
 ### 升级依赖
 yarn upgrade [package]
 yarn upgrade [package]@[version]
