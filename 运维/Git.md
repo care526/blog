@@ -66,37 +66,24 @@ git rm filename　　删除某个文件，之后再commit就行了（如果用rm
 
 # 分支
 创建分支的目的是在不影响主分支的情况下进行开发，在分支完成的时候将分支的内容和主分支合并即可   
-git branch dev　　创建dev分支   
-git checkout dev　　切换到dev分支   
 git checkout filePath   还原未提交的该文件到上次提交   
 git checkout .   还原未提交的所有文件到上次提交  
 git checkout -b dev　　创建dev分支，并切换到该分支（等于上面两个命令之和）   
-git branch　　查看当前分支   
-git branch -a　　查看所有分支   
 git merge dev　　合并dev分支到当前分支   
 git merge --no-ff -m "XXX" dev　　将dev分支合并到当前分支（不采用Fast forward模式），并创建commit描述，提交一次，XXX是这次提交的修改内容   
 git push --set-upstream origin dev　　在远程库创建分支并推送   
-git push origin dev　　只是推送分支（如果之前已经创建了）   
-git branch -d dev　　删除dev分支（如果dev没有合并到当前分支，会有提示）   
-git branch -D dev　　强制删除dev分支，不管合没合并   
-git push origin --delete dev　　删除远程库上的dev分支   
+
 如果当前分支和主分支都提交的修改，但是修改的内容是不同的，我们在合并分支的时候就会发生冲突（相同文件的内容冲突），我们要手动修改两个分支为相同，然后才能合并分支，再删除   
 
 修改某个分支的bug的时候，先在当前分支分一个分支，在分好的分支上进行修改，修改完了合并分支，再删除分出来的分支。
 开发新功能的时候，也是先分一个功能分支，开发实验结束后再合并，删除，流程同bug分支   
 
-git stash　　隐藏当前分支上工作区的修改   
-git stash list　　查看隐藏的内容   
-git stash apply　　恢复隐藏内容，不删除记录的隐藏内容   
-git stash drop　　删除恢复的隐藏内容   
-git stash pop　　恢复隐藏内容的同时将隐藏内容一并删掉   
-git remote　　查看远程库   
-git remote -v　　查看远程库详细信息（是否可提交 | 是否可拉取）   
+  
 git push origin master　　推送主分支到远程库   
 git push origin dev　　推送dev分支到远程库   
 git checkout -b dev origin/dev　　拉取远程库的分支到本地并切换   
-git push origin dev　　推送分支到远程库   
-git pull　　抓取远程库的新提交   
+git pull　　抓取远程库的新提交到当前工作区
+git fetch   抓取远程库的新提交到本地库  
 git branch --set-upstream dev origin/dev　　建立远程库分支与本地分支的关联   
 当其他人对你要用的分支做了提交，远程库的分支领先于你的本地分支，要先拉取远程库的分支与本地合并，再做开发。如果拉取的分支和当前有冲突，要先解决冲突。 
 

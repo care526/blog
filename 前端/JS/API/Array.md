@@ -250,3 +250,6 @@ for(let elem of ['a','b'].values()){ console.log(elem) } // 依次打印出 0 1
 for(let [index,elem] of ['a','b'].keys()){ console.log(index,elem) } // 解构赋值了
 for(let care of ['a','b'].keys()){ console.log(care) } // 没有解构赋值 是数组 [0,"a"] [1,"b"]
 ```
+
+## 其他
+array.length = 0  // 清空数组
