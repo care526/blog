@@ -1,3 +1,74 @@
+## 嵌套
+```css
+.a {
+  .b {}
+}
+```
+```css
+.a {
+  &:hover {}
+}
+```
+```css
+.a {
+  &-b {}
+}
+```
+```css
+.a {
+  font: 20px/24px {
+    family: fantasy;
+    weight: bold;
+  }
+}
+```
+
+## 注释
+```
+/* This comment is
+ * several lines long.
+ * since it uses the CSS comment syntax,
+ * it will appear in the CSS output. */
+
+// This comment is
+```
+ps: 多行注释会被编译进样式代码中
+
+## 变量
+```css
+/* 定义 */
+$width: 5em;
+$width: 5em !global;  // 全局变量
+
+/* 使用 */
+#main {
+  width: $width;
+}
+```
+
+## 数据类型
+- 数字  1, 2, 13, 10px
+- 字符串  有引号字符串与无引号字符串，"foo", 'bar', baz
+- 颜色  blue, #04a3f9, rgba(255,0,0,0.5)
+- 布尔型  true, false
+- 空值  null
+- 数组  (list)，用空格或逗号作分隔符，1.5em 1em 0 2em, Helvetica, Arial, sans-serif
+- maps  相当于 JavaScript 的 object，(key1: value1, key2: value2)
+
+## 函数
+
+
+
+
+
+
+
+
+
+
+
+
+
 CSS扩展语言
 ------------------------------------------------------------------------------------------------------------------------------
 变量

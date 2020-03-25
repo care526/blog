@@ -20,8 +20,8 @@ right: 0;
 ## 文本三行省略
 ```
 overflow: hidden;
-text-overflow: ellipsis;
-display: -webkit-box;
+text-overflow: ellipsis;  // 文本溢出，省略号显示
+display: -webkit-box;  // 只能针对webkit内核的
 -webkit-line-clamp: 3;
 -webkit-box-orient: vertical;
 ```

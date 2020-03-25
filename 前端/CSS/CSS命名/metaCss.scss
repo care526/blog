@@ -10,29 +10,29 @@
 // background
 
 /* 定位相关 */
-.pt {
-  &-Re {
+.pn {
+  &-r {
     position: relative;
   }
-  &-As {
+  &-a {
     position: absolute;
   }
-  &-fx {
+  &-f {
     position: fixed;
   }
 }
 // 元素类型
 .dp {
-  &-in {
+  &-i {
     display: inline;
   }
   &-b {
     display: block;
   }
-  &-inb {
+  &-ib {
     display: inline-block;
   }
-  &-fx {
+  &-f {
     display: flex;
   }
 }
@@ -57,7 +57,6 @@
     border-radius: 50%;
   }
 }
-// background
 
 // 文字
 .fs {
@@ -83,51 +82,59 @@
   &24 {
     font-size: 24px;
   }
-  // 粗细
-  &-w {
-    font-weight: bold;
-  }
-  &-wer {
-    font-weight: bolder;
-  }
+}
+fw {
+  font-weight: bold;
+}
+fwer {
+  font-weight: bolder;
 }
 // 行高
 .lh {
-  &12 {
+  &-12 {
     line-height: 12px;
   }
-  &14 {
+  &-14 {
     line-height: 14px;
   }
-  &16 {
+  &-16 {
     line-height: 16px;
   }
-  &18 {
+  &-18 {
     line-height: 18px;
   }
-  &20 {
+  &-20 {
     line-height: 20px;
   }
-  &22 {
+  &-22 {
     line-height: 22px;
   }
-  &24 {
+  &-24 {
     line-height: 24px;
   }
 }
 // 系统常用的颜色
-// 6位相同的使用-x，每两位相同的使用-xx，6位都不同的使用全拼-xxxxxx,rgb的转16进制，透明度使用-6/1(代表 #666666, 0.1)
-.cl {
-  &#3 {
+// 6位相同的使用xxx，每两位相同的使用xx，6位都不同的使用全拼xxxxxx,rgb的转16进制，透明度使用-6/1(代表 #666666, 0.1)
+.cr {
+  &-3 {
     color: #333;
   }
-  &#6 {
+  &-6 {
     color: #666;
   }
-  &#9 {
+  &-9 {
     color: #999;
   }
-  &#f7 {
+  &-f7 {
     color: #f7f7f7;
   }
 }
+
+.pt {}
+.pb {}
+.pl {}
+.pf {}
+.mt {}
+.mb {}
+.ml {}
+.mr {}

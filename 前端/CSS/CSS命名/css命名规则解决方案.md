@@ -1,3 +1,8 @@
+
+## PS
+所有的方法应该是交叉合理使用  
+达到不会冲突的目的即可
+
 ## 命名空间
 在每一个组件的最外层包一层唯一的类名
 ```
@@ -11,6 +16,8 @@
 - B 块
 - E 元素
 - M 修饰符
+BEM的命名规矩很容易记：block-name__element-name--modifier-name，也就是模块名 + 元素名 + 修饰器名  
+一般适合UI框架
 
 ## OOCSS
 结构和内容分离 容器和皮肤分离
@@ -37,7 +44,7 @@
 .font-12 { font-size: 12px; }
 ```
 
-## 设置hash的唯一标示 （这是最好的解决方案）
+## 设置hash的唯一标示（这是最好的解决方案）
 ```
 <p data-v-hjk12y9n class="name">asdahsjgdkhasd</p>
 .name[data-v-hjk12y9n] {
