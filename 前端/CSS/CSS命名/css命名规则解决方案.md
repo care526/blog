@@ -44,7 +44,7 @@ BEM的命名规矩很容易记：block-name__element-name--modifier-name，也�
 .font-12 { font-size: 12px; }
 ```
 
-## 设置hash的唯一标示（这是最好的解决方案）
+## 设置hash的唯一标示
 ```
 <p data-v-hjk12y9n class="name">asdahsjgdkhasd</p>
 .name[data-v-hjk12y9n] {
@@ -52,3 +52,7 @@ BEM的命名规矩很容易记：block-name__element-name--modifier-name，也�
   font-size: 14px;
 }
 ```
+缺点：给class多加了一个权重，影响样式的优先级
+
+## css module
+通过在改变class的名字来保证唯一性，如 .asd -> .asd_h68ss9

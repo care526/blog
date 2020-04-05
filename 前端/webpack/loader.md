@@ -73,3 +73,14 @@ module.exports = {
   }
 }
 ```
+
+## 写法
+
+## loader生效顺序
+- 从右到左
+- 从下到上
+
+## loaders
+- css-loader
+- file-loader
+- url-loader
