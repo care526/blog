@@ -8,6 +8,7 @@ let Routers = {}
 
 function findChild(dirName) {
     return fs.readdirSync(path.resolve(__dirname, `../../${dirName}`))
+            .filter(fileName => fileName.indexOf('.md') > -1)
             .map(fileName => fileName.slice(0, -3))
 }
 

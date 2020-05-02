@@ -1,8 +1,8 @@
 
 module.exports = [
-    ['@vuepress/back-to-top', true],
+    '@vuepress/back-to-top'
 
-    ['@vuepress/active-header-links'],
+    // ['@vuepress/active-header-links'],
     
-    ['@vuepress/nprogress']
+    // ['@vuepress/nprogress']
 ]

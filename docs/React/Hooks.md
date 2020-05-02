@@ -1,16 +1,18 @@
+# Hooks
+
 # 规则
 - 只能在顶层(也就是函数的外层调用)
 - 不能在流程和判断语句中调用
 
 # 基础 Hooks
 ## usestate
-```
+```jsx
 import React, { useState } from 'react'
 const [state, setstate] = useState(initState)
 ```
 
 ## useEffect
-```
+```jsx
 import React, { useEffect } from 'react'
 useEffect(() => {
   // XXX
@@ -26,7 +28,7 @@ useEffect(() => {
 返回的一个函数为解绑函数，当组件卸载的时候需要将代码的部分副作用清除
 
 ## useContext
-```
+```jsx
 import React, { createContext, useContext } from 'react'
 
 // 夫组件中
@@ -45,14 +47,14 @@ function Care(props) {
 
 # 高阶 Hooks
 ## useRef
-```
+```jsx
 import React, { useRef } from 'react'
 const inputEl = useRef(null)
 <input ref={inputEl} type="text"/>
 ```
 
 ## useMemo
-```
+```jsx
 // 用于性能优化
 // 监听count的变化，如果改变了就执行，并返回一个实时计算的返回值
 // 有点类似于vue吗compluted属性，但是并没有那么多的拘束
@@ -65,7 +67,7 @@ const otherName =  useMemo(() => {
 ```
 
 ## useCallback
-```
+```jsx
 // 同useMemo，但接受的第一个函数参数的调用方式不同，useCallback直接返回传入参数的返回值
 // useCallback(fn, deps) 相当于 useMemo(() => fn, deps)
 import React, { useCallback } from 'react'
@@ -77,7 +79,7 @@ const otherName =  useCallback((() => {
 ```
 
 ## useReducer
-```
+```jsx
 const initialState = { count: 0 }
 
 function reducer(state, action) {
