@@ -8,7 +8,7 @@ module.exports = [
                     { text: 'Js', link: '/Js' },
                     { text: 'Ts', link: '/Ts/class' },
                     { text: 'CSS', link: '/' },
-                    { text: 'SVG', link: '/SVG/rect' },
+                    { text: 'SVG', link: '/SVG/all' },
                     { text: 'HTML', link: '/HTML/HTML' },
                     { text: 'Node', link: '/' },
                 ] 

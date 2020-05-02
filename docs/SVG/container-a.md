@@ -1,4 +1,5 @@
 # 链接 a
+```svg
 <svg width="100%" height="1000" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 
     <a xlink:href="https://developer.mozilla.org/en-US/docs/SVG" target="_blank">
@@ -8,11 +9,9 @@
     </a>
 
 </svg>
-
-<!-- 
-    专有属性
-    xlink:show
-    xlink:actuate
-    xlink:href
-    target
--->
+```
+专有属性
+- xlink:show
+- xlink:actuate
+- xlink:href
+- target
