@@ -9,7 +9,8 @@ module.exports = {
     lineNumbers: true,
 
     themeConfig: {
-        // logo: '',
+        logo: '/logo.jpeg',
+        
         nav,
 
         smoothScroll: true,

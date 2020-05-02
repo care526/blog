@@ -5,11 +5,11 @@ module.exports = [
             {   
                 text: '基础', 
                 items: [
-                    { text: 'JS', link: '/' },
-                    { text: 'TS', link: '/Ts/class' },
-                    { text: 'CSS', link: '/' },
-                    { text: 'SVG', link: '/' },
-                    { text: 'HTML', link: '/' },
+                    { text: 'Js', link: '/Js' },
+                    { text: 'Ts', link: '/Ts/class' },
+                    { text: 'Css', link: '/' },
+                    { text: 'SVG', link: '/SVG/rect' },
+                    { text: 'Html', link: '/Html/HTML' },
                     { text: 'Node', link: '/' },
                 ] 
             },
@@ -17,7 +17,7 @@ module.exports = [
                 text: '框架', 
                 items: [
                     { text: 'Vue', link: '/' },
-                    { text: 'React', link: '/' },
+                    { text: 'React', link: '/React/Class' },
                 ]
             },
             {
