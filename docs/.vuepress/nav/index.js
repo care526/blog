@@ -6,7 +6,7 @@ module.exports = [
                 text: '基础', 
                 items: [
                     { text: 'JS', link: '/' },
-                    { text: 'TS', link: '/' },
+                    { text: 'TS', link: '/Ts/class' },
                     { text: 'CSS', link: '/' },
                     { text: 'SVG', link: '/' },
                     { text: 'HTML', link: '/' },
