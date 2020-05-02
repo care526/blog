@@ -1,3 +1,5 @@
+# mysql3
+
 TOP  规定要返回的记录的数目(可以是数字,也可以是百分数)
 SELECT TOP 2 * FROM Persons;
 SELECT TOP 50 PERCENT * FROM Persons;

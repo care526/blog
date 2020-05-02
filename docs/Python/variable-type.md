@@ -1,3 +1,6 @@
+# 变量和类型
+
+```python
 #!/usr/local/bin/python3
 # -*- coding: UTF-8 -*-
 
@@ -31,3 +34,4 @@ tinydict[2] = "This is two"
 del var1
 
 # 类型转换
+```

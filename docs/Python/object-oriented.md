@@ -1,3 +1,6 @@
+# 面向对象
+
+```python
 #!/usr/bin/python
 # -*- coding: UTF-8 -*-
  
@@ -20,3 +23,4 @@ class Employee:
 emp1 = Employee("Zara", 2000)
 "创建 Employee 类的第二个对象"
 emp2 = Employee("Manni", 5000)
+```

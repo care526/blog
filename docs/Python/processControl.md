@@ -1,3 +1,6 @@
+# 流程控制
+
+```python
 #!/usr/local/bin/python3
 # -*- coding: UTF-8 -*-
 
@@ -48,3 +51,4 @@ for letter in 'Python':
         continue
 
 # beak 跳出当前层的循环
+````

@@ -1,3 +1,6 @@
+# 运算符
+
+```python
 #!/usr/local/bin/python3
 # -*- coding: UTF-8 -*-
 
@@ -40,3 +43,4 @@
 # is is not
 # in not in
 # not and or
+```

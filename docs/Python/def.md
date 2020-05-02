@@ -1,3 +1,6 @@
+# 函数
+
+```python`
 #!/usr/local/bin/python3
 # -*- coding: UTF-8 -*-
 
@@ -15,3 +18,4 @@
 # 匿名函数 (只能写一行)
 # sum = lambda arg1, arg2: return arg1 + arg2
 # print(sum(1, 2))
+````

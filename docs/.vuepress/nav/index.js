@@ -7,9 +7,9 @@ module.exports = [
                 items: [
                     { text: 'Js', link: '/Js' },
                     { text: 'Ts', link: '/Ts/class' },
-                    { text: 'Css', link: '/' },
+                    { text: 'CSS', link: '/' },
                     { text: 'SVG', link: '/SVG/rect' },
-                    { text: 'Html', link: '/Html/HTML' },
+                    { text: 'HTML', link: '/HTML/HTML' },
                     { text: 'Node', link: '/' },
                 ] 
             },
@@ -23,7 +23,7 @@ module.exports = [
             {
                 text: '工程化', 
                 items: [
-                    { text: 'Webpack', link: '/' },
+                    { text: 'Webpack', link: '/webpack/entry' },
                 ]
             }
         ]
@@ -31,9 +31,9 @@ module.exports = [
     {
         text: '后端', 
         items: [
-            { text: 'GO', link: '/' },
-            { text: 'JAVA', link: '/' },
-            { text: 'Python', link: '/' },
+            { text: 'GO', link: '/Go/func' },
+            { text: 'JAVA', link: '/Java/Java' },
+            { text: 'Python', link: '/Python/def' },
         ]
     },
     { text: 'Linux', link: '/linux/vim' },

@@ -1,3 +1,6 @@
+# 模块
+
+```python
 #!/usr/local/bin/python3
 # -*- coding: UTF-8 -*-
 
@@ -12,3 +15,4 @@
 
 # a.care2(2)
 # care2(3)
+```
