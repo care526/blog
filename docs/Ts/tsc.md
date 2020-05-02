@@ -1,3 +1,4 @@
+# tsc
 tsc filename.ts
 
 tsc src/*.ts

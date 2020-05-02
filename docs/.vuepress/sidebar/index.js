@@ -1,7 +1,22 @@
-const linux = require('./linux')
-const Git = require('./Git')
+const path = require('path')
+const fs = require('fs')
 
-module.exports = {
-    '/linux/': linux,
-    '/Git/': Git
+const Items = fs.readdirSync(path.resolve(__dirname, '../../'))
+                .filter(rootPath => !['.vuepress', 'README.md'].includes(rootPath))
+
+let Routers = {}
+
+function findChild(dirName) {
+    return fs.readdirSync(path.resolve(__dirname, `../../${dirName}`))
+            .map(fileName => fileName.slice(0, -3))
 }
+
+Items.forEach(rootPath => {
+    Routers[`/${rootPath}/`] = [{
+        title: rootPath,
+        collapsable: false,
+        children: findChild(rootPath)
+    }]
+})
+
+module.exports = Routers

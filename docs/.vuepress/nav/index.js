@@ -2,9 +2,30 @@ module.exports = [
     {
         text: '前端', 
         items: [
-            { text: 'JS', link: '/' },
-            { text: 'CSS', link: '/' },
-            { text: 'HTML', link: '/' },
+            {   
+                text: '基础', 
+                items: [
+                    { text: 'JS', link: '/' },
+                    { text: 'TS', link: '/' },
+                    { text: 'CSS', link: '/' },
+                    { text: 'SVG', link: '/' },
+                    { text: 'HTML', link: '/' },
+                    { text: 'Node', link: '/' },
+                ] 
+            },
+            {
+                text: '框架', 
+                items: [
+                    { text: 'Vue', link: '/' },
+                    { text: 'React', link: '/' },
+                ]
+            },
+            {
+                text: '工程化', 
+                items: [
+                    { text: 'Webpack', link: '/' },
+                ]
+            }
         ]
     },
     {
