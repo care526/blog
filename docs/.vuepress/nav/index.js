@@ -38,6 +38,14 @@ module.exports = [
     },
     { text: 'Linux', link: '/linux/vim' },
     { text: 'Git', link: '/Git/branch' },
+
+    {
+        text: '编程其他', 
+        items: [
+            { text: '编程思想', link: '/programmingThought/function' },
+            { text: '数据结构', link: '/programmingThought/function' },
+        ]
+    },
     {
         text: '书籍',
         items: [

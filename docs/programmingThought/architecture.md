@@ -1,3 +1,5 @@
+# 架构
+
 ## MVC
 - 用户向View发出指令
 - View告诉Controller要干嘛
