@@ -16,8 +16,6 @@ module.exports = {
 
         sidebar,
         
-        // displayAllHeaders: true,
-
         plugins,
 
         lastUpdated: 'Last Updated', // string | boolean

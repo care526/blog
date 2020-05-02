@@ -1,3 +1,4 @@
+# other
 ## 模式
 ```
 开发环境
@@ -28,7 +29,7 @@ webpack --mode=production  在cli里面传递选项参数也可以
 [hash]: 资源的hash值
 ```
 
-## 
+## 开发环境
 devtool: 'cheap-module-eval-source-map'  // 开发环境 
 devtool: 'cheap-module-source-map'  // 生产环境
 

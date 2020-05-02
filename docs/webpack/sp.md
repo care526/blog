@@ -1,3 +1,4 @@
+# sp
 node 和 webpack 的版本越新，打包的速度越快，会利用node中的新特性，提高打包速度
 
 npx
