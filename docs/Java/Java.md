@@ -1,7 +1,7 @@
 # Java
 
 ## 对象与类
-```
+```java
 class Person {  //类名首字母大写
     //实例化对象需要的属性
     //将属性设置为私有，通过共有的get，set方法获取和设置，叫“封装”
@@ -53,7 +53,7 @@ class Person {  //类名首字母大写
 ```
 
 ## 继承
-```
+```java
 class Man extend Person { 
     
 }

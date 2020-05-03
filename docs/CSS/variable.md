@@ -1,0 +1,9 @@
+# 变量
+```
+:root {
+  --main-color: hotpink;
+  --pane-padding: 5px 42px;
+}
+```
+- 变量一般以'--'开头
+- 具有继承性

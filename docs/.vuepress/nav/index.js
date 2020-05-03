@@ -5,9 +5,9 @@ module.exports = [
             {   
                 text: '基础', 
                 items: [
-                    { text: 'Js', link: '/Js' },
+                    { text: 'JS', link: '/JS/Array' },
                     { text: 'Ts', link: '/Ts/class' },
-                    { text: 'CSS', link: '/' },
+                    { text: 'CSS', link: '/CSS/qa' },
                     { text: 'SVG', link: '/SVG/all' },
                     { text: 'HTML', link: '/HTML/HTML' },
                     { text: 'Node', link: '/' },
@@ -16,7 +16,7 @@ module.exports = [
             {
                 text: '框架', 
                 items: [
-                    { text: 'Vue', link: '/' },
+                    { text: 'Vue', link: '/Vue/Vue-cli' },
                     { text: 'React', link: '/React/Class' },
                 ]
             },
