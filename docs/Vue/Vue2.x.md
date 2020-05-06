@@ -133,8 +133,10 @@ export defult {
   ```
 - v-on （缩写 @）
   绑定相应的事件
+  ```html
   <button v-on:click=''shijian''></button>
   <button v-on:click.stop=''shijian''></button>   //在后面添加修改器，如：阻止冒泡等
+  ```
   ps：父组件监听子组件的事件触发。用自定义组件（第三章5-7，8分钟）
   自定义事件的名称不要写成驼峰模式
 - v-once
@@ -217,38 +219,53 @@ this.$emit("change", this.cba)
 
 ## 内置的组件
 - slot
-  <slot>no slot</slot>  
+  ```html
+  <slot>no slot</slot>
+  ```
   slot标签将子组件中间包含的标签插在slot标签中间，当没有要插入的标签的时候，显示slot标签里的默认值
 - keep-alive
+  ```html
   <keep-alive></keep-alive>
+  ```
   将动态的组件写在这个标签之间，当组件切换的时候，会将前一个组件的内容缓存起来，再切换回来的时候，加快相应速度
 - transition
+  ```html
   <transition name=“v” mode=“in-out”></transition>
-
+  ```
+```html
 <style>
 .v-enter-active    .v-leace-active   //过渡状态，transtion写在这两个里面
 .v-enter    .v-leave     //开始和结尾状态
 </style>
+```
 将需要添加过渡状态的标签放在这个标签里面
 只有配合v-if  v-show  :is='XXX'  这三个才会有效果
 mode控制多元素的过渡序列
 ps：同时还有用js来控制过渡状态，js可以控制的属性多一些
 - component
+  ```html
   <component :is="currentView"></component>
+  ```
   该组件名字跟随变量的改变而改变，变量对应的是一个引入的一个组件
   is接受一个注册了的组件名字，也接受一个导入的组件 如() => import('A')
 
 ## key
+```html
 <li v-for="item in items" :key="item.id"></li>
+```
 保证一列元素的唯一性
 
 ## ref
+```html
 <div ref="divRef"></div>
+```
 获取该元素/组件的DOM实例(最好在组件创建成功后引用)
 
 ## class
+```html
 <div class="class1"></div>
 <div :class="['class1', { class2: true }]"></div>
+```
 
 ## render
 ```js
@@ -376,18 +393,26 @@ comments
 
 v-bind（缩写 ：）
 绑定元素的属性
+```html
 <a v-bind:href="" :title="care"></a>
+```
 变量的类型为string，直接展现。为数组，为指定多个类名。为对象，根据对象属性的bool值来展现，键名为属性值，bool键值控制属性的展现
 可以直接写属性的值
 ps：标签的属性最好也是全部小写
+```html
 <a class="asd"></a>
+```
 区别，绑定的属性后面的字符串会当作变量，而直接使用的就是字符串
 v-model
 数据的双向绑定
+```html
 <input v-model="asd" type="text" />
+```
 还有单选和多选
 v-slot
+```html
 <my-component v-once :comment="msg"></my-component>
+```
 组件及其子孙组件只渲染一次，提高页面更新渲染速度
 
 
