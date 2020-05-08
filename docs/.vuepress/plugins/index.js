@@ -1,6 +1,6 @@
 
 module.exports = [
-    '@vuepress/back-to-top'
+    ['@vuepress/back-to-top', true]
 
     // ['@vuepress/active-header-links'],
     
