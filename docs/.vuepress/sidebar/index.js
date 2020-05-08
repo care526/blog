@@ -6,13 +6,16 @@ const docsPath = path.resolve(__dirname, '../../')
 const Items = fs.readdirSync(docsPath)
                 .filter(child => !['.vuepress', 'README.md'].includes(child))
 // 获取目录下的md文件
-function findMdChild(dir, dirname) {
+function findMdChild(dir, dirName, isDeep) {
     return {
-        title: dirname,
+        title: dirName,
         collapsable: false,
         children: fs.readdirSync(dir)
                     .filter(fileName => fileName.indexOf('.md') > -1)
-                    .map(fileName => fileName.slice(0, -3))
+                    .map(fileName => {
+                        if (isDeep) return dirName + '/' + fileName.slice(0, -3)
+                        return fileName.slice(0, -3)
+                    })
     }
 }
 // 获取目录下的子目录
@@ -31,7 +34,8 @@ function setGroups(targetDir, targetDirName) {
         targetChildDir.forEach((dirname, index) => {
             groups[index + 1] = findMdChild(
                 path.resolve(targetDir, dirname),
-                dirname
+                dirname,
+                true
             )
         })
     }
