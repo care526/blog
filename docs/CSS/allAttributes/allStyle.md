@@ -55,8 +55,6 @@ background-attachment　background-origin	background-clip
 
 
 ## 布局定位
-position: absolute / fixed / relative;  # 绝对定位(相对父元素) / 固定定位(相对body) / 相对定位(相对自己)
-z-index: 6 / 0 / -1;   # 定义元素的层级
 
 clip:rect(top, right, bottom, left);  ＃绝对定位的元素，子元素大小比父元素大小大，裁剪
 display:none/block/inline/inline-block/list-item/几种table；　＃隐藏/块级/内联/行内块/列表/表格
