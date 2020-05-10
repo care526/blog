@@ -1,5 +1,6 @@
 # Bootstrap
 
+```html
 <!DOCTYPE html>   H5文档类型
 
 <html lang="zh-CN">     语言
@@ -33,7 +34,7 @@ Normalize.css增强跨浏览器表现的一致性    也就是浏览器的css兼
 <u>带有下划线的文本
 <strong>加粗文本
 <em>斜体文本
----------------------------------------------------
+
 text-left 左对齐
 text-center 居中对齐
 text-right 右对齐
@@ -42,11 +43,11 @@ text-nowrap 不换行
 text-lowercase 全部小写
 text-uppercase 全部大写
 text-capitalize 首字母大写
---------------------------------------------------
+
 <abbr title="attribute">attr</abbr> 缩略语
 <address>  地址
 <blockquote>  引用文本 加上blockquote-reverse类  可右对齐
---------------------------------------------------
+
 表格
 <table class="table">  
 通过 .table-striped 类可以给 <tbody> 之内的每一行增加斑马条纹样式  <table class="table table-striped">
@@ -64,7 +65,7 @@ text-capitalize 首字母大写
 将任何 .table 元素包裹在 .table-responsive 元素内，即可创建响应式表格，
 其会在小屏幕设备上（小于768px）水平滚动。当屏幕大于 768px 宽度时，水平滚动条消失。
 在表格的外面加上一个带有.table-responsive类的盒子
---------------------------------------------------
+
 <code>&lt;section&gt;</code>  内联代码  &lt； &gt；是左右括号
 <kbd>  用户输入
 <pre>&lt;p&gt;Sample text here...&lt;/p&gt;</pre> 代码块
@@ -124,3 +125,4 @@ img-thumbnail   带点边框
 .show          让元素显示
 .hidden        让元素隐藏  这两个用的是display来设置显隐性
 .invisible     隐藏 但还占用文档位置
+```

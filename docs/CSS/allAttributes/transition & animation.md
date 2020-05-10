@@ -1,8 +1,43 @@
-# 过渡 & 动画
+# 渐变 & 过渡 & 动画
 
 ## 渐变
+### 线性渐变
+1. 预定方向  
+    语法：`background-image: linear-gradient(direction, color-stop1, color-stop2, ...);`
+    direction
+      - to bottom
+      - to top
+      - to left
+      - to right
+      - to bottom right
+      - to bottom left
+      - to top right
+      - to top left
+
+2. 定义角度
+    语法`background-image: linear-gradient(angle, color-stop1, color-stop2);`
+    angle
+      - 90deg
+3. repeating-linear-gradient() 
+    函数用于重复线性渐变，属性同上
+
+
+
+### 径向渐变
+语法`background-image: radial-gradient(shape size at position, start-color, ..., last-color);`
+- shape  定义了形状
+    ellipse  椭圆形，默认
+    circle  圆形
+- size  定义了渐变的大小
+    - closest-side
+    - farthest-side
+    - closest-corner
+    - farthest-corner
+
+repeating-radial-gradient() 函数用于重复径向渐变
 
 ## 变形
+```css
 transform: matrix(n,n,n,n,n,n) // 6个值的2D转换，使用6个值的矩阵
            matrix3d(n,n,n,n,n,n,n,n,n,n,n,n,n,n,n,n) // 定义 3D 转换，使用 16 个值的 4x4 矩阵
            translate(x, y) // 2D转换(10px / 20%)
@@ -38,6 +73,7 @@ perspective-origin: x-axis y-axis;
 - y-axis: 视角在Y轴上的位置
   ps: 一般和perspective一起使用
 backface-visibility: visible / hidden;  // 定义元素不面向屏幕时(就是元素的背面)是否可见
+```
 
 ## 过渡
 transition: 以下各个属性;
@@ -53,7 +89,7 @@ transition-timing-function: linear / ease / ease-in / ease-out / ease-in-out / c
 transition-delay: 1s; // 过渡延迟时间
 
 ## 动画
-animation
+animation: name 所需时间 延迟时间 循环次数;
 animation-name: demo;  // 动画的名字
 animation-duration: 1s;  // 动画持续时间
 animation-timing-function: linear / ease / ease-in / ease-out / ease-in-out / cubic-bezier(n,n,n,n); // 动画效果的时间曲线
@@ -69,7 +105,7 @@ animation-direction: normal / reverse / alternate / alternate-reverse;  // 动�
 animation-play-state: paused / running;  // 指定动画暂停/播放
 - 在JS中使用该属性在一个周期中暂停动画
 animation-fill-mode: 
-```
+```css
 @keyframes demo  // demo的动画
 {
 	from {
@@ -78,14 +114,5 @@ animation-fill-mode:
 	to {
         left:450px;
     }
-}
-@keyframes demo  // demo的动画
-{
-	0% {
-        left:0px;
-    }
-	100% {
-        left:450px;
-    }
-}
+}]
 ```

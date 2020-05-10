@@ -38,14 +38,12 @@ letter-spacing、word-spacing、white-space、line-height、color、font、font-
 - less
 
 ## link和@import的异同：
-link用于html引入css，是标签
-------------------------------------
-@import可用于html引入css，也可用于css中引入css，是样式，不是标签。
-用法：@import url（css地址）；
-本质上两者使用选择区别不大，但为了软件中编辑布局网页html代码，一般使用link较多，也推荐使用link。
-------------------------------------
-不推荐使用@import的原因：
-不能并行下载css，使页面反应时间过长。但可用于工程较大的项目中，编译得到不含@import的css文件。如webpack。
+link用于html引入css，是标签  
+@import可用于html引入css，也可用于css中引入css，是样式，不是标签。  
+用法：@import url（css地址）；  
+本质上两者使用选择区别不大，但为了软件中编辑布局网页html代码，一般使用link较多，也推荐使用link。  
+不推荐使用@import的原因：  
+不能并行下载css，使页面反应时间过长。但可用于工程较大的项目中，编译得到不含@import的css文件。如webpack。  
 
 ## display：none；和visible：hidden；的区别：
 display相当于把元素删除，dom结构中没有，查询不到，不在render tree中，所以不参与界面的绘制
@@ -56,28 +54,28 @@ visible会保留元素在页面上的位置，dom结构中也有，只是隐藏
 怪异ie盒子，width、height是设置总的宽度和高度，压缩content的大小
 
 ## 三种定位机制：
-------------------------------------
 标准文档流
-1、行内元素之间的水平margin为第一个元素的margin-right加上第二个元素的margin-left
-2、块级元素之间的竖直margin不是第一个元素的margin-bottom加上第二个元素的margin-top
-而是两者中的较大值
-3、嵌套盒子之间的margin（margin坍塌）
+1. 行内元素之间的水平margin为第一个元素的margin-right加上第二个元素的margin-left
+2. 块级元素之间的竖直margin不是第一个元素的margin-bottom加上第二个元素的margin-top，而是两者中的较大值
+3. 嵌套盒子之间的margin（margin坍塌）
 原因：可能是由于margin值需要参照物来实现偏移，当没有参照物就出现无法偏移的情况。所以需要手动给父元素设置一个参照物
 解决方法（推荐1、2、3）
-1、给父元素设置一个border，如果不需要就设置透明的border
-2、给父元素添加overflow：hidden；
-3、给要用的子元素前面添加一个兄弟元素（content：“”；overflow：hidden；）
-4、给父元素添加display：table；
-5、给父元素设置display：fixed；
-------------------------------------
+1. 给父元素设置一个border，如果不需要就设置透明的border
+2. 给父元素添加overflow：hidden；
+3. 给要用的子元素前面添加一个兄弟元素（content：“”；overflow：hidden；）
+4. 给父元素添加display：table；
+5. 给父元素设置display：fixed；
+********
+
 两个都有display：inline-block；属性的盒子之间会有4px的空隙
 解决方法：在两个子元素的父元素上设置word-spacing: -4px;属性
 然后在子元素上再设置word-spacing: 4px;作相抵消，否则，子元素的文字会挤在一起（每个word之间减少4px的空间）
-------------------------------------
+******
+
 浮动及清除:
 float:left/right;
 相当于给元素默认添加了属性display：inline-block；脱离文档流，在常规文档流的上面
-------------------------------------
+***
 绝对定位  re  ab   fixe
 
 
@@ -106,12 +104,12 @@ transform-origin: @origin;
   缺点：色彩较少
   官网：阿里（www.iconfont.cn）
        iocmoon（icooon.io/app/#/selete）
-****
+
 图标的格式
 - 采取图片的格式
   处理方式：雪碧图 CSS Sprite
 - 采取字体格式，可以采用color，font-size来改变
-****
+
 原理
 + 读取文字内容转换成对应的 unicode码（&#xe608）
 + 根据HTML里设置的 font-family （如果没设置则使用浏览器默认设置）去查找电脑里（如果有自定义字体@font-face ，则加载对应字体文件）对应字体的字体文件
@@ -137,139 +135,36 @@ transform-origin: @origin;
 }
 ```
 
+## CSS3新特性
+- 选择器
+- 边框(border-image、border-radius、box-shadow)
+- 背景(background-clip、background-origin、background-size)
+- 渐变(linear-gradients、radial-gradents)
+- 字体(@font-face)
+- 转换、形变(transform)
+- 过渡(transition)
+- 动画(animation)
+- 弹性盒模型(flex-box)
+- 媒体查询(@media)
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-CSS优化：
-1、样式放在头部，脚本放在底部
+## CSS优化：
+1. 样式放在头部，脚本放在底部
 <加载优化，减少请求>
-2、减少使用import，不使用import
-3、压缩文件的体积
-4、css缩写   如：margin padding.....
-5、多用class，减少层级选择器的使用（因为，层级越多，定位越慢）
-6、利用好继承机制（css可以和不可以继承的属性）
-7、减少重布局和重绘，改变元素的大小和位置会触发
-
-
-
-
-
-
-
-
+2. 减少使用import，不使用import
+3. 压缩文件的体积
+4. css缩写   如：margin padding.....
+5 .多用class，减少层级选择器的使用（因为，层级越多，定位越慢）
+6 .利用好继承机制（css可以和不可以继承的属性）
+7. 减少重布局和重绘，改变元素的大小和位置会触发
 
 css sprite（雪碧图）
 background+position
 
 水平居中的方式，垂直居中的方式
-块级元素：
-1、margin左右auto（盒子有宽度）
--------------------
-内联元素或inline-block
-1、text-align：center；
-一些box设置display：inline-block；时每个box之间会有4px的word-spacing
-所以在box使用的时候加-4px的word-spacing
---------------------
-相对定位和绝对定位来实现水平和垂直居中
----------------
-
-
-列举Css3新特性
-选择器
-边框(border-image、border-radius、box-shadow)
-背景(background-clip、background-origin、background-size)
-渐变(linear-gradients、radial-gradents)
-字体(@font-face)
-转换、形变(transform)
-过度(transition)
-动画(animation)
-弹性盒模型(flex-box)
-媒体查询(@media)
-
-
-
-
-
-
-
-
-
-
-
-
-css变形： 
-transform:
-类别|     2d                                        3d
-移动|  translate（） |  translate3d（）  translateX（）  translateY（）  translateZ()
-缩放|  scale（）     |  scale3d()       scaleX()        scaleY()       scaleZ()
-旋转|  rotate（）    |  rotate3d()      rotateX（）      rotateY（）    rotateZ（）
-倾斜|  skew（） X Y  |
---------------------------------------------------------------
-transform-origin:  百分比  top/center...   ..px/em ;
-2d变形中，两个属性（X/Y） | 3d变形中，三个属性（X/Y/Z）
---------------------------------------------------------------
-transform-style: flat(默认2d)/preserve-3d（3d空间）;  设置在父元素上
---------------------------------------------------------------
-perspective：（大于0的值）px； 决定观看者的位置（3d空间） 设置在父元素上
-perspective-origin：百分比  top/center...；
---------------------------------------------------------------
-css过渡：
-transition：属性 所需时间 函数 延迟时间；
---------------------------------------------------------------
-css动画 ：
-@keyframes name {
-    from {}
-    percentage {}
-    to {}
-}
-@keyframes name{
-    0% {}
-    .
-    .
-    .
-    100% {}
-}
-使用：animation：name 所需时间 延迟时间 循环次数；
-
-
-
-
-
-
-
-
-
-
-
-
+1. 块级元素：
+margin左右auto（盒子有宽度）
+2. 内联元素或inline-block
+text-align：center；  
+一些box设置display：inline-block；时每个box之间会有4px的word-spacing  
+所以在box使用的时候加-4px的word-spacing  
+3. 相对定位和绝对定位来实现水平和垂直居中
