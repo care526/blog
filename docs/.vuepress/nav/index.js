@@ -36,6 +36,13 @@ module.exports = [
             { text: 'Python', link: '/Python/def' },
         ]
     },
+    {
+        text: '计算机基础', 
+        items: [
+            { text: '数据结构', link: '/Go/func' },
+            { text: '设计模式', link: '/Java/Java' },
+        ]
+    },
     { text: 'Linux', link: '/linux/vim' },
     { text: 'Git', link: '/Git/Git' },
 
