@@ -37,7 +37,7 @@ module.exports = [
         ]
     },
     { text: 'Linux', link: '/linux/vim' },
-    { text: 'Git', link: '/Git/branch' },
+    { text: 'Git', link: '/Git/Git' },
 
     // {
     //     text: '编程其他', 
