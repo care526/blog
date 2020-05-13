@@ -1,5 +1,64 @@
 # loader
 
+## 使用
+```JS
+module.exports = {
+  module: {
+    rules: [
+      // 单一使用
+      { test: /\.css$/, use: 'css-loader' },
+      // 增加参数
+      {
+        test: /\.(jpg|png|gif)$/,
+        use: {
+            loader: 'file-loader',
+            option: {
+                name: '[name].[ext]',
+                outputPath: 'images/'
+            }
+        }
+      },
+      // 多loader处理
+      {
+        test: /\.(scss|css)$/,
+        use: [
+          'style-loader',
+          {
+                loader: css-loader,
+                option: {
+                    importLoaders: 2,
+                    modules: true
+                }
+          },
+          'sass-loader'
+        ]
+      },
+    ]
+  }
+};
+```
+
+## loader生效顺序
+- 从右到左
+- 从下到上
+总的来说就是数据的后面倒着依次执行
+
+## loaders
+- 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ## 常用的loader
 ```
 npm install --save-dev css-loader
@@ -78,9 +137,7 @@ module.exports = {
 
 ## 写法
 
-## loader生效顺序
-- 从右到左
-- 从下到上
+
 
 ## loaders
 - css-loader
