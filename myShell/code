@@ -1,0 +1,13 @@
+#!/usr/local/bin/node
+const exec = require('child_process').exec
+const projectsList = require('./projectList')
+
+const ARGV = process.argv[2]
+
+let PATH = __dirname
+
+if (ARGV > 0 && ARGV < projectsList.length + 1) {
+    PATH = projectsList[ARGV - 1].url
+}
+
+exec(`code ${PATH}`)

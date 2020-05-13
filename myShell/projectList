@@ -1,0 +1,45 @@
+const PDIR1 = '/Users/morika/Desktop/projects/'
+
+const projectsList = [{
+    name: '新零售 PC',
+    url: 'senguocashier-manage-frontend'
+}, {
+    name: '新零售 移动',
+    url: 'senguo-cashier-manage-mobile'
+}, {
+    name: '品牌商',
+    url: 'senguo-pf-pps-manage-web'
+}, {
+    name: '账户中心',
+    url: 'senguo-passport-frontend'
+}, {
+    name: '商户中心 PC',
+    url: 'senguo-merchantcenter-frontend'
+}, {
+    name: '商户中心 移动',
+    url: 'senguo-merchantcenter-mobile'
+}, {
+    name: '总后台',
+    url: 'senguosuper-frontend'
+}, {
+    name: '批发 老',
+    url: 'pf.senguo.cc'
+}, {
+    name: '批发 新',
+    url: 'senguo-pf-manage-frontend'
+}, {
+    name: 'blog',
+    url: '/Users/morika/Desktop/my-project/blog'
+}, {
+    name: 'my-projects',
+    url: '/Users/morika/Desktop/my-project'
+}]
+
+// 补全工作目录
+projectsList.forEach(item => {
+    if (item.url.indexOf('/Users') === -1) {
+        item.url = PDIR1 + item.url
+    }
+})
+
+module.exports = projectsList

@@ -1,0 +1,7 @@
+#!/usr/local/bin/node
+const projectsList = require('./projectList')
+
+// 打印项目名称和编号
+projectsList.forEach((dir, index) => {
+    console.log((index + 1) + ': ' + dir.name)
+})
