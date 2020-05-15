@@ -56,9 +56,6 @@ module.exports = {
 
 
 
-
-
-
 ## 常用的loader
 ```
 npm install --save-dev css-loader
