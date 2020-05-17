@@ -57,14 +57,14 @@ module.exports = [
 
                 ]
             },
-            // {
-            //     text: '数据库',
-            //     items: [
-            //         { text: 'Mysql', link: '/Python/def' },
-            //         { text: 'Redis', link: '/Python/def' },
-            //         { text: 'Mongdb', link: '/Python/def' },
-            //     ]
-            // }
+            {
+                text: '数据库',
+                items: [
+                    { text: 'Mysql', link: '/database/mysql' },
+                    { text: 'Redis', link: '/database/redis' },
+                    // { text: 'Mongdb', link: '/Python/def' },
+                ]
+            }
         ]
     },
     // {
