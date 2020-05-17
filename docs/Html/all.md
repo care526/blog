@@ -61,14 +61,6 @@
 		<b></b>　　<!-- 加粗文本表强调 -->  
 		<br />　　<!-- 换行 -->  
 
-		<></>　　<!--  -->  
-		<></>　　<!--  -->  
-		<></>　　<!--  -->  
-		<></>　　<!--  -->  
-		<></>　　<!--  -->  
-		<></>　　<!--  -->  
-		<></>　　<!--  -->
-
 		<!-- 表单 -->
 		<form name="XXX" method="XXX" action="XXX"></form>
 		name: 表单的名字
@@ -105,14 +97,10 @@
 		<label for="male"></label>
 		for: 用于关联表单元素，对应的是表单元素的id
 
-		<></>
-		<></> 
 		<!-- 嵌入其他页面的标签 -->
 		<iframe width="宽度" height="高度" src="链接" scrolling="XXX" width="宽度"></iframe>
 		scrolling: 可否可滚动yes/on
 
-		<></>
-		<></>
   	</body>
 
 	<!-- JS脚本 -->
@@ -127,5 +115,40 @@
 ```
 
 ## 块级元素
+- h1
+- h2
+- h3
+- h4
+- h5
+- h6
+- ol
+- ul
+- li
+- dl
+- p
+- div
+- hr
+- table
+- form
+- address
+- center
+- pre
+- blockquote
+- marquee
 
 ## 内联元素
+- span
+- a
+- br
+- b
+- strong
+- img
+- sup
+- sub
+- i
+- em
+- del
+- u
+- input
+- textarea
+- select

@@ -6,7 +6,7 @@ module.exports = [
             {   
                 text: '基础', 
                 items: [
-                    { text: 'HTML', link: '/HTML/HTML' },
+                    { text: 'HTML', link: '/HTML/all' },
                     { text: 'SVG', link: '/SVG/all' },
                     { text: 'CSS', link: '/CSS/qa' },
                     { text: 'JS', link: '/JS/Array' },
@@ -21,26 +21,26 @@ module.exports = [
                     { text: 'React', link: '/React/Class' },
                 ]
             },
-            {
-                text: '路由', 
-                items: [
-                    { text: 'Vue-router', link: '/Vue/Vue-cli' },
-                    { text: 'React-router', link: '/React/Class' },
-                ]
-            },
-            {
-                text: '状态管理', 
-                items: [
-                    { text: 'Vuex', link: '/Vue/Vue-cli' },
-                    { text: 'Redux', link: '/React/Class' },
-                    { text: 'Mbox', link: '/React/Class' },
-                ]
-            },
+            // {
+            //     text: '路由', 
+            //     items: [
+            //         { text: 'Vue-router', link: '/Vue/Vue-cli' },
+            //         { text: 'React-router', link: '/React/Class' },
+            //     ]
+            // },
+            // {
+            //     text: '状态管理', 
+            //     items: [
+            //         { text: 'Vuex', link: '/Vue/Vue-cli' },
+            //         { text: 'Redux', link: '/React/Class' },
+            //         { text: 'Mbox', link: '/React/Class' },
+            //     ]
+            // },
             {
                 text: '工程化', 
                 items: [
                     { text: 'Webpack', link: '/webpack/entry' },
-                    { text: '脚手架', link: '/webpack/entry' },
+                    // { text: '脚手架', link: '/webpack/entry' },
                 ]
             }
         ]
@@ -57,48 +57,50 @@ module.exports = [
 
                 ]
             },
-            {
-                text: '数据库',
-                items: [
-                    { text: 'Mysql', link: '/Python/def' },
-                    { text: 'Redis', link: '/Python/def' },
-                    { text: 'Mongdb', link: '/Python/def' },
-                ]
-            }
+            // {
+            //     text: '数据库',
+            //     items: [
+            //         { text: 'Mysql', link: '/Python/def' },
+            //         { text: 'Redis', link: '/Python/def' },
+            //         { text: 'Mongdb', link: '/Python/def' },
+            //     ]
+            // }
         ]
     },
-    {
-        text: '计算机基础', 
-        items: [
-            { text: '数据结构', link: '/Go/func' },
-            { text: '设计模式', link: '/Java/Java' },
-        ]
-    },
-    {
-        text: '产品', 
-        items: [
-            { text: '数据结构', link: '/Go/func' },
-        ]
-    },
+    // {
+    //     text: '计算机基础', 
+    //     items: [
+    //         { text: '数据结构', link: '/Go/func' },
+    //         { text: '设计模式', link: '/Java/Java' },
+    //     ]
+    // },
+    // {
+    //     text: '产品', 
+    //     items: [
+    //         { text: '案例', link: '/production/example/baiduyun' },
+    //         { text: '理论', link: '/production/theory/a' },
+    //     ]
+    // },
     {
         text: 'Linux', 
         items: [
             { text: 'Vim', link: '/linux/vim' },
         ]
     },
-    {
-        text: '通用', 
-        items: [
-            { text: 'Git', link: '/Git/Git' },
-        ]
-    },
-    {
-        text: '管理', 
-        items: [
-            { text: '自我管理', link: '/Git/Git' },
-            { text: '团队管理', link: '/Git/Git' },
-        ]
-    },
+    { text: 'Git', link: '/Git/Git' },
+    // {
+    //     text: '通用', 
+    //     items: [
+    //         { text: 'Git', link: '/Git/Git' },
+    //     ]
+    // },
+    // {
+    //     text: '管理', 
+    //     items: [
+    //         { text: '自我管理', link: '/Git/Git' },
+    //         { text: '团队管理', link: '/Git/Git' },
+    //     ]
+    // },
     // {
     //     text: '编程其他', 
     //     items: [

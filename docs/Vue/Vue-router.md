@@ -180,6 +180,20 @@ beforeRouteLeave (to, from, next) {
 - app  router的vue根实例
 - mode  模式
 - currentRoute  当前路由对应的路由信息，相当于route
+### 方法
+- beforeEach
+- beforeResolve
+- afterEach
+- push
+- replace
+- go
+- back
+- forward
+- resolve
+- addRoutes
+  动态添加路由
+- onReady
+- onError
 
 ## router的拆分
 - 集中式

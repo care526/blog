@@ -20,7 +20,6 @@ function findMdChild(dir, dirName, isDeep) {
 }
 // 获取目录下的子目录
 function findDirChild(dir) {
-    console.log(dir)
     return fs.readdirSync(dir)
             .filter(fileName => fs.statSync(path.resolve(dir, fileName)).isDirectory() && !['.DS_Store', 'images'].includes(fileName))
 }

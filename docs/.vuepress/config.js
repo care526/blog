@@ -2,6 +2,8 @@ const nav = require('./nav')
 const sidebar = require('./sidebar')
 const plugins = require('./plugins')
 
+console.log(plugins)
+
 module.exports = {
     title: "care's blog",
     description: 'care的知识笔记',
