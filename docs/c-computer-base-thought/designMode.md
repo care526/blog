@@ -1,7 +1,82 @@
 # 设计模式
 
 ## 单例（Singleton）模式
-某个类只能生成一个实例，该类提供了一个全局访问点供外部获取该实例，其拓展是有限多例模式
+**描述**：某个类只能生成一个实例，该类提供了一个全局访问点供外部获取该实例，其拓展是有限多例模式  
+**如何实现**：是用一个变量来标志当前是否已经为某个类创建
+过对象，如果是直接返回之前创建的对象
+```js
+function Singleton(name) { 
+	this.name = name
+	this.instance = null
+}
+Singleton.getInstance = function(name) {
+	if (!this.instance){
+		this.instance = new Singleton(name)
+	}
+	return this.instance
+}
+// test
+var a = Singleton.getInstance('sven1')
+var b = Singleton.getInstance('sven2')
+console.log(a === b)  // true
+```
+
+
+## 策略（Strategy）模式
+**描述**：定义了一系列算法，并将每个算法封装起来，使它们可以相互替换，且算法的改变不会影响使用算法的客户
+```js
+// 使用这一系列的方法的过程
+var strategies = {
+	isNonEmpty: function(value, errorMsg) {
+		value === '' && return errorMsg
+	},
+	minLength: function(value, length, errorMsg) {
+		(value.length < length) && return errorMsg
+	},
+	isMobile: function( value, errorMsg ){
+ 		!/(^1[3|5|8][0-9]{9}$)/.test(value) && return errorMsg
+ 	}
+}
+```
+
+
+## 代理（Proxy）模式
+为某对象提供一种代理以控制对该对象的访问。即客户端通过代理间接地访问该对象，从而限制、增强或修改该对象的一些特性  
+代理一般和本体实现一致的接口
+```js
+var myImage = (function() {
+	var imgNode = document.createElement('img')
+	document.body.appendChild(imgNode)
+
+	return {
+		setSrc: function( src ){
+			imgNode.src = src
+		} 
+	} 
+})()
+
+var proxyImage = (function(){ 
+ 	var img = new Image
+	img.onload = function() {
+		myImage.setSrc(this.src)
+	}
+
+	return { 
+		setSrc: function(src){ 
+			myImage.setSrc('file:// /C:/Users/svenzeng/Desktop/loading.gif')
+			img.src = src
+		} 
+	} 
+})()
+// test
+proxyImage.setSrc('http:// imgcache.qq.com/music/photo/k/000GGDys0yA0Nk.jpg')
+```
+- 保护代理
+  在代理之前做一些逻辑处理，如：请求的转发过滤
+- 虚拟代理
+- 缓存代理
+  用户保存已经获取/计算得到的数据
+
 
 ## 原型（Prototype）模式
 将一个对象作为原型，通过对其进行复制而克隆出多个和原型类似的新实例
@@ -15,8 +90,6 @@
 ## 建造者（Builder）模式
 将一个复杂对象分解成多个相对简单的部分，然后根据不同需要分别创建它们，最后构建成该复杂对象
 
-## 代理（Proxy）模式
-为某对象提供一种代理以控制对该对象的访问。即客户端通过代理间接地访问该对象，从而限制、增强或修改该对象的一些特性
 
 ## 适配器（Adapter）模式
 将一个类的接口转换成客户希望的另外一个接口，使得原本由于接口不兼容而不能一起工作的那些类能一起工作
@@ -38,9 +111,6 @@
 
 ## 模板方法（TemplateMethod）模式
 定义一个操作中的算法骨架，而将算法的一些步骤延迟到子类中，使得子类可以不改变该算法结构的情况下重定义该算法的某些特定步骤
-
-## 策略（Strategy）模式
-定义了一系列算法，并将每个算法封装起来，使它们可以相互替换，且算法的改变不会影响使用算法的客户
 
 ## 命令（Command）模式
 将一个请求封装为一个对象，使发出请求的责任和执行请求的责任分割开
