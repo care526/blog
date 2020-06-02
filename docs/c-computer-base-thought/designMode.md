@@ -121,14 +121,57 @@ proxyImage.setSrc('http:// imgcache.qq.com/music/photo/k/000GGDys0yA0Nk.jpg')
 ## 状态（State）模式
 允许一个对象在其内部状态发生改变时改变其行为能力
 
-## 观察者（Observer）模式
+## 观察者（Observer）模式 / 发布-订阅模式
 多个对象间存在一对多关系，当一个对象发生改变时，把这种改变通知给其他多个对象，从而影响其他对象的行为
+```js
+const Event = (function(){
+	var clientList = {}
+
+	function listen(key, fn) {
+		!clientList[key] && clientList[key] = []
+		clientList[key].push(fn)
+	}
+
+	function trigger() {
+		var key = Array.prototype.shift.call(arguments),
+				fns = clientList[key]
+		if (!fns || fns.length === 0) {
+			return false
+		}
+		for (let i = 0, fn;fn = fns[i + 1];) {
+			fn.apply(this, arguments)
+		}
+	}
+
+	function remove(key, fn) {
+		var fns = clientList[key]
+		if (!fns) return false
+		if (!fn) {
+			fns && (fns.length = 0)
+		} else {
+			for (let l = fns.length - 1; l > -1; l--) {
+				var _fn = fns[l]
+				if (_fn === fn) {
+					fns.splice(l, 1)
+				}
+			}
+		}
+	}
+})()
+// test
+Event.listen('squareMeter88', price => {
+ console.log('价格= ' + price)
+})
+Event.trigger('squareMeter88', 2000000)
+```
 
 ## 中介者（Mediator）模式
 定义一个中介对象来简化原有对象之间的交互关系，降低系统中对象间的耦合度，使原有对象之间不必相互了解
 
 ## 迭代器（Iterator）模式
 提供一种方法来顺序访问聚合对象中的一系列数据，而不暴露聚合对象的内部表示
+- `Array.prototype.forEach`
+- jQuery 中的$.each 函数
 
 ## 访问者（Visitor）模式
 在不改变集合元素的前提下，为一个集合中的每个元素提供多种访问方式，即每个元素有多个访问者对象访问
