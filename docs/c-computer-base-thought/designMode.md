@@ -113,7 +113,30 @@ proxyImage.setSrc('http:// imgcache.qq.com/music/photo/k/000GGDys0yA0Nk.jpg')
 定义一个操作中的算法骨架，而将算法的一些步骤延迟到子类中，使得子类可以不改变该算法结构的情况下重定义该算法的某些特定步骤
 
 ## 命令（Command）模式
-将一个请求封装为一个对象，使发出请求的责任和执行请求的责任分割开
+将一个请求封装为一个对象，使发出请求的责任和执行请求的责任分割开  
+命令模式将过程式的请求调用封装在 command 对象的 execute 方法里，通过封装方法调用，我们可以把运算块包装成形。command 对象可以被四处传递，所以在调用命令的时候，客户（Client）不需要关心事情是如何进行的。
+```js
+var bindClick = function(button, func) {
+ 	button.onclick = func
+}
+var MenuBar = { 
+	refresh: function() {
+		console.log('刷新菜单界面')
+	} 
+}
+var SubMenu = { 
+	add: function() {
+		console.log('增加子菜单')
+	}, 
+	del: function() {
+		console.log('删除子菜单')
+	} 
+}
+// test
+bindClick(button1, MenuBar.refresh)
+bindClick(button2, SubMenu.add) 
+bindClick(button3, SubMenu.del)
+```
 
 ## 职责链（Chain of Responsibility）模式
 把请求从链中的一个对象传到下一个对象，直到请求被响应为止。通过这种方式去除对象之间的耦合
