@@ -95,11 +95,14 @@ DOM.className  等于下面classList的value  'a b'，可以修改
   - DOM.className += ' c'  添加类名c，c前面有个空格(其实就是修改HTML中的字符串)
 
 DOM.classList  当前DOM元素的class名的类数组 {0: 'a', 1: 'b', length: 2, value: 'a b'}
-  - DOM.classList.add('XXX')  添加XXX类名
-  - DOM.classList.remove('XXX')  移除XXX类名
+  - DOM.classList.add(newClassName )  添加newClassName类名，如果有取消添加
+  - DOM.classList.remove(oldClassName)  移除oldClassName类名
+  - DOM.classList.contains(oldClassName)  测试是否存在oldClassName类名，返回true/false
+  - DOM.classList.toggle(className)  如果classList中存在给定的值，删除它，否则，添加它
+  - DOM.classList.replace(oldClassName, newClassName)  类名替换
  
 ## 属性相关
-```
+``` 
 setAttribute("XXX","XXX") 属性名 属性值   
 hasAttribute("XXX") 检测是否存在某个属性  
 removeAttribute("XXX") 移除某个属性   

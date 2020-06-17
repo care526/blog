@@ -31,6 +31,7 @@ origin是远程库的默认name，也可以改成别的名字
 ## 克隆
 git clone .git name  由某版本库克隆生成一个新的目录     
 git clone git@github.com:care526/learnGit.git　克隆远程库到本地   
+git clone -b <name> git@github.com:care526/learnGit.git　克隆远程库的指定分支到本地   
 
 ## 版本提交／查看／回退／撤销    
 ![image](./clipboard.png)   
