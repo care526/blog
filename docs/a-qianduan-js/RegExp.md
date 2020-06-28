@@ -37,12 +37,8 @@
 - 还有三个相关的正则方法见String方法中
 
 ## 例子
-### 普通匹配
-- 电话 
-- 汉字
-
-### 输入匹配
-- 电话
+- 匹配空格
+  `/\s/g`
 
 [常用的正则表达式](http://www.cnblogs.com/jay-xu33/archive/2010/08/18/1802536.html)
 [参考文章](http://www.cnblogs.com/skylar/p/4265490.html)

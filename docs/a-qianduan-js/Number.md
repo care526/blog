@@ -40,3 +40,13 @@ console.log(a === a); //true
 var b = NaN;
 console.log(b === b); //false
 ```
+
+***
+## 具体示例
+- 去除数字后面的多余的0
+  ```js
+  num = +num
+  ```
+- 保留若干位小数点
+  ```
+  ```
