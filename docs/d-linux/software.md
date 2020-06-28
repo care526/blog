@@ -146,6 +146,10 @@ ctrl + `(反引号)   打开终端
   // 应用更新
   sudo apt-get update
   sudo apt-get upgrade
+4. 安装
+   ```
+   sudo apt install mysql-server mysql-client mysql-workbench
+   ```
 
-4. 初始化root密码
+5. 初始化root密码
 　　```set password for root@localhost = password('123');```

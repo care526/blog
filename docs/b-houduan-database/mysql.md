@@ -25,10 +25,48 @@ ps: information_schema、mysql、performance_schema和sys是系统库
 ## 表
 - 新建表
   ```bash
-  CREATE TABLE pet (name VAECHAR(20), owner VARCHAR(20), sex CHAR(1), birth DATE, death DATE)  # 新建pet表，项是name/owner/sex/birth/death
+  CREATE TABLE pet (name VARCHAR(20), owner VARCHAR(20), sex CHAR(1), birth DATE, death DATE)  # 新建pet表，项是name/owner/sex/birth/death
   ```
 - 显示表的项和项的属性  
   `describe tableName;`
+  `desc tableName;`
+- 删除表
+  ｀drop table tableName;｀
+
+## 支持的数据
+- 数值类型
+  | 类型 | 大小(bytes) | 范围(有符号) | 范围(无符号) | 用途 |
+  |:--|:--:|:--:|:--:|--:|
+  | TINYINT | 1 | -128 ~ 127 | 0 ~ 255 | 小整数值 |
+  | SMALLINT | 2 | -32768 ~ 32767 | 0 ~ 65535 | 大整数值 |
+  | MEDIUMINT | 3 | -8388608 ~ 8388607 | 0 ~ 16777215 | 大整数值 |
+  | INT | 4 | -2147483648 ~ 2147483647 | 0 ~ 4294967295 | 大整数值 |
+  | BIGINT | 8 | -9223372036854775808 ~ 9223372036854775807) | 0 ~ 18446744073709551615 | 小整数值 |
+  | FLOAT | 4 | ~ | ~ | 单精度浮点数值 |
+  | DOUBLE | 8 | ~ | ~ | 双精度浮点数值 |
+
+- 日期
+  | 类型 | 大小(bytes) | 范围 | 格式 | 用途 |
+  |:--|:--:|:--:|:--:|--:|
+  | DATE | 3 | 1000-01-01/9999-12-31 | YYYY-MM-DD | 日期值 |
+  | TIME| 3 | '-838:59:59'/'838:59:59' | HH:MM:SS|时间值或持续时间|
+  | YEAR | 1 | 1901/2155 | YYYY | 年份值 |
+  | DATETIME | 8 | 1000-01-01 00:00:00/9999-12-31 23:59:59 | YYYY-MM-DD HH:MM:SS | 混合日期和时间值 |
+  | TIMESTAMP | 4 | 1970-01-01 00:00:00/2038 | YYYYMMDD HHMMSS | 混合日期和时间值，时间戳 |
+
+- 字符串
+  | 类型 | 大小(bytes) | 用途 |
+  |:--|:--|:--|
+  | CHAR | 255 | 定长字符串|
+  | VARCHAR | 65535 | 变长字符串|
+  | TINYBLOB | 255 | 不超过 255 个字符的二进制字符串|
+  | TINYTEXT | 255 | 短文本字符串|
+  | BLOB | 65535 | 二进制形式的长文本数据|
+  | TEXT | 65535 | 长文本数据|
+  | MEDIUMBLOB | 16777215 | 二进制形式的中等长度文本数据|
+  | MEDIUMTEXT | 16777215 | 中等长度文本数据|
+  | LONGBLOB | 4294967295 | 二进制形式的极大文本数据|
+  | LONGTEXT | 4294967295 | 极大文本数据|
 
 ## 增
 - 表  

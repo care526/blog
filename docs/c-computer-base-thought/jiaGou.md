@@ -21,3 +21,7 @@
 - Model的修改告诉viewModel
 - viewModel和View一同更新
 - ps: 业务逻辑在viewModel中
+
+## 微内核
+- 核心
+- 插件
