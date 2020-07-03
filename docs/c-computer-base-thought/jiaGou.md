@@ -33,3 +33,11 @@
 - 插件
   插件模块是独立的模块，包含特定的处理、额外的功能和自定义代码，来向核心系统增强或扩展额外的业务能力
   尽量减少插件之间的通信以避免依赖的问题  
+  ```js
+  static install(name, descriptor) {
+    if (!Player.plugins) {
+      Player.plugins = {}
+    }
+    Player.plugins[name] = descriptor
+  }
+  ```

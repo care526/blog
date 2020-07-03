@@ -39,23 +39,6 @@
   那么只需要判断该页面的code是否存在与用户的权限的数据中就可以了
   如果需要更细粒度的权限控制，比如某一页面的部分是否可见
 
-## API封装
-目录设置
-- api
-- - config
-- - 
-
-
-## 开发/测试/线上环境的配置
-```
-npm run build --mode uat --no-clean
-npm run build --mode production
-// .env.production  # 生产环境
-// .env.uat  # 测试环境
-// .env.development  # 开发环境
-// .env.gray  # 预发布版本(灰度)
-```
-
 ## 待打包的系统变量(根据环境的不同，配置不同的变量)
 VUE_APP_XXX  # 以这个开头的变量会被打包
 
@@ -68,23 +51,6 @@ VUE_APP_XXX  # 以这个开头的变量会被打包
   每一次请求将token带在接口里面，后端对其进行校验
   登出系统或者接口401/403报错的时候，清除token并跳转到登录界面
 
-## 模版代码结构(xxx.vue)
-```
-mixins: [],
-data() {},
-inject: [],
-provide: {},
-props: {},
-computed: {}
-watch: {}
-created() {},
-mounted() {},
-//... 生命周期函数
-directives: {}
-filters: {}
-methods: {}
-components: {}
-```
 
 ## css模块的编辑
 最外层组件使用id来控制保证不被外界的css样式干扰

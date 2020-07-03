@@ -4,21 +4,21 @@
 1. `DOM.onclick = function () {}`  
 2. `<input onclick='add()'>`  
 3. 事件监听的方式  
-```
-var myFunction = function() {}
-var myEventObj = {
-  handleEvent: function() {}
-}
-/* IE */
-DOM.attachEvent('onclick', myFunction); //绑定事件
-DOM.removeEvent('onclick', myFunction); //取消绑定事件
-/* 其他 */
-DOM.addEventListener('click', myFunction)
-DOM.addEventListener('click', myEventObj) // 第二个参数也可以是对象(包含属性handleEvent)，如果没有，就会注册不成功
-DOM.removeEventListener('click', myFunction)
-/* 所以原生事件不要这个方法来写，有兼容性问题 */
-/* remove方法接受的函数，必须是外部定义的函数 */
-```
+    ```
+    var myFunction = function() {}
+    var myEventObj = {
+      handleEvent: function() {}
+    }
+    /* IE */
+    DOM.attachEvent('onclick', myFunction); //绑定事件
+    DOM.removeEvent('onclick', myFunction); //取消绑定事件
+    /* 其他 */
+    DOM.addEventListener('click', myFunction)
+    DOM.addEventListener('click', myEventObj) // 第二个参数也可以是对象(包含属性handleEvent)，如果没有，就会注册不成功
+    DOM.removeEventListener('click', myFunction)
+    /* 所以原生事件不要这个方法来写，有兼容性问题 */
+    /* remove方法接受的函数，必须是外部定义的函数 */
+    ```
 ps：在事件处理函数中`return false`来阻止它的默认行为
 
 ## 事件流
