@@ -106,11 +106,29 @@ http {
 
 
   # 负载均衡
+  # 默认轮询 每一个请求按时间顺序逐一分配到不同的后端服务器 缺点：可靠性低和负载分配不均衡
   upstream linuxidc { 
     server 10.0.6.108:7080 weight=5;
-    server 10.0.0.85:8980; 
+    server 10.0.0.85:8980 weight=10; 
   }
-
+  # ip_hash ( 访问ip )
+  # 每一个请求按访问ip的hash结果分配。这样每一个访客固定访问一个后端服务器，能够解决session的问题
+  upstream favresin{ 
+    ip_hash; 
+    server 10.0.0.10:8080; 
+    server 10.0.0.11:8080; 
+  }
+  # 按后端服务器的响应时间来分配请求。响应时间短的优先分配
+  upstream favresin{      
+    server 10.0.0.10:8080 down ; 
+    server 10.0.0.11:8080; 
+    fair; 
+  }
+  # down 表示单前的server临时不參与负载.
+  # weight 默觉得1.weight越大，负载的权重就越大。
+  # max_fails 同意请求失败的次数默觉得1.当超过最大次数时，返回proxy_next_upstream 模块定义的错误.
+  # fail_timeout max_fails次失败后。暂停的时间。
+  # backup 其他全部的非backup机器down或者忙的时候，请求backup机器。所以这台机器压力会最轻。
 
   # 虚拟主机开始
   server {
@@ -147,19 +165,20 @@ http {
     location / {}
 
     location / {
-      index                   
+      # 网页根目录
       root                    /web/wwwroot/www.cszhi.com;
+      # 访问的默认首页地址
+      index                   index.htm index.html;  
+      # 缓存时间                
       expires                 30d;
-      proxy_pass              http://localhost:8080;
+      
+      # 代理到8080端口
+      proxy_pass              http://localhost:8080;  
+      # 参与反向代理 http:// + upstream名称
+      proxy_pass              http://linuxidc;  
     }
 
-
-
-
-    location / {
-        root   html;
-        index  index.html index.htm;
-    }
+    # 错误
     error_page   500 502 503 504  /50x.html;
     location = /50x.html {
         root   html;
