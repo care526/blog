@@ -49,20 +49,20 @@
 - 邻接矩阵
   邻接矩阵是一个二维数组，数据项表示两点间是否存在边，如果图中有 N 个顶点，邻接矩阵就是 N*N 的数组  
   1. 无向
-     ![](./images/无向-邻接矩阵.png)
+     ![](./images/tree1.png)
   2. 有向
-     ![](./images/有向-邻接矩阵.png)
+     ![](./images/tree2.png)
   3. 有向加权
-     ![](./images/有向-加权-邻接矩阵.png)
+     ![](./images/tree3.png)
   
 - 邻接表
   每个单独的链表表示了有哪些顶点与当前顶点邻接  
   对于有向图，可分为出度邻接表和入度邻接表
   1. 无向
-  ![](./images/无向-邻接表.png)
-  2. 有向出度
-  ![](./images/有向-出度-邻接表.png)
+  ![](./images/tree4.png)
+  1. 有向出度
+  ![](./images/tree5.png)
   3. 有向入度
-  ![](./images/有向-入度-邻接表.png)
+  ![](./images/tree6.png)
   4. 有向加权出度
-  ![](./images/有向-加权-出度-邻接表.png)
+  ![](./images/tree7.png)

@@ -34,7 +34,7 @@ git clone git@github.com:care526/learnGit.git　克隆远程库到本地
 git clone -b <name> git@github.com:care526/learnGit.git　克隆远程库的指定分支到本地   
 
 ## 版本提交／查看／回退／撤销    
-![image](./clipboard.png)   
+![image](./images/clipboard.png)   
 git add xxx　　添加某文件到暂存区，可使用多次添加多个文件   
 git add .　　添加所有文件   
 git commit -m "xxx"　　将添加到暂存区的文件更新同步到版本库   
