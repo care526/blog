@@ -24,8 +24,8 @@ ps: information_schema、mysql、performance_schema和sys是系统库
 
 ## 表
 - 新建表
-  ```bash
-  CREATE TABLE pet (name VARCHAR(20), owner VARCHAR(20), sex CHAR(1), birth DATE, death DATE)  # 新建pet表，项是name/owner/sex/birth/death
+  ```sql
+  CREATE TABLE pet (name VARCHAR(20), owner VARCHAR(20), sex CHAR(1), birth DATE, death DATE);  # 新建pet表，项是name/owner/sex/birth/death
   ```
 - 显示表的项和项的属性  
   `describe tableName;`

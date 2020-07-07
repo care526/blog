@@ -1,15 +1,15 @@
 # 正则
 
-## 正则表达式的作用：
+## 正则表达式的作用
 1、对字符串进行测试，就是数据的有效性测试 如：电话，邮箱.....
 2、查找、替换匹配的字符串中的文本
 3、根据匹配模式，提取字符串中的特定部分
 
-## 创建方法：
+## 创建方法
 1、构造函数 如：var a = new RegExp（"xyz","g"）；常用
 2、字面量 如：var a = /aabb/g； 当需要动态匹配的时候用（匹配用户的输入，避免写死正则）
 
-## 相关的属性：
+## 相关的属性
 1、ignoreCase 返回一个布尔值表示正则对象是否设置了i修饰符，是一个只读属性
 2、global 表示正则对象是否设置了g修饰符，返回布尔值
 3、multiline 表示是否设置了m修饰符，返回一个布尔值
@@ -34,7 +34,11 @@
 
 	当正则不是全局g的时候
 	返回的数组描述同上，但会将lastIndex属性的值改变为匹配成功后的第一个字符的位置（为下一次匹配做准备）。所以可以多次调用exec方法来遍历匹配的结果（用该方法的返回值是否为null来确定是否匹配完了）
-- 还有三个相关的正则方法见String方法中
+- match
+- matchAll
+- search
+- replace
+- split
 
 ## 例子
 - 匹配空格
@@ -42,3 +46,4 @@
 
 [常用的正则表达式](http://www.cnblogs.com/jay-xu33/archive/2010/08/18/1802536.html)
 [参考文章](http://www.cnblogs.com/skylar/p/4265490.html)
+[MDN](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Guide/Regular_Expressions)

@@ -1,17 +1,28 @@
 # Hooks
 
-# 规则
+## 出现原因、解决的问题
+### class的组件复用问题
+高阶函数和props传值会导致组件的标签层级过多
+### 生命周期
+部分逻辑需要在componentDidMount和componentDidUpdate都写一遍  
+生命周期钩子的里面的代码逻辑多了就会很混乱
+### 函数this的指向问题
+类方法的声明需要显式的绑定当前类对象，不然函数的传递，this的指向就会不是该类对象
+****
+
+## 使用规则
 - 只能在顶层(也就是函数的外层调用)
 - 不能在流程和判断语句中调用
+****
 
-# 基础 Hooks
-## usestate
+## 基础 Hooks
+### usestate
 ```jsx
 import React, { useState } from 'react'
 const [state, setstate] = useState(initState)
 ```
 
-## useEffect
+### useEffect
 ```jsx
 import React, { useEffect } from 'react'
 useEffect(() => {
@@ -27,7 +38,7 @@ useEffect(() => {
 3. 第二个参数的数组中有值，当该值变化的时候，执行
 返回的一个函数为解绑函数，当组件卸载的时候需要将代码的部分副作用清除
 
-## useContext
+### useContext
 ```jsx
 import React, { createContext, useContext } from 'react'
 
@@ -44,16 +55,17 @@ function Care(props) {
   return <div>{ count }</div>
 } 
 ```
+****
 
-# 高阶 Hooks
-## useRef
+## 高阶 Hooks
+### useRef
 ```jsx
 import React, { useRef } from 'react'
 const inputEl = useRef(null)
 <input ref={inputEl} type="text"/>
 ```
 
-## useMemo
+### useMemo
 ```jsx
 // 用于性能优化
 // 监听count的变化，如果改变了就执行，并返回一个实时计算的返回值
@@ -66,7 +78,7 @@ const otherName =  useMemo(() => {
 }, [count])
 ```
 
-## useCallback
+### useCallback
 ```jsx
 // 同useMemo，但接受的第一个函数参数的调用方式不同，useCallback直接返回传入参数的返回值
 // useCallback(fn, deps) 相当于 useMemo(() => fn, deps)
@@ -78,7 +90,7 @@ const otherName =  useCallback((() => {
 })(), [count])
 ```
 
-## useReducer
+### useReducer
 ```jsx
 const initialState = { count: 0 }
 
@@ -99,4 +111,30 @@ const [state, dispatch] = useReducer(reducer, initialState)
 return (
   <button onClick={() => dispatch({type: 'decrement'})}>-</button>
 )
+```
+****
+
+## 自定义Hooks
+### 规则
+- 函数开头为use开头
+
+```jsx
+import { useState, useEffect } from 'react'
+
+function useFriendStatus(friendId) {
+  const [isOnline, setIsOnline] = useState(null)
+
+  function handleStatusChange(status) {
+    setIsOnline(status.isOnline)
+  }
+
+  useEffect(() => {
+    ChatAPI.subscribeToFriendStatus(friendId, handleStatusChange)
+    return () => {
+      ChatAPI.unsubscribeFromFriendStatus(friendId, handleStatusChange)
+    }
+  })
+
+  return isOnline
+}
 ```

@@ -6,19 +6,19 @@ module.exports = [
             {   
                 text: '基础', 
                 items: [
-                    { text: 'HTML', link: '/HTML/all' },
-                    { text: 'SVG', link: '/SVG/all' },
-                    { text: 'CSS', link: '/CSS/qa' },
-                    { text: 'JS', link: '/JS/Array' },
-                    { text: 'Ts', link: '/Ts/class' },
-                    { text: 'Node', link: '/Node/fs' },
+                    { text: 'HTML', link: '/a-qianduan-html/all' },
+                    { text: 'SVG', link: '/a-qianduan-svg/all' },
+                    { text: 'CSS', link: '/a-qianduan-css/qa' },
+                    { text: 'JS', link: '/a-qianduan-js/Array' },
+                    { text: 'Ts', link: '/a-qianduan-ts/class' },
+                    { text: 'Node', link: '/a-qianduan-node/fs' },
                 ]
             },
             {
                 text: '框架', 
                 items: [
-                    { text: 'Vue', link: '/Vue/Vue-cli' },
-                    { text: 'React', link: '/React/Class' },
+                    { text: 'Vue', link: '/a-qianduan-vue/Vue-cli' },
+                    { text: 'React', link: '/a-qianduan-react/Class' },
                 ]
             },
             // {
@@ -39,7 +39,7 @@ module.exports = [
             {
                 text: '工程化', 
                 items: [
-                    { text: 'Webpack', link: '/webpack/entry' },
+                    { text: 'Webpack', link: '/a-qianduan-webpack/entry' },
                     // { text: '脚手架', link: '/webpack/entry' },
                 ]
             }
@@ -51,17 +51,17 @@ module.exports = [
             {
                 text: '语言',
                 items: [
-                    { text: 'GO', link: '/Go/func' },
-                    { text: 'JAVA', link: '/Java/Java' },
-                    { text: 'Python', link: '/Python/def' },
+                    { text: 'GO', link: '/b-houduan-go/func' },
+                    { text: 'JAVA', link: '/b-houduan-java/Java' },
+                    { text: 'Python', link: '/b-houduan-python/def' },
 
                 ]
             },
             {
                 text: '数据库',
                 items: [
-                    { text: 'Mysql', link: '/database/mysql' },
-                    { text: 'Redis', link: '/database/redis' },
+                    { text: 'Mysql', link: '/b-houduan-database/mysql' },
+                    { text: 'Redis', link: '/b-houduan-database/redis' },
                     // { text: 'Mongdb', link: '/Python/def' },
                 ]
             }
@@ -84,7 +84,7 @@ module.exports = [
     {
         text: 'Linux', 
         items: [
-            { text: 'Vim', link: '/linux/vim' },
+            { text: 'Vim', link: '/d-linux/vim' },
         ]
     },
     { text: 'Git', link: '/Git/Git' },
