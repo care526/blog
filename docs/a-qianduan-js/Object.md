@@ -1,5 +1,11 @@
 # Object
 
+## 键
+只接收两种类型的键名 String 和 Symbol  
+对象/正则无法用作键名，会报错  
+使用其他类型的键名，但是最终 JavaScript 都会隐式转换为字符串  
+如Object会被转成 [object Object]  
+
 ### Object.create(proto,descriptors) <返回一个新对象>
 使用指定对象来创建一个对象（可用于继承）
 proto是要继承的对象，也可以是null，返回一个继承Object的对象
