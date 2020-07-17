@@ -22,9 +22,105 @@
 ****
 
 ## 树
-### 遍历方法
-- 深度优先
-- 广度优先
+```ts
+class TreeNode {
+   public data: number
+   public num: number
+   public leftChild: TreeNode | null
+   public rightChild: TreeNode | null
+
+   constructor(data: number) {
+      this.data = data
+      this.num = 1
+      this.leftChild = null
+      this.rightChild = null
+   }
+}
+
+class BinaryTree {
+   public root: TreeNode
+   public order = {
+      'before': ['in', 'left', 'right'],
+      'after':['left', 'in', 'right'],
+      'in': ['left', 'right', 'in']
+   }
+
+   constructor(initData: number = 0) {
+      this.root = new TreeNode(initData)
+   }
+   
+   public add(data: number) {
+      this.compare(data, this.root)
+   }
+
+   private compare(waitData: number, node: TreeNode) {
+      if (waitData === node.data) return node.num++
+      // 左节点
+      if (waitData < node.data) {
+         node.leftChild
+               ? this.compare(waitData, node.leftChild)
+               : node.leftChild = new TreeNode(waitData)
+      } else {
+      // 右节点
+         node.rightChild
+               ? this.compare(waitData, node.rightChild)
+               : node.rightChild = new TreeNode(waitData)
+      }
+   }
+
+   public detele() {}
+    
+   // 基础遍历
+   private baseTraverse(node: TreeNode, order: string[], findObj?: {
+      rules: (node: TreeNode) => boolean,
+      foundNodes: TreeNode[]
+   }) {
+      if (!node) return
+
+      const traverses = new Map([
+         ['left', () => this.baseTraverse(node.leftChild, order, findObj)],
+         ['in', () => {
+               if (findObj && findObj.rules(node)) findObj.foundNodes.push(node)
+         }],
+         ['right', () => this.baseTraverse(node.rightChild, order, findObj)]
+      ])
+      order.forEach(i => traverses.get(i)())
+   }
+
+   // 深度优先遍历的三种方式（栈）
+   // 前序遍历  ['in', 'left', 'right']
+   // 中序遍历  ['left', 'in', 'right']
+   // 后序遍历  ['left', 'right', 'in']
+   public traverse(order: string[], findObj?: {
+      rules: (node: TreeNode) => boolean,
+      findedCallback?: (foundNodes: TreeNode[]) => void
+   }) {
+      const foundNodes: TreeNode[] = []
+      this.baseTraverse(this.root, order, {
+         rules: findObj ? findObj.rules : () => false,
+         foundNodes
+      })
+      findObj && findObj.findedCallback(foundNodes)
+   }
+   // 广度优先遍历（队列）
+   // 层序遍历
+   public traverseFloor(findObj?: {
+      rules: (node: TreeNode) => boolean,
+      findedCallback?: (foundNodes: TreeNode[]) => void
+   }) {
+      const queue: TreeNode[] = []
+      const foundNodes: TreeNode[] = []
+      queue.push(this.root)
+      while (queue.length) {
+         const node = queue.shift()
+         findObj && foundNodes.push(node)
+         node.leftChild && queue.push(node.leftChild)
+         node.rightChild && queue.push(node.rightChild)
+      }
+      findObj && findObj.findedCallback(foundNodes)
+   }
+}
+```
 ****
 
 ## 散列表
