@@ -1,5 +1,15 @@
 # 面向对象
 
+- OOP 
+  Object Oriented Programming  
+  面向对象的编程
+- OOD
+  Object-Oriented Design  
+  面向对象的设计
+- OOA
+  Object-Oriented Analysis  
+  面向对象的分析
+
 ## Java
 ## 类
 类是对象的抽象
