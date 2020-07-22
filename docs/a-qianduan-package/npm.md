@@ -1,15 +1,21 @@
 # NPM
 
 [npm文档](https://www.axihe.com/api/npm/api/api.html)
-### npm init
-初始化当前项目，指定作者，包名等基础信息
+### init
+- npm init
+  初始化当前项目，指定作者，包名等基础信息
+- npm init --yes
+  同上，直接使用默认数据，不再一一询问
 
-### npm install
-```
-npm i  # 别名
-npm i XXX --save  # 安装XXX为线上依赖
-npm i XXX --save-dev  # 安装XXX为本地依赖
-```
+### install / i(别名)
+- npm i packageName
+  安装packageName包，默认添加到dependencies里，默认npm仓库最新版本
+- npm i packageName -S/--save
+  同上
+- npm i packageName@3.0.1
+  同上(指定包的版本)
+- npm i packageName -D/--save-dev
+  添加依赖包到devDependencies
 
 ### npm uninstall
 ```
@@ -31,8 +37,15 @@ npm version patch -m '[patch]'  # 提升小号，同时提交一个commit log [p
 
 ### npm link
 
-### npm config
+### config
+- npm config ls -l  
+  查看npm的所有配置，包括默认配置
+- npm config delete <key>  
+  删除指定的配置项
+- npm config set <key> <value>
+  设置指定的配置项
 
+****
 ## package.json
 ```json
 {
@@ -62,11 +75,21 @@ npm version patch -m '[patch]'  # 提升小号，同时提交一个commit log [p
 
   "files"
 
-  "main": "./index.js",  // 指定模块的入口文件
+  /* 
+    指定程序的入口文件
+    其他项目在引用这个npm包时，实际上引入的是这个文件暴露的模块
+  */
+  "main": "./index.js",
 
-  "bin"
+  "bin": {
+
+  }
 
   "man"
+
+  "dependencies"
+
+  "devDependencies"
 
   "repository": {  // 代码托管
     "type": ".git",  // 托管的类型
