@@ -31,19 +31,63 @@ npm unstall XXX --save  # 移除XXX包依赖
 找到了命令在
 
 ### npm version
-1.1.2-0  ->  大号.中号.小号-预发布号
-npm version patch -m '[patch]'  # 提升小号，同时提交一个commit log [patch]
+1.1.2-0 --> 大号.中号.小号-预发布号  
+- npm version patch  
+  升级补丁版本号
+- npm version minor  
+  升级小版本号
+- npm version major  
+  升级大版本号
+- npm version patch -m '[patch]'  
+  提升小号，同时提交一个commit log [patch]
 ![](./images/version.png)
 
-### npm link
+### link
+- npm link
+  在本地包所在的目录执行  
+  1. 将本地包链接到全局模块安装路径
+  2. 为bin文件创建软连接，链接到全局的node命令安装目录
+- npm link devPackageName
+  在项目中使用本地的包(前提是包已创建链接)
+
+### unlink
+  - npm unlink  
+  取消本地包的链接  
+  在本地包所在的目录执行  
+
+### adduser
+- npm adduser
+  添加用户  
+  根据提示输入用户名密码即可
+
+### publish
+- npm publish  
+  更新npm包，必须更改版本号，否者会报错(建议遵循Semver<语义化版本号>规范)
+.npmignore 和 .gitignore 可以排除一些文件不上传  
+npmignore的优先级更高，但是建议使用gitignore  
+#### npm模块目录
+- bin：存放可执行二进制文件的目录
+- lib：存放js代码的目录
+- doc：存放文档的目录
+- test：存放单元测试用例代码的目录
 
 ### config
 - npm config ls -l  
   查看npm的所有配置，包括默认配置
+- npm config get globalconfig
+  查看npm全局配置文件的位置
 - npm config delete <key>  
   删除指定的配置项
 - npm config set <key> <value>
   设置指定的配置项
+#### npmrc文件
+npmrc文件所处位置的优先级：  
+- 工程内配置文件 .npmrc
+- 用户级配置文件 ~/.npmrc
+- 全局配置文件 npm config get globalconfig输出路径目录下的 .npmrc
+- npm内置配置文件
+
+## .npmrc
 
 ****
 ## package.json
@@ -71,7 +115,10 @@ npm version patch -m '[patch]'  # 提升小号，同时提交一个commit log [p
   },
   "author": "Rubble <b@rubble.com> (http://barnyrubble.tumblr.com/)",  // 以上的简写
 
-  "contributors": [],  // 包的作者们，单个数组内容同author
+  "contributors": [
+    "Rubble <b@rubble.com> (http://barnyrubble.tumblr.com/)",
+    "Rubble <b@rubble.com> (http://barnyrubble.tumblr.com/)"
+  ],  // 包的作者们，单个数组内容同author
 
   "files"
 
@@ -81,15 +128,22 @@ npm version patch -m '[patch]'  # 提升小号，同时提交一个commit log [p
   */
   "main": "./index.js",
 
+  // 当前模块包的可执行文件，执行命令care
   "bin": {
-
+    "care": "./care.js"
   }
 
-  "man"
-
-  "dependencies"
-
-  "devDependencies"
+  "man": "",
+  
+  // 线上依赖的包
+  "dependencies": {
+    "react": "1.14.0"
+  },
+  
+  // 本地依赖的包
+  "devDependencies": {
+    "node-sass": "1.14.0"
+  },
 
   "repository": {  // 代码托管
     "type": ".git",  // 托管的类型
