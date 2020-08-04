@@ -4,7 +4,7 @@
 (function ($) {  //这样做可以让插件调用JQ的方法
     $.fun.extend({
         //插件的名字
-        plugname: function () {}
+        plugName: function () {}
     })
 })(jquery);
 ```

@@ -1,5 +1,5 @@
 ## 五种基本句型
-![图片](./五种句型.png)
+![图片](./images/fiveSentencePattern.png)
 
 ## 三种句式
 - 普通句
