@@ -21,6 +21,22 @@ module.exports = [
                     { text: 'React', link: '/a-qianduan-react/Class' },
                 ]
             },
+            {
+                text: '工程化', 
+                items: [
+                    { text: 'Webpack', link: '/a-qianduan-webpack/entry' },
+                    // { text: '脚手架', link: '/webpack/entry' },
+                ]
+            },
+            {
+                text: '其他', 
+                items: [
+                    { text: '浏览器', link: '/a-qianduan-browser/save' },
+                    { text: '包', link: '/a-qianduan-package/1-npm' },
+                    { text: 'vscode', link: '/a-qianduan-vscode/plugins' },
+                    { text: '性能优化', link: '/a-qianduan-xingNengYouHua/dev' },
+                ]
+            },
             // {
             //     text: '路由', 
             //     items: [
@@ -36,13 +52,6 @@ module.exports = [
             //         { text: 'Mbox', link: '/React/Class' },
             //     ]
             // },
-            {
-                text: '工程化', 
-                items: [
-                    { text: 'Webpack', link: '/a-qianduan-webpack/entry' },
-                    // { text: '脚手架', link: '/webpack/entry' },
-                ]
-            }
         ]
     },
     {
@@ -54,7 +63,13 @@ module.exports = [
                     { text: 'GO', link: '/b-houduan-go/func' },
                     { text: 'JAVA', link: '/b-houduan-java/Java' },
                     { text: 'Python', link: '/b-houduan-python/def' },
-
+                    { text: 'Rust', link: '/b-houduan-rust/bianliang' },
+                ]
+            },
+            {
+                text: '运维',
+                items: [
+                    { text: 'Docker', link: '/b-houduan-docker/docker' },
                 ]
             },
             {
@@ -67,13 +82,13 @@ module.exports = [
             }
         ]
     },
-    // {
-    //     text: '计算机基础', 
-    //     items: [
-    //         { text: '数据结构', link: '/Go/func' },
-    //         { text: '设计模式', link: '/Java/Java' },
-    //     ]
-    // },
+    {
+        text: '计算机基础', 
+        items: [
+            { text: 'HTTP', link: '/c-computer-base-http/http' },
+            { text: '编程思想', link: '/c-computer-base-thought/designMode' },
+        ]
+    },
     // {
     //     text: '产品', 
     //     items: [
@@ -84,10 +99,11 @@ module.exports = [
     {
         text: 'Linux', 
         items: [
-            { text: 'Vim', link: '/d-linux/vim' },
+            { text: '命令', link: '/d-linux-mingLing/mingLing' },
+            { text: 'Shell', link: '/d-linux-shell/myShell' },
+            { text: '软件', link: '/d-linux-software/git' },
         ]
     },
-    { text: 'Git', link: '/Git/Git' },
     // {
     //     text: '通用', 
     //     items: [

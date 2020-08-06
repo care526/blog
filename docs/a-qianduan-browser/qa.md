@@ -7,7 +7,7 @@
 4. 生成布局(layout)，计算布局的位置
 5. 将布局绘制在屏幕上
 
-![](./render.png)   
+![](./images/render.png)   
 
 ps：第4步和第5部合称为渲染  
 
