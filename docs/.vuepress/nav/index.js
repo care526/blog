@@ -60,7 +60,7 @@ module.exports = [
             {
                 text: '语言',
                 items: [
-                    { text: 'GO', link: '/b-houduan-go/func' },
+                    { text: 'GO', link: '/b-houduan-go/1-base-data' },
                     { text: 'JAVA', link: '/b-houduan-java/Java' },
                     { text: 'Python', link: '/b-houduan-python/def' },
                     { text: 'Rust', link: '/b-houduan-rust/bianliang' },
