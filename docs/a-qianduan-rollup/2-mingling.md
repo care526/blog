@@ -3,3 +3,5 @@
 - rollup
 - rollup -h
 - rollup --help
+- rollup -c
+- rollup --config
