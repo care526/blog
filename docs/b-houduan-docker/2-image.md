@@ -1,0 +1,25 @@
+# 镜像
+
+### 列出所有镜像
+docker image ls  
+docker images
+### 删除镜像
+docker image rm  
+docker rmi
+### 查看镜像详情
+docker image inspect  
+docker inspect
+### 删除所有无用镜像
+docker image prune  
+### 构建新镜像
+docker image build  
+docker build
+### 从仓库拉取镜像
+docker image pull  
+docker pull
+### 向仓库推送镜像
+docker image push  
+docker push
+### 给镜像打标签
+docker image tag  
+docker tag

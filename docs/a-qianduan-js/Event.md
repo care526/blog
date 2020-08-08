@@ -31,7 +31,7 @@ ps：在事件处理函数中`return false`来阻止它的默认行为
 ## 常用的事件
 - HTML事件
   1. 页面完全加载：load
-     支持的标签 <body>, <frame>, <frameset>, <iframe>, <img>, <link>, <script>
+     支持的标签 `<body>, <frame>, <frameset>, <iframe>, <img>, <link>, <script>`
   2. 页面关闭前：onbeforeunload
   3. 页面完全卸载：unload
   4. 尺寸改变事件：resize

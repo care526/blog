@@ -9,15 +9,15 @@
   同上，直接使用默认数据，不再一一询问
 
 ### install / i(别名)
-- npm i <packageName>
+- npm i packageName
   添加packageName包，默认添加到dependencies里，默认npm仓库最新版本
-- npm i <packageName> -S/--save
+- npm i packageName -S/--save
   同上
-- npm i <packageName>@3.0.1
+- npm i packageName@3.0.1
   同上(指定包的版本)
-- npm i <packageName> -D/--save-dev
+- npm i packageName -D/--save-dev
   添加依赖包到devDependencies
-- npm i -g <packageName>
+- npm i -g packageName
   添加全局依赖包
 
 ### npm uninstall
@@ -79,9 +79,9 @@ npmignore的优先级更高，但是建议使用gitignore
   查看npm的所有配置，包括默认配置
 - npm config get globalconfig
   查看npm全局配置文件的位置
-- npm config delete <key>  
+- npm config delete `<key>`  
   删除指定的配置项
-- npm config set <key> <value>
+- npm config set `<key>` `<value>`
   设置指定的配置项
 #### npmrc文件
 npmrc文件所处位置的优先级：  

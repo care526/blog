@@ -115,7 +115,7 @@ router.push({ path: '/user', params: { userId }}) // -> /user
 <router-link to="/" exact>
 ```
 
-### <router-view>
+### router-view
 ```html
 //当和有一些组件一起使用的时候，要在内层添加keep-alive组件
 <transition>
