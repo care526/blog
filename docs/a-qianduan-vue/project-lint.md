@@ -2,6 +2,7 @@
 
 ## 项目结构
 - .vscode  // vscode的配置文件
+- docs  // 项目文档，取决于使用哪个文档库设置文档结构
 - builds  // 打包相关文件
 	- webpack.dll.js
 	- build.sh
@@ -79,17 +80,27 @@ npm run build --mode production
 <template></template>
 
 <script>
-// function
-import dayjs from 'dayjs'  // 第三方库
-import { formatNum } from '@/utils'  // 全局工具函数
-import { radom } from './xxx.js'  // 局部工具函数
+// 框架核心或相关
+import Vue from 'vue'
+import VueRouter from 'vue-router'
+import Vuex from 'vuex'
 // components
 import { Toast } from 'vant';  // 第三方组件
 import Dialog from '@/components/Dialog.vue'  // 全局组件
-import Card from './components/Card.vue'  // 自有组件
+import C_Card from './components/Card.vue'  // 自有组件
+// function
+import dayjs from 'dayjs'  // 第三方库
+import { F_formatNum } from '@/utils'  // 全局工具函数
+import { F_radom } from './xxx.js'  // 局部工具函数
+// apis
+import { A_GetUserList } from '@/apis/user'
+// types
+import { T_User } from '@/types/user.type'
 // 静态文件
 import jsons from 'xxx.json'
 import img from './xxx.png'
+
+function xxx() {}
 
 export defult {
 	mixins: [],
