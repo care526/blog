@@ -1,6 +1,8 @@
 # npm
 
 [npm文档](https://www.axihe.com/api/npm/api/api.html)
+****
+
 ## 命令
 ### init
 - npm init
@@ -77,12 +79,18 @@ npmignore的优先级更高，但是建议使用gitignore
 ### config
 - npm config ls -l  
   查看npm的所有配置，包括默认配置
-- npm config get globalconfig
-  查看npm全局配置文件的位置
-- npm config delete <key>  
+- npm config get [key]
+  ```bash
+  npm config get globalconfig  # 查看npm全局配置文件的位置
+  npm config get registry  # 查看依赖安装源
+  ```
+- npm config delete [key]  
   删除指定的配置项
-- npm config set <key> <value>
+- npm config set [key] [value]
   设置指定的配置项
+  ```bash   
+  npm config set registry https://registry.npm.taobao.org  # 修改淘宝源 
+  ```
 #### npmrc文件
 npmrc文件所处位置的优先级：  
 - 工程内配置文件 .npmrc
@@ -154,16 +162,17 @@ npmrc文件所处位置的优先级：
   }
 }
 ```
+[详细介绍](https://www.cnblogs.com/paris-test/p/9760308.html)
 
 ### 版本号
 ```
-"bluebird": "^3.3.4",
+"bluebird": "3.3.4"
+"bluebird": "^3.3.4"
 "body-parser": "~1.15.2"
 ```
-- ^
-  默认升级版本第二位的数字
-- ~
-  默认升级版本第三位的数字
+- 没有前缀，写死版本
+- ^  默认升级版本第二位的数字
+- ~  默认升级版本第三位的数字
 
 ### 版本数字的意义
 1.15.2
@@ -173,6 +182,3 @@ npmrc文件所处位置的优先级：
   这个版本号变化了表示有了增加了新的功能，并且可以向后兼容
 - PATCH ( 对应2 )
   这个版本号变化了表示修复了bug，并且可以向后兼容
-
-### 参考文章
-https://www.cnblogs.com/paris-test/p/9760308.html

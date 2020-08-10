@@ -26,3 +26,13 @@
   调用系统命令的包
 - pkg
   将本地js，打包为三个平台的文件，没有node环境也可以运行
+
+
+- @vue/cli  
+  ```bash
+  vue create projectName  # 创建项目
+  ```
+- typescript
+  ```bash
+  tsc a.ts  # 编译ts文件
+  ```

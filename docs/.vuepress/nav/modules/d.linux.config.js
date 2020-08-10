@@ -1,7 +1,7 @@
 module.exports = {
     partName: "Linux",
     fistPartOfDir: "d-linux",
-    sortNames: ["base"],
+    sortNames: [""],
     sorts: [[
         { mingLing: '命令' },
         { shell: 'shell' },

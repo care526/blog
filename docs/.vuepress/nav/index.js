@@ -1,10 +1,10 @@
 const Utils = require('./utilsForConfig')
 
 const PartConfigs = [
-    require('./modules/a.config'),
-    require('./modules/b.config'),
-    require('./modules/c.config'),
-    require('./modules/d.config')
+    require('./modules/a.qianduan.config'),
+    require('./modules/b.houduan.config'),
+    require('./modules/c.computer.base.config'),
+    require('./modules/d.linux.config')
 ]
 
 const NavConfigs = [

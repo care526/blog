@@ -1,7 +1,7 @@
 # 插件
 
 ## 语言
-- Chinese
+- Chinese (Simplified) Language Pack for Visual Studio Code
   中文语言
 
 ## 编码
@@ -23,9 +23,13 @@
 ## 版本控制
 - Git Graph
   提交记录
+- svn
+  SVN
+  TortoiseSVN
 
 ## 服务
 - Live Server
   本地服务
 
-## 
+## 主题/图标
+- Material Icon Theme

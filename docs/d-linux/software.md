@@ -1,46 +1,10 @@
 # 常用软件的安装
+
 ## nvm安装
+```bash
 wget -qO- https://raw.githubusercontent.com/creationix/nvm/v0.33.2/install.sh | bash
-source ~/.nvm/nvm.sh
-- nvm常见命令
-nvm ls  #当前系统上可以使用的node版本
-nvm use 版本（10.15.1） #使用指定的node版本
-- 淘宝源
-export NVM_NODEJS_ORG_MIRROR=https://npm.taobao.org/dist 
-
-## node安装
-nvm install 10.8.0    
-- 修改淘宝源    
-npm config set registry https://registry.npm.taobao.org    
-- 验证是否成功    
-npm config get registry    
-- 常用NPM包的安装    
-npm install -g webpack webpack-cli create-react-app    
-- TyprScript的安装    
-npm install -g typescript    
-- - 编译ts文件    
-tsc a.ts    
-- vue-cli的安装    
-npm install -g @vue/cli    
-- - 创建项目    
-vue create projectName    
-
-## yarn的安装
-npm i -g yarn
+source ~/.nvm/nvm.sh  # . ~/.nvm/nvm.sh 也可以
 ```
-设置镜像源
-yarn config set registry https://registry.npm.taobao.org --global
-yarn config set disturl https://npm.taobao.org/dist --global
-```
-- 常用命令
-  yarn init  # 初始化新项目
-  yarn / yarn install  # 安装项目的全部依赖
-  yarn add package  # 添加依赖包
-  yarn upgrade package  # 升级依赖包
-  yarn remove package  # 移除依赖包
-  yarn add package --dev  # 添加到devDependencies依赖中
-  yarn add package --peer  # 添加到peerDependencies依赖中
-  yarn add package --optional  # 添加到optionalDependencies依赖中
 
 ## git安装
 sudo apt-get install git  
@@ -103,28 +67,6 @@ java name.class    运行java的编译文件，class可以省略
 ## 配置C++环境，安装gcc g++
 sudo apt-get install build-essential
 sudo apt-get install libtool
-
-## Vs Code
-### 常用插件
-- markdown
-  Markdown All in One
-  Markdown Preview Enhanced
-- 主题/图标
-  Material Icon Theme
-- 中文
-  Chinese (Simplified) Language Pack for Visual Studio Code
-- svn
-  SVN
-  TortoiseSVN
-- 路径补全
-  Path Intellisense
-- leetcode
-  LeetCode
-- 格式
-  ESLint
-  Vetur
-  Prettier - Code formatter
-
 
 ### 快捷键
 ctrl + f  打开查找功能(左边的小箭头可以开启替换功能，右边的按钮设置单个还是全局替换)  
