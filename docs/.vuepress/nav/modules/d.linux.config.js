@@ -3,7 +3,7 @@ module.exports = {
     fistPartOfDir: "d-linux",
     sortNames: [""],
     sorts: [[
-        { mingLing: '命令' },
+        { all: '所有命令' },
         { shell: 'shell' },
         { software: '软件' }
     ]]
