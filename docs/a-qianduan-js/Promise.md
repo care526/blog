@@ -12,22 +12,32 @@ new Promise((resolve, reject) => {
   }
 })
 //也可以
-promise.then(function(value) {
+promise.then(res => {
   // success
-}, function(error) {
+}, error => {
+  // failure
+});
+promise.then(res => {
+  // success
+}).catch(error => {
   // failure
 });
 ```
 
-## Promise.all()
+## Promise.all
 将多个Promise实例包装为一个新的Promise实例  
 只有所有的成功，才会返回resolve，为所有返回值组成的数组  
 只要有一个失败，就返回reject，值为第一个失败的Promise的reject  
 
-## Promise.resolve()
+## Promise.race
+将多个Promise实例包装为一个新的Promise实例  
+哪一个promise转态先变更，就返回谁，无论resolve还是reject
+只执行一个
+
+## Promise.resolve
 将现有对象转化为一个直接返回resolve的Promise对象  
 
-## Promise.resolve()
+## Promise.resolve
 将现有对象转化为一个直接返回reject的Promise对象  
 
 ## 问题
