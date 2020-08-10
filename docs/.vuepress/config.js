@@ -17,10 +17,10 @@ module.exports = {
 
         sidebar,
         
-        plugins,
-
         lastUpdated: true,
     },
+
+    plugins,
 
     extraWatchFiles: [
         '../.vuepress'

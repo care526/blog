@@ -11,15 +11,15 @@
   同上，直接使用默认数据，不再一一询问
 
 ### install / i(别名)
-- npm i <packageName>
+- npm i packageName
   添加packageName包，默认添加到dependencies里，默认npm仓库最新版本
-- npm i <packageName> -S/--save
+- npm i packageName -S/--save
   同上
-- npm i <packageName>@3.0.1
+- npm i packageName@3.0.1
   同上(指定包的版本)
-- npm i <packageName> -D/--save-dev
+- npm i packageName -D/--save-dev
   添加依赖包到devDependencies
-- npm i -g <packageName>
+- npm i -g packageName
   添加全局依赖包
 
 ### npm uninstall
