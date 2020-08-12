@@ -42,6 +42,7 @@ ps：在事件处理函数中`return false`来阻止它的默认行为
   9.  文本内容发生改变：change
   10. 点击from表单里的submit按钮：submit
   11. 选中了文本框里的部分内容：select
+  12. hash路由变更：hashchange
 - 键盘事件
   1. 按下键盘上的某个键：keydown
   2. 释放键盘上的某个键：keyup

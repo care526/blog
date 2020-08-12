@@ -33,10 +33,6 @@ letter-spacing、word-spacing、white-space、line-height、color、font、font-
 列表元素可继承：list-style、list-style-type、list-style-position、list-style-image。
 表格元素可继承：border-collapse。
 
-## 预处理器
-- sass
-- less
-
 ## link和@import的异同：
 link用于html引入css，是标签  
 @import可用于html引入css，也可用于css中引入css，是样式，不是标签。  

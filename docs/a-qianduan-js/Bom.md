@@ -1,17 +1,56 @@
 # Bom
 
 ## URL
-- history
-  history.length  # 存的是用户的浏览历史的元素数量，但脚本不能直接访问以保存的URL
-  history.state  # 
-  history.back()  # 返回前一页
-  history.go(n);  # 跳转到当前页面的第几页(前几页/后几页)
-  history.forward()  # 
-  history . pushState(data, title [, url ] )
-  history . replaceState(data, title [, url ] )
-  window . history . scrollRestoration [ = value ]
+### history
+history.length  # 存的是用户的浏览历史的元素数量，但脚本不能直接访问以保存的URL
+history.state  # 
+history.back()  # 返回前一页
+history.go(n);  # 跳转到当前页面的第几页(前几页[正数]/后几页[负数])
+history.forward()  # 前进到下一个文档
+history.pushState(data, title [, url] )
+history.replaceState(data, title [, url] )
+window.history.scrollRestoration [ = value]
+### location
+window.location === document.location  
+Window对象的location属性引用的是Location对象  
+Document对象的location属性也引用到了Location对象  
+#### 属性
+- href
+  url的完整文本字符串  
+- hash
+  第一个#及其后面所有字符的字符串
+- protocol
+  当前url的协议
+- host 
+  主机名和端口号
+- hostname 
+  主机名
+- port 
+  端口号
+- pathname 
+  url的路径部分
+- search
+  从?开始的url的query部分
+#### 方法
+- assign(url)
+  载入新的文档，可以通过后退按钮返回上一个文档
+  ```js
+  window.location.assign(reUrl)  // 相对路径，相对当前文档所在目录
+  window.location.assign(asbUrl)  // 绝对路径，也就是完整的文档地址
+  ```
+- replace(url)
+  同上，但会把当前文档从浏览历史中删除
+- reload()
+  让浏览器重新载入当前文档
+### 载入文档的其他方式
+```js
+location = "care.html"  // 相对路径　直接赋值给location对象
+location = "http://www.baidu.com"  // 直接赋值新的URL
+location = "#top"  // 会跳转到当前文档上ID为top的元素上，如果没有，就到达文档头部，也可以传其他ID
+location.search = "?value=5"  // 载入其他界面，在当前文档上跳转
+```
 
-## 加载
+## 加载方法
 - window.ready  # 页面的DOM结构已经加载完毕，不包括媒体元素
 - window.onload  # 页面全部都加载完毕
 - window.onbeforeunload  # 
@@ -34,6 +73,18 @@
   ```
 
 ## 视窗
+- window.screen
+  Window对象的screen属性引用的是Screen对象  
+  - screen.width 　　　
+    以像素为单位的窗口的宽
+  - screen.height 　　 
+    以像素为单位的窗口的高
+  - screen.colorDepth　 
+    显示的BPP值
+  - screen.availWidth　 
+    以像素为单位的窗口的实际可用的宽
+  - screen.availHeight 　
+    以像素为单位的窗口的实际可用的高
 - window.innerHeight
   当前浏览器窗口的视口高度(只读属性)
 - window.innerWidth
@@ -41,7 +92,6 @@
 
 ## 样式
 - window.getComputedStyle(DOM)  # 得到该DOM元素的style属性
-
 
 ## 编解码
 - escape
@@ -61,55 +111,20 @@
 
 ## 定时器
 - setTimeout
-  ```
+  ```js
   var timer = setTimeout(function(){}, time)
   clearTimeout(timer)
   ```
 - setInterval
-  ```
+  ```js
   var timer = setInterval(function(){}, time);
   clearInterval(timer)
   ```
 
-
-
-
-
-temp:
-
-由于历史的原因，以上两个函数的第一个参数可以传入字符串，相当于执行eval()进行求值运算
-浏览器的定位和导航
-window.location === document.location;
-Window对象的location属性引用的是Location对象
-Document对象的location属性也引用到了Location对象
-Location对象的href属性是一个字符串，包含了URL的完整文本
-还有其他属性protocol host hostname port pathname search
-载入新的文档
-location.assign(newHref) 载入新的文档，可以通过后退按钮返回上一个文档
-newHref 是一个字符串，是相对于当前文档的目录的　如“care.html” (就是当前目录下的care.html文档)
-location.replace(newHref)　 同上，但会把当前文档从浏览历史中删除
-location.reload()　　　让浏览器重新载入当前文档
-还有几种方式是：
-location = ''care.html''; 相对路径　直接赋值给location对象
-location = ''http://www.baidu.com''; 直接赋值新的URL
-location = "#top" 会跳转到当前文档上ID为top的元素上，如果没有，就到达文档头部，也可以传其他ID
-location.search = "?value=5" 载入其他界面，在当前文档上跳转
-浏览器历史
-Window对象的history属性引用的是该窗口的History对象
-History.length 保存的是用户的浏览历史的元素数量，但脚本不能直接访问以保存的URL
-History.back(); 后退到上一个文档
-History.forward();　 前进到下一个文档
-History.go(X); 接受一个整数，向前（正）或者向后（负）跳转任意多页
-浏览器和屏幕信息
-浏览器的信息见权威指南的346页
-Window对象的screen属性引用的是Screen对象
-screen.width 　　　以像素为单位的窗口的宽
-screen.height 　　 以像素为单位的窗口的高
-screen.colorDepth　 显示的BPP值
-screen.availWidth　 以像素为单位的窗口的实际可用的宽
-screen.availHeight 　以像素为单位的窗口的实际可用的高
-对话框
-alert(); 向用户显示一条信息的等待用户关闭的对话框
-confirm(); 也是显示一条信息，要求用户点击“确定”或“取消”，并返回一个bool值
-prompt(); 显示一条消息，等待用户输入字符串，并返回那个字符串
-三种方法会产生代码阻塞
+## 对话框
+```js
+alert()  // 向用户显示一条信息的等待用户关闭的对话框
+confirm()  // 也是显示一条信息，要求用户点击“确定”或“取消”，并返回一个bool值
+prompt()  // 显示一条消息，等待用户输入字符串，并返回那个字符串
+```
+三种方法都会产生代码阻塞
