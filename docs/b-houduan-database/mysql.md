@@ -4,11 +4,13 @@
 - 连接
   ```bash
   mysql -u user -p  # 然后再输入密码
-  mysql -u user -p basedataName  # 同上并指定待连接的数据库
-  mysql -h host -u user -p basedataName  # 同上如果要连接的数据库不在本机上，如果是可以省略 -h **host**
+  mysql -u user -ppassword  # password密码也可以直接写出来，但是和-p之间不能有空格
+  # 同上如果要连接的数据库不在本机上，如果是可以省略 -h **host**
+  # 端口默认是3306
+  mysql -h localhost -P 3306 -u user -ppassword  
   ```
 - 断开
-  `quit` or `ctrl D  # 快捷键`
+  `quit` or `ctrl c  # 快捷键` or `exit`
 
 ## 数据库
 ps: information_schema、mysql、performance_schema和sys是系统库  
