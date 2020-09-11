@@ -23,7 +23,24 @@
 
 ## 递归
 满足一定条件之前调用自身技术
-
+### 尾递归优化
+函数的最后一步是调用一个函数，没有其他的额外操作  
+```js
+function mutiply(n) {
+  if (n === 0) return 1
+  return n * mutiply(n - 1)
+}
+// test
+mutiply(5) // 120
+```
+```js
+function mutiply(n, total = 1) {
+  if (n === 0) return total
+  return mutiply(n - 1, n * total)
+}
+// test
+mutiply(5) // 120
+```
 ## 组合
 将功能划分为小型可重用的纯函数，将这些可重用的函数放在一起，使其成为产品  
 还可以组合小函数合成更大的函数  

@@ -37,6 +37,10 @@
 ps: 多行注释会被编译进样式代码中
 
 ## 变量
+1. 变量以美元符号开头，赋值方法与 CSS 属性的写法一样  
+2. 变量支持块级作用域  
+   局部变量：嵌套规则内定义的变量
+   全局变量：不在嵌套规则内定义的变量 或 添加 !global 声明
 ```css
 /* 定义 */
 $width: 5em;
@@ -49,15 +53,85 @@ $width: 5em !global;  // 全局变量
 ```
 
 ## 数据类型
-- 数字  1, 2, 13, 10px
-- 字符串  有引号字符串与无引号字符串，"foo", 'bar', baz
-- 颜色  blue, #04a3f9, rgba(255,0,0,0.5)
-- 布尔型  true, false
-- 空值  null
-- 数组  (list)，用空格或逗号作分隔符，1.5em 1em 0 2em, Helvetica, Arial, sans-serif
-- maps  相当于 JavaScript 的 object，(key1: value1, key2: value2)
+1. 数字
+   1  10px
+2. 字符串 
+   有引号字符串与无引号字符串
+   "foo"  'bar'  baz
+3. 颜色
+   blue  #04a3f9  rgba(255,0,0,0.5)
+4. 布尔型
+   true  false
+5. 空值
+   null
+6. 数组(list)  
+   用空格或逗号作分隔符  
+   ```sass
+   1.5em 1em 0 2em                // 空格分隔
+   Helvetica, Arial, sans-serif   // 逗号分隔
+   (1px 2px) (5px 6px)            // 是包含 1px 2px 与 5px 6px 两个数组的数组（空格分隔）
+   1px 2px, 5px 6px               // 同上（逗号分隔）
+   ```
+7. maps
+   相当于JS中的Object  
+   (key1: value1, key2: value2)
+
+## 运算
 
 ## 函数
+
+## @-rules
+### @import
+### @media
+### @extend
+### @at-root
+
+## 指令
+### @if
+### @for
+### @each
+### @while
+### @mixin
+### @include
+### @function
+
+## 输出格式
+- :nested
+  嵌套样式（默认）
+  ```css
+  #main {
+  color: #fff;
+  background-color: #000; }
+  #main p {
+    width: 10em; }
+  ```
+- :expanded
+  手写样式
+  ```css
+  #main {
+    color: #fff;
+    background-color: #000;
+  }
+  #main p {
+    width: 10em;
+  }
+  ```
+- :compact
+  每条 CSS 规则只占一行
+  ```css
+  #main { color: #fff; background-color: #000; }
+  #main p { width: 10em; }
+  ```
+- :compressed
+  压缩模式
+  ```css
+  #main{color:#fff;background-color:#000}#main p{width:10em}
+  ```
+
+
+
+
+
 
 
 
