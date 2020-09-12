@@ -14,7 +14,6 @@ fi
 # 待修改目录名字中的 分隔符 (不能为*)
 delimiter='_'
 WillBuildDir=./docs/
-echo $WillBuildDir
 
 #
 dir_a=(html svg css JS TS browser node package react vue angular vscode webpack rollup youhua yonghutiyan)
@@ -26,7 +25,7 @@ dir_f=()
 dir_g=()
 
 # 待处理目标数组
-target_dir='dir_'"${type}"'[*]'
+target_dir='dir_'"$type"'[*]'
 
 # 索引
 num=1
@@ -34,7 +33,7 @@ num=1
 for name in ${!target_dir}
 do  
     # 目标目录
-    findDir=`find ./docsWillBuild -name $type*$name`
+    findDir=`find ./$WillBuildDir -name $type*$name`
     # 最终名字
     willDir=$WillBuildDir$type$delimiter$num$delimiter$name
 
@@ -42,7 +41,7 @@ do
     then
         echo 相同 $findDir
     else
-        mv `find ./docsWillBuild -wholename $findDir` $willDir
+        mv `find ./$WillBuildDir -wholename $findDir` $willDir
         echo 修改 $findDir 为 $willDir
     fi
     # 索引+1
