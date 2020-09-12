@@ -33,7 +33,7 @@ num=1
 for name in ${!target_dir}
 do  
     # 目标目录
-    findDir=`find ./$WillBuildDir -name $type*$name`
+    findDir=`find $WillBuildDir -name $type*$name`
     # 最终名字
     willDir=$WillBuildDir$type$delimiter$num$delimiter$name
 
@@ -41,7 +41,7 @@ do
     then
         echo 相同 $findDir
     else
-        mv `find ./$WillBuildDir -wholename $findDir` $willDir
+        mv $findDir $willDir
         echo 修改 $findDir 为 $willDir
     fi
     # 索引+1
