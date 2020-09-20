@@ -15,7 +15,9 @@ module.exports = {
 
         smoothScroll: true,
 
-        sidebar,
+        sidebar: 'auto',
+
+        sidebarDepth: 2,
         
         lastUpdated: true,
     },

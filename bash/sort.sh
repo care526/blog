@@ -16,10 +16,10 @@ delimiter='_'
 WillBuildDir=./docs/
 
 #
-dir_a=(html svg css JS TS browser node package react vue angular vscode webpack rollup youhua yonghutiyan)
-dir_b=(database docker go java python rust)
-dir_c=(http thought)
-dir_d=(all shell software)
+dir_a=(Html Svg Css Js Ts Browser Node Package React Vue Angular Vscode Webpack Rollup Youhua Yonghutiyan)
+dir_b=(Database Docker Go Java Python Rust)
+dir_c=(Http Thought)
+dir_d=(All Shell Software)
 dir_e=()
 dir_f=()
 dir_g=()
