@@ -1,4 +1,3 @@
-const { dir } = require("console");
 var fs = require("fs");
 const { argv, exit } = require("process");
 
