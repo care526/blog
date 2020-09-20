@@ -13,4 +13,5 @@ cp -r docs $WillBuildDir
 rm -rf ./$WillBuildDir/*----*
 
 ## 重命名目录和文件
-node ./bash/rename.js
+node ./bash/rename.js $WillBuildDir dir
+node ./bash/rename.js $WillBuildDir allChild
