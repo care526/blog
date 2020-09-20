@@ -1,6 +1,5 @@
 module.exports = {
     partName: "前端",
-    fistPartOfDir: "a-qianduan",
     sortNames: ["基础", "框架", "工程化", "其他"],
     sorts: [[
         { html: 'HTML' },

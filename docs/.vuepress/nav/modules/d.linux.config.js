@@ -1,6 +1,5 @@
 module.exports = {
     partName: "Linux",
-    fistPartOfDir: "d-linux",
     sortNames: [""],
     sorts: [[
         { all: '所有命令' },

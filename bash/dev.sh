@@ -17,4 +17,4 @@ node ./bash/rename.js $WillBuildDir dir
 node ./bash/rename.js $WillBuildDir allChild
 
 ## 打包
-npm run build
+npx vuepress dev docsWillBuild

@@ -26,7 +26,7 @@ module.exports = {
         '../.vuepress'
     ],
 
-    dest: '../dist',
+    dest: './dist',
 
     port: 4000,
 

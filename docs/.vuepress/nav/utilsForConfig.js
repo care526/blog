@@ -1,7 +1,6 @@
 /**
  * interface partConfig {
  *     partName: string
- *     fistPartOfDir: string
  *     sortNames: string[]
  *     sorts: <{
  *         [index: string]: string
@@ -12,7 +11,6 @@
 function transfrom(partConfig) {
     const { 
         partName,
-        fistPartOfDir,
         sortNames,
         sorts
     } = partConfig
@@ -22,7 +20,7 @@ function transfrom(partConfig) {
 
         return {
             text: sortItem[key],
-            link: `/${fistPartOfDir}-${key}/1-index`
+            link: `/${key}/`
         }
     }
     

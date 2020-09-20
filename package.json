@@ -4,10 +4,11 @@
   "description": "## 目录结构",
   "main": "index.js",
   "scripts": {
-    "dev": "vuepress dev docs",
-    "build": "vuepress build docs",
+    "dev": "./bash/dev.sh",
+    "build": "npx vuepress build docsWillBuild",
     "buildPro": "./bash/build.sh",
-    "sort": "./bash/sort.sh"
+    "sort": "./bash/sort.sh",
+    "fileLint": "find ./docs -name *-*-*"
   },
   "repository": {
     "type": "git",
