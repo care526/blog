@@ -11,3 +11,6 @@ cp -r docs $WillBuildDir
 
 # 处理 docsWillBuild 目录中的无关文件
 rm -rf ./$WillBuildDir/*----*
+
+## 重命名目录和文件
+node ./bash/rename.js

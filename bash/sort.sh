@@ -18,8 +18,8 @@ WillBuildDir=./docs/
 #
 dir_a=(html svg css JS TS browser node package react vue angular vscode webpack rollup youhua yonghutiyan)
 dir_b=(database docker go java python rust)
-dir_c=()
-dir_d=()
+dir_c=(http thought)
+dir_d=(all shell software)
 dir_e=()
 dir_f=()
 dir_g=()
