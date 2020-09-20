@@ -5,7 +5,7 @@ if (!argv[2]) {
     exit('待处理目录不存在，请检查!')
 }
 
-const TargetDir = `./${argv[2]}/`
+const TargetDir = `../${argv[2]}/`
 const ExcludeDirOrFile = ['.vuepress', 'images', 'README.md']
 
 // 待处理根目录 重命名规则
