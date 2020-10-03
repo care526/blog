@@ -1,0 +1,8 @@
+新建docsWillBuild
+新建images
+复制README.me
+复制.vuepress
+
+获取当前markdown文档的h1 和 待移动的路径 做一一对应
+如 原子类 -> .5121736173.md，保存为json
+复制所有目录的markdown文档到docsWillBuild目录的根目录 命名为唯一字段
