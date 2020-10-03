@@ -6,12 +6,15 @@ WillBuildDir=`cat ./bash/willBuildDir`
 # 删除 docsWillBuild 目录
 rm -rf ./$WillBuildDir
 
-# 
-mkdir $WillBuildDir
-
 #
-mkdir $WillBuildDir images
+mkdir -p $WillBuildDir/images
 
+# 
+cp docs/README.md $WillBuildDir/README.md
+cp -r docs/.vuepress $WillBuildDir/.vuepress
+
+# 
+node ./bash/rename.js
 
 
 

@@ -1,30 +1,58 @@
 var fs = require("fs");
-const { argv, exit } = require("process");
-const { stringify } = require("querystring");
 const execSync = require('child_process').execSync
 
-if (!argv[2]) {
-    exit('待处理目录不存在，请检查!')
+const TargetDir = './docs/'
+
+const reFileName = (() => {
+    let index = 0
+    return () => `${++index}.md`
+})()
+
+function moveMd(path) {
+    fs.rename(path, `./docsWillBuild/${reFileName()}`, () => '')
 }
 
-const TargetDir = `./${argv[2]}/`
-const ExcludeDirOrFile = ['.vuepress', 'images', 'README.md']
-
-function radam32() {
-    return String(Math.floor(Math.random() * 100000000000000))
-}
-
-// 获取所有的目录
-const content = fs.readdirSync(TargetDir).filter(i => !ExcludeDirOrFile.includes(i))
-
-for (let i = 0; i < content.length; i++) {
-    const allFiles = fs.readdirSync(TargetDir + content[i] + '/').filter(i => !ExcludeDirOrFile.includes(i))
-
-    allFiles.forEach((file, index) => {
-        // console.log(`${TargetDir}${file} ./${radam32()}`)
-        execSync(`mv ${TargetDir}${content[i]}/${file} ${TargetDir}${radam32()}.md` )
+function moveImage(path) {
+    fs.readdir(path, (err, images) => {
+        if (err) console.error(err)
+        images.forEach(image => {
+            fs.rename(path + image, './docsWillBuild/images/' + image, () => '')
+        })
     })
 }
+
+function moveFile(dir) {
+    fs.readdir(dir, (err, fileList) => {
+        if (err) console.error(err)
+        fileList.forEach(filename => {
+            if (filename === 'images') {
+                moveImage(dir + filename)
+            } else {
+                moveMd(dir + filename)
+            }
+        })
+    })
+}
+
+fs.readdir(TargetDir, (err, fileList) => {
+    if (err) console.error(err)
+    fileList.filter(filename => /^[a-z]_[0-9]+_[a-z]+$/.test(filename)).forEach(filename => {
+        moveFile(TargetDir + filename + '/')
+    })
+})
+
+
+// // 获取所有的目录
+// const content = fs.readdirSync(TargetDir).filter(i => !ExcludeDirOrFile.includes(i))
+
+// for (let i = 0; i < content.length; i++) {
+//     const allFiles = fs.readdirSync(TargetDir + content[i] + '/').filter(i => !ExcludeDirOrFile.includes(i))
+
+//     allFiles.forEach((file, index) => {
+//         // console.log(`${TargetDir}${file} ./${radam32()}`)
+//         execSync(`mv ${TargetDir}${content[i]}/${file} ${TargetDir}${radam32()}.md` )
+//     })
+// }
 
 
 
