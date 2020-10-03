@@ -17,4 +17,4 @@ cp -r docs/.vuepress $WillBuildDir/.vuepress
 node ./bash/rename.js
 
 # 打包
-npx vuepress build $WillBuildDir
+# npx vuepress build $WillBuildDir

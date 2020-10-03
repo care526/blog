@@ -1,6 +1,8 @@
 var fs = require("fs");
 const {exec, execSync} = require('child_process')
 
+const yingshe = {}
+
 const TargetDir = './docs/'
 
 const reFileName = (() => {
@@ -11,8 +13,9 @@ const reFileName = (() => {
 function moveMd(path) {
     exec(`head -1 ${path} | tail -1`, (err, stdout) => {
         if (err) console.error(err, path)
-        console.log(stdout.slice(2))
-        execSync(`cp -r ${path} ./docsWillBuild/${reFileName()}`)
+        const newName = reFileName()
+        yingshe[stdout.slice(2).replace('\n', '')] = newName
+        execSync(`cp ${path} ./docsWillBuild/${newName}`)
     })
 }
 
@@ -41,3 +44,11 @@ fs.readdir(TargetDir, (err, fileList) => {
         moveFile(TargetDir + filename + '/')
     })
 })
+
+setTimeout(() => {
+    fs.writeFile('./docsWillBuild/.vuepress/data.json', JSON.stringify(yingshe), 'utf-8', err => {
+        if (err) console.error(err)
+        console.log('写入成功')
+    })
+    console.log(Object.keys(yingshe).length)
+}, 5 * 1000)
