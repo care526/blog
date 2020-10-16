@@ -1,97 +1,64 @@
 const fs = require("fs");
 const path = require("path");
-// const {exec, execSync} = require('child_process')
+const { exec } = require('child_process')
 
-const yingshe = {}
-const sameKeys = []
-// const yingshe = {}
-
-const TargetDir = './docs'
-
-const reFileName = (() => {
+// 待处理目录
+const RootPath = 'docs'
+// 所有的文件集合
+const allFileName = {}
+// 处理排除的目录
+const exclude = filename => filename !== '.vuepress'
+// 重命名md文档
+const reMdFileName = (() => {
     let index = 0
     return () => `${++index}.md`
 })()
 
-function moveMd(path) {
-    exec(`head -1 ${path} | tail -1`, (err, stdout) => {
-        if (err) console.error(err, path)
-        const newName = reFileName()
-        if (Object.keys(yingshe).some(i => i === stdout.slice(2).replace('\n', ''))) {
-            sameKeys.push(stdout.slice(2).replace('\n', ''))
-        }
-        yingshe[stdout.slice(2).replace('\n', '')] = newName
-        execSync(`cp ${path} ./docsWillBuild/${newName}`)
+// 处理images图片资源
+function moveImages(imagesPath) {
+    let images = fs.readdirSync(imagesPath);
+    images.forEach(image => {
+        exec(`cp ${path.join(imagesPath, image)} ./docsWillBuild/images/${image}`)
     })
-const exclude = filename => {
-    return filename !== '.vuepress'
 }
+// 处理markdown文档
+function moveMd(mdPath) {
+    exec(`head -1 ${mdPath} | tail -1`, (err, stdout) => {
+        if (err) console.error(err, mdPath)
 
-
-function dealUnitDir(rootPath) {
-    const files = fs.readdirSync(rootPath);
+        const newName = reMdFileName()
+        const title = stdout.slice(2).replace('\n', '')
+        if (allFileName[title]) {
+            console.log(title)
+        } else {
+            allFileName[title] = newName.replace('md', 'html')
+        }
+        exec(`cp ${mdPath} ./docsWillBuild/${newName}`)
+    })
+    
+}
+// 处理目录
+function dealUnitDir(dirPath) {
+    let files = fs.readdirSync(dirPath);
     files = files.filter(exclude)
     files.forEach(filename => {
-        console.log(filename)
+        const filePath = path.join(dirPath, filename)
+        if (filename === 'images') {
+            return moveImages(filePath)
+        }
+        if (filename.indexOf('.md') > -1) {
+            return moveMd(filePath)
+        }
+        dealUnitDir(filePath)
     })
 }
 
+dealUnitDir(RootPath)
 
 setTimeout(() => {
-    fs.writeFile('./docsWillBuild/.vuepress/data.json', JSON.stringify(yingshe), 'utf-8', err => {
+    fs.writeFile('./docsWillBuild/.vuepress/data.json', JSON.stringify(allFileName), 'utf-8', err => {
         if (err) console.error(err)
         console.log('写入成功')
     })
-    console.log(sameKeys)
-    console.log(Object.keys(yingshe).length)
+    console.log('总md文件数目:' + Object.keys(allFileName).length)
 }, 5 * 1000)
-
-
-
-// const reFileName = (() => {
-//     let index = 0
-//     return () => `${++index}.md`
-// })()
-
-// function moveMd(path) {
-//     exec(`head -1 ${path} | tail -1`, (err, stdout) => {
-//         if (err) console.error(err, path)
-//         const newName = reFileName()
-//         yingshe[stdout.slice(2).replace('\n', '')] = newName
-//         execSync(`cp ${path} ./docsWillBuild/${newName}`)
-//     })
-// }
-
-// function moveImage(path) {
-//     fs.readdir(path, (err, images) => {
-//         if (err) console.error(err)
-//         images.forEach(image => {
-//             execSync(`cp ${path + image} ./docsWillBuild/images/${image}`)
-//         })
-//     })
-// }
-
-// function moveFile(dir) {
-//     fs.readdir(dir, (err, fileList) => {
-//         if (err) console.error(err)
-//         fileList.forEach(filename => {
-//             if (filename === 'images') moveImage(dir + filename + '/')
-//             if (filename.indexOf('.md') > -1) moveMd(dir + filename)
-//         })
-//     })
-// }
-
-// fs.readdir(TargetDir, (err, fileList) => {
-//     if (err) console.error(err)
-//     fileList.filter(filename => /^[a-z]_[0-9]+_[a-z]+$/.test(filename)).forEach(filename => {
-//         moveFile(TargetDir + filename + '/')
-//     })
-// })
-
-// setTimeout(() => {
-//     fs.writeFile('./docsWillBuild/.vuepress/data.json', JSON.stringify(yingshe), 'utf-8', err => {
-//         if (err) console.error(err)
-//         console.log('写入成功')
-//     })
-//     console.log(Object.keys(yingshe).length)
-// }, 5 * 1000)
