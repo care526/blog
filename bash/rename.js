@@ -47,7 +47,7 @@ setAllFileTree = (type, pathName, index) => {
     }
 }
 // 处理排除的目录
-const exclude = filename => !['.vuepress', 'README.md', 'gurd.md'].includes(filename)
+const exclude = filename => !['.vuepress', 'README.md', 'navigate.md'].includes(filename)
 // 重命名md文档
 const reMdFileName = (() => {
     let index = 0

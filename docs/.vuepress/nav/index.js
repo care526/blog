@@ -9,10 +9,10 @@ const PartConfigs = [
 
 const NavConfigs = [
     { text: 'Home', link: '/' },
-    { text: '前端', link: '/md/gurd' },
-    // { text: '后端', link: '/md/gurd?a=2' },
-    // { text: '编程思想', link: '/md/gurd?a=3' },
-    // { text: 'Linux', link: '/md/gurd?a=4' },
+    { text: '前端', link: '/md/navigate' },
+    // { text: '后端', link: '/md/navigate?a=2' },
+    // { text: '编程思想', link: '/md/navigate?a=3' },
+    // { text: 'Linux', link: '/md/navigate?a=4' },
     // ...PartConfigs.map(Utils.transfrom)
 ]
 
