@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "./bash/dev.sh",
     "build": "npx vuepress build docsWillBuild",
-    "buildPro": "./bash/build.sh",
+    "c": "./bash/build.sh",
     "sort": "./bash/sort.sh",
     "fileLint": "find ./docs -name *-*-*"
   },
