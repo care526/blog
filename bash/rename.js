@@ -9,7 +9,7 @@ const allFileTree = {
     id: 'care的知识体系',
     children: []
 }
-setAllFileTree = (type, pathName) => {
+setAllFileTree = (type, pathName, index) => {
     if (pathName.indexOf('README') > -1) return
 
     const arr = pathName.slice(5).split('/')
@@ -31,7 +31,6 @@ setAllFileTree = (type, pathName) => {
         })
     }
     if (type === 'md') {
-        console.log('-------')
         arr.reduce((root, childNode) => {
             if (!root) return
             if (!childNode.indexOf('.md') > -1) {
@@ -39,7 +38,8 @@ setAllFileTree = (type, pathName) => {
                     return root.filter(i => i.id === childNode)[0].children
                 } else {
                     root.push({
-                        id: childNode.slice(0, -3)
+                        id: childNode.slice(0, -3),
+                        index
                     })
                 }
             }
@@ -47,7 +47,7 @@ setAllFileTree = (type, pathName) => {
     }
 }
 // 处理排除的目录
-const exclude = filename => filename !== '.vuepress'
+const exclude = filename => !['.vuepress', 'README.md', 'gurd.md'].includes(filename)
 // 重命名md文档
 const reMdFileName = (() => {
     let index = 0
@@ -63,13 +63,13 @@ function moveImages(imagesPath) {
 }
 // 处理markdown文档
 function moveMd(mdPath) {
-    exec(`head -1 ${mdPath} | tail -1`, (err, stdout) => {
-        if (err) console.error(err, mdPath)
+    // exec(`head -1 ${mdPath} | tail -1`, (err, stdout) => {
+        // if (err) console.error(err, mdPath)
 
-        const newName = reMdFileName()
-        setAllFileTree('md', mdPath)
-        exec(`cp ${mdPath} ./docsWillBuild/${newName}`)
-    })
+    const newName = reMdFileName()
+    setAllFileTree('md', mdPath, newName.slice(0, -3))
+    exec(`cp ${mdPath} ./docsWillBuild/${newName}`)
+    // })
     
 }
 // 处理目录

@@ -9,7 +9,11 @@ const PartConfigs = [
 
 const NavConfigs = [
     { text: 'Home', link: '/' },
-    ...PartConfigs.map(Utils.transfrom)
+    { text: '前端', link: '/gurd' },
+    { text: '后端', link: '/gurd' },
+    { text: '编程思想', link: '/gurd' },
+    { text: 'Linux', link: '/gurd' },
+    // ...PartConfigs.map(Utils.transfrom)
 ]
 
 module.exports = NavConfigs
