@@ -58,7 +58,7 @@ const reMdFileName = (() => {
 function moveImages(imagesPath) {
     let images = fs.readdirSync(imagesPath);
     images.forEach(image => {
-        exec(`cp ${path.join(imagesPath, image)} ./docsWillBuild/images/${image}`)
+        exec(`cp ${path.join(imagesPath, image)} ./docsWillBuild/md/images/${image}`)
     })
 }
 // 处理markdown文档
@@ -68,7 +68,7 @@ function moveMd(mdPath) {
 
     const newName = reMdFileName()
     setAllFileTree('md', mdPath, newName.slice(0, -3))
-    exec(`cp ${mdPath} ./docsWillBuild/${newName}`)
+    exec(`cp ${mdPath} ./docsWillBuild/md/${newName}`)
     // })
     
 }

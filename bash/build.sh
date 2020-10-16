@@ -7,15 +7,16 @@ WillBuildDir=docsWillBuild
 rm -rf ./$WillBuildDir
 
 # 新建待打包目录
-mkdir -p $WillBuildDir/images
+mkdir -p $WillBuildDir/md
+mkdir -p $WillBuildDir/md/images
 
 # 移动固定目录
 cp docs/README.md $WillBuildDir/README.md
-cp docs/README.md $WillBuildDir/gurd.md
+cp docs/gurd.md $WillBuildDir/md/gurd.md
 cp -r docs/.vuepress $WillBuildDir/.vuepress
 
 # 复制文件到待打包目录
 node ./bash/rename.js
 
 # 打包
-npx vuepress build $WillBuildDir
+npx vuepress dev $WillBuildDir
