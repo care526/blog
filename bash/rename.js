@@ -2,6 +2,7 @@ var fs = require("fs");
 const {exec, execSync} = require('child_process')
 
 const yingshe = {}
+const sameKeys = []
 
 const TargetDir = './docs/'
 
@@ -14,6 +15,9 @@ function moveMd(path) {
     exec(`head -1 ${path} | tail -1`, (err, stdout) => {
         if (err) console.error(err, path)
         const newName = reFileName()
+        if (Object.keys(yingshe).some(i => i === stdout.slice(2).replace('\n', ''))) {
+            sameKeys.push(stdout.slice(2).replace('\n', ''))
+        }
         yingshe[stdout.slice(2).replace('\n', '')] = newName
         execSync(`cp ${path} ./docsWillBuild/${newName}`)
     })
@@ -50,5 +54,6 @@ setTimeout(() => {
         if (err) console.error(err)
         console.log('写入成功')
     })
+    console.log(sameKeys)
     console.log(Object.keys(yingshe).length)
 }, 5 * 1000)

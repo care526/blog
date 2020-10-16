@@ -1,4 +1,4 @@
-# 命令
+# go命令
 
 ## 直接运行go文件
 go run file.go

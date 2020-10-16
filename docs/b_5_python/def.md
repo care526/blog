@@ -1,4 +1,4 @@
-# 函数
+# py函数
 
 ```python
 #!/usr/local/bin/python3

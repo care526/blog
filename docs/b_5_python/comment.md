@@ -1,4 +1,4 @@
-# 注释
+# py注释
 
 ```python
 #!/usr/local/bin/python3
