@@ -15,15 +15,19 @@ export default {
     }
   },
   mounted() {
-    console.log('mount')
     this.resolve()
-    // window.addEventListener('hashChange', () => {
-    //   console.log(1)
-    // })
+    this.addClickEvent()
   },
   methods: {
+    addClickEvent() {
+      document.getElementsByClassName('nav-link').forEach(a => {
+        a.addEventListener('click', () => {
+          if (this.graph) this.graph.destroy()
+          this.resolve()
+        })
+      })
+    },
     resolve() {
-      console.log('res')
       let willShowData = data
       if (location.hash) {
         const arr = location.hash.slice(1).split(',').map(i => decodeURI(i))
