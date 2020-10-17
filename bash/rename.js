@@ -63,14 +63,9 @@ function moveImages(imagesPath) {
 }
 // 处理markdown文档
 function moveMd(mdPath) {
-    // exec(`head -1 ${mdPath} | tail -1`, (err, stdout) => {
-        // if (err) console.error(err, mdPath)
-
     const newName = reMdFileName()
     setAllFileTree('md', mdPath, newName.slice(0, -3))
     exec(`cp ${mdPath} ./docsWillBuild/md/${newName}`)
-    // })
-    
 }
 // 处理目录
 function dealUnitDir(dirPath) {
