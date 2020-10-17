@@ -38,6 +38,7 @@ export default {
           container: 'container',
           width,
           height,
+          linkCenter: true,
           modes: {
             default: [
               {
@@ -53,38 +54,35 @@ export default {
             ],
           },
           defaultNode: {
-            size: 26,
-            anchorPoints: [
-              [0, 0.5],
-              [1, 0.5],
-            ],
+            size: 32,
             style: {
               fill: '#C6E5FF',
               stroke: '#5B8FF9',
             },
+            labelCfg: {
+              style: {
+                fontSize: 4,
+              }
+            }
           },
           defaultEdge: {
-            type: 'cubic-horizontal',
             style: {
               stroke: '#A3B1BF',
             },
           },
           layout: {
             type: 'dendrogram',
-            direction: 'LR', // H / V / LR / RL / TB / BT
-            nodeSep: 30,
+            direction: 'LR',
+            nodeSep: 20,
             rankSep: 100,
+            radial: true,
           },
         });
 
-        graph.node(function (node) {
+        graph.node(function(node) {
           return {
-            label: node.id,
-            labelCfg: {
-              position: node.children && node.children.length > 0 ? 'left' : 'right',
-              offset: 5,
-            },
-          };
+            label: node.id.indexOf('.') === -1 ? node.id : node.id.split('.')[1]
+          }
         });
         
         graph.data(willShowData);
@@ -109,7 +107,7 @@ export default {
   top: 60px;
   left: 0;
   width: 100vw;
-  height: calc(100vh - 30px);
+  height: calc(100vh - 60px);
   margin-top: 0 !important;
   padding-top: 30px;
   background: #FFFFFF;
