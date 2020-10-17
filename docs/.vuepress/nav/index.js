@@ -7,9 +7,15 @@ const PartConfigs = [
     require('./modules/d.linux.config')
 ]
 
+const Translation = name => encodeURI(name)
+
 const NavConfigs = [
     { text: 'Home', link: '/' },
-    { text: '前端', link: '/md/navigate' },
+    { text: '前端', items: [
+        { text: '基础', items: [
+            { text: 'HTML', link: `/navigate/#${Translation('前端')},HTML` },
+        ] }
+    ] },
     // { text: '后端', link: '/md/navigate?a=2' },
     // { text: '编程思想', link: '/md/navigate?a=3' },
     // { text: 'Linux', link: '/md/navigate?a=4' },

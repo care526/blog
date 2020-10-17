@@ -16,7 +16,7 @@ setAllFileTree = (type, pathName, index) => {
     arr.unshift(allFileTree.children)
     if (type === 'dir') {
         arr.reduce((root, parentNode) => {
-            if (!root) return
+            // if (!root) return
             const node = {
                 id: parentNode,
                 children: []
@@ -32,13 +32,13 @@ setAllFileTree = (type, pathName, index) => {
     }
     if (type === 'md') {
         arr.reduce((root, childNode) => {
-            if (!root) return
+            // if (!root) return
             if (!childNode.indexOf('.md') > -1) {
                 if (root.filter(i => i.id === childNode).length) {
                     return root.filter(i => i.id === childNode)[0].children
                 } else {
                     root.push({
-                        id: childNode.slice(0, -3),
+                        id: `${index}.${childNode.slice(0, -3)}`,
                         index
                     })
                 }

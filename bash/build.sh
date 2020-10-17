@@ -12,11 +12,14 @@ mkdir -p $WillBuildDir/md/images
 
 # 移动固定目录
 cp docs/README.md $WillBuildDir/README.md
-cp docs/navigate.md $WillBuildDir/md/navigate.md
+cp -r docs/navigate $WillBuildDir/navigate
 cp -r docs/.vuepress $WillBuildDir/.vuepress
 
 # 复制文件到待打包目录
 node ./bash/rename.js
 
-# 打包
-npx vuepress dev $WillBuildDir
+# 更新docs中的data.json
+cp $WillBuildDir/.vuepress/data.json docs/.vuepress/data.json
+
+# # 打包
+npx vuepress $1 $WillBuildDir

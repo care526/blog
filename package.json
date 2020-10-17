@@ -4,9 +4,9 @@
   "description": "## 目录结构",
   "main": "index.js",
   "scripts": {
-    "dev": "./bash/dev.sh",
-    "build": "npx vuepress build docsWillBuild",
-    "c": "./bash/build.sh",
+    "dev": "npx vuepress dev docs",
+    "dev:build": "./bash/build.sh dev",
+    "build": "./bash/build.sh build",
     "sort": "./bash/sort.sh",
     "fileLint": "find ./docs -name *-*-*"
   },
