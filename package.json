@@ -4,9 +4,9 @@
   "description": "## 目录结构",
   "main": "index.js",
   "scripts": {
-    "dev": "./bash/dev.sh",
-    "build": "npx vuepress build docsWillBuild",
-    "buildPro": "./bash/build.sh",
+    "dev": "npx vuepress dev docs",
+    "dev:build": "./bash/build.sh dev",
+    "build": "./bash/build.sh build",
     "sort": "./bash/sort.sh",
     "fileLint": "find ./docs -name *-*-*"
   },
@@ -21,6 +21,7 @@
   },
   "homepage": "https://github.com/care526/blog#readme",
   "dependencies": {
+    "@antv/g6": "^3.8.1",
     "@vuepress/plugin-active-header-links": "^1.4.1",
     "@vuepress/plugin-back-to-top": "^1.5.3",
     "@vuepress/plugin-nprogress": "^1.5.4",

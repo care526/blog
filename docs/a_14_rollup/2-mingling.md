@@ -1,7 +1,0 @@
-# cli命令
-
-- rollup
-- rollup -h
-- rollup --help
-- rollup -c
-- rollup --config

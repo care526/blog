@@ -1,84 +1,94 @@
-const { dir } = require("console");
-var fs = require("fs");
-const { argv, exit } = require("process");
+const fs = require("fs");
+const path = require("path");
+const { exec } = require('child_process')
 
-if (!argv[2]) {
-    exit('待处理目录不存在，请检查!')
+// 待处理目录
+const RootPath = 'docs'
+// 所有的文件集合
+const allFileTree = {
+    id: 'care的知识体系',
+    children: []
 }
+setAllFileTree = (type, pathName, index) => {
+    if (pathName.indexOf('README') > -1) return
 
-const TargetDir = `./${argv[2]}/`
-const ExcludeDirOrFile = ['.vuepress', 'images', 'README.md']
-const dealType = argv[3] === 'dir' ? 'dir' : 'allChild'
-
-// 待处理根目录 重命名规则
-const rootRenameRule = name => name.split('_')[2]
-// 子目录 重命名规则
-const childRenameRule = name => {
-    if (name.indexOf('-') > 0) return name.split('-')[1]
-    return name
-}
-// 是否是目录
-const isDir = dirPath => fs.statSync(dirPath).isDirectory()
-// 是否是文件
-const isFile = filePath => fs.statSync(filePath).isFile()
-
-async function findChildDirAndFile(targetDir, excludeRules = [], renameRule) {
-    return new Promise((res, rej) => {
-        fs.readdir(targetDir, (err, files) => {
-            if (err) rej(err)
-    
-            const dirs = files.filter(filename => !excludeRules.includes(filename))
-            // 检查是否会出现子目录 简化 重名的情况
-            const featureDirs = dirs.map(renameRule)
-            if ( Array.from(new Set(featureDirs)).length !== dirs.length ) return console.log('如果简化 会出现重名的目录 请检查!')
-
-            // 区分 目录和文件
-            res({
-                dirs: dirs.filter(dirPath => isDir((targetDir + dirPath))),
-                files: dirs.filter(filePath => isFile((targetDir + filePath)))
-            })
-    
+    const arr = pathName.slice(5).split('/')
+    arr.unshift(allFileTree.children)
+    if (type === 'dir') {
+        arr.reduce((root, parentNode) => {
+            const node = {
+                id: parentNode,
+                name: parentNode,
+                children: []
+            }
+            const Nodes = root.filter(i => i.id === parentNode)
+            if (Nodes.length) {
+                return Nodes[0].children
+            } else {
+                root.push(node)
+                return node.children
+            }
         })
+    }
+    if (type === 'md') {
+        arr.reduce((root, childNode) => {
+            if (!childNode.indexOf('.md') > -1) {
+                if (root.filter(i => i.id === childNode).length) {
+                    return root.filter(i => i.id === childNode)[0].children
+                } else {
+                    root.push({
+                        id: `${index}.${childNode.slice(0, -3)}`,
+                        name: childNode.slice(0, -3),
+                        index
+                    })
+                }
+            }
+        })
+    }
+}
+// 处理排除的目录
+const exclude = filename => !['.vuepress', 'README.md', 'navigate.md'].includes(filename)
+// 重命名md文档
+const reMdFileName = (() => {
+    let index = 0
+    return () => `${++index}.md`
+})()
+
+// 处理images图片资源
+function moveImages(imagesPath) {
+    let images = fs.readdirSync(imagesPath);
+    images.forEach(image => {
+        exec(`cp ${path.join(imagesPath, image)} ./docsWillBuild/md/images/${image}`)
     })
 }
-
-// 重命名文件或目录
-async function rename(prefix, name, newPathRule) {
-    if (!name) return console.log('待重命名目录为指定')
-    if (!newPathRule || typeof newPathRule !== 'function') return console.log('重命名规则为声明!')
-    
-    const oldPath = prefix + name
-    const newPath = prefix + newPathRule(name)
-
-    
-    return new Promise((res, rej) => {
-        fs.rename(oldPath, newPath, err => {
-            if (err) rej(err)
-            res(1)
-        })
-    })
+// 处理markdown文档
+function moveMd(mdPath) {
+    const newName = reMdFileName()
+    setAllFileTree('md', mdPath, newName.slice(0, -3))
+    exec(`cp ${mdPath} ./docsWillBuild/md/${newName}`)
 }
-
-async function resolveChildDir(childDirPath, excludeDirOrFile, renameRule) {
-    const data = await findChildDirAndFile(childDirPath, excludeDirOrFile, renameRule)
-    const { dirs, files } = data
-    return new Promise((res, rej) => {
-        files.forEach(async dirname => await rename(childDirPath, dirname, renameRule))
-        if (dirs.length) {
-            dirs.forEach(async dirname => {
-                const childDate = await findChildDirAndFile(childDirPath + dirname + '/', excludeDirOrFile, renameRule)
-                childDate.files.forEach(async filename => await rename(childDirPath + dirname + '/', filename, renameRule))
-            })
+// 处理目录
+function dealUnitDir(dirPath) {
+    let files = fs.readdirSync(dirPath);
+    files = files.filter(exclude)
+    files.forEach(filename => {
+        const filePath = path.join(dirPath, filename)
+        if (filename === 'images') {
+            return moveImages(filePath)
         }
-        res()
+        if (filename.indexOf('.md') > -1) {
+            return moveMd(filePath)
+        }
+        setAllFileTree('dir', filePath)
+        dealUnitDir(filePath)
     })
 }
 
-findChildDirAndFile(TargetDir, ExcludeDirOrFile, rootRenameRule).then(async data => {
-    const { dirs } = data
-    // 重命名子目录相关文件
-    dealType === 'dir'
-    ? dirs.forEach(async dirname => await resolveChildDir(TargetDir + dirname + '/', ExcludeDirOrFile, childRenameRule))
-    // 重命名目录
-    : dirs.forEach(async dirname => await rename(TargetDir, dirname, rootRenameRule))
-})
+dealUnitDir(RootPath)
+
+setTimeout(() => {
+    fs.writeFile('./docsWillBuild/.vuepress/data.json', JSON.stringify(allFileTree), 'utf-8', err => {
+        if (err) console.error(err)
+        console.log('写入成功')
+    })
+}, 5 * 1000)

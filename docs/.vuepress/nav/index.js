@@ -9,35 +9,52 @@ const PartConfigs = [
 
 const NavConfigs = [
     { text: 'Home', link: '/' },
-    ...PartConfigs.map(Utils.transfrom)
+    { text: '前端', items: [
+        { text: '基础', items: [
+            { text: 'HTML', link: '/navigate/#前端,HTML' },
+            { text: 'SVG', link: '/navigate/#前端,SVG' },
+            { text: 'CSS', link: '/navigate/#前端,CSS' },
+            { text: 'JS', link: '/navigate/#前端,JS' },
+            { text: 'TS', link: '/navigate/#前端,TS' },
+            { text: 'Node', link: '/navigate/#前端,Node' },
+            { text: 'Package', link: '/navigate/#前端,Package' },
+            { text: 'Vscode', link: '/navigate/#前端,Vscode' },
+        ] },
+        { text: '框架', items: [
+            { text: 'React', link: '/navigate/#前端,React' },
+            { text: 'Vue', link: '/navigate/#前端,Vue' },
+            { text: 'Angular', link: '/navigate/#前端,Angular' },
+        ] },
+        { text: '工程化', items: [
+            { text: 'Webpack', link: '/navigate/#前端,Webpack' },
+            { text: 'Rollup', link: '/navigate/#前端,Rollup' },
+            { text: '优化', link: '/navigate/#前端,优化' },
+        ] },
+        { text: '其他', items: [
+            { text: '浏览器', link: '/navigate/#前端,浏览器' },
+            { text: '用户体验', link: '/navigate/#前端,用户体验' },
+            { text: 'HTTP', link: '/navigate/#前端,HTTP' },
+        ] }
+    ] },
+    { text: '后端', items: [
+        { text: '数据库', link: '/navigate/#后端,数据库' },
+        { text: 'Docker', link: '/navigate/#后端,Docker' },
+        { text: 'Go', link: '/navigate/#后端,Go' },
+        { text: 'Java', link: '/navigate/#后端,Java' },
+        { text: 'Python', link: '/navigate/#后端,Python' },
+        { text: 'Rust', link: '/navigate/#后端,Rust' },
+    ] },
+    { text: '编程思想', link: '/navigate/#编程思想' },
+    { text: 'Linux', items: [
+        { text: '所有', link: '/navigate/#Linux,所有' },
+        { text: '软件', link: '/navigate/#Linux,软件' },
+        { text: 'Shell', link: '/navigate/#Linux,Shell' },
+    ] },
+
+    // ...PartConfigs.map(Utils.transfrom)
 ]
 
 module.exports = NavConfigs
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 // module.exports = [
 //     { text: 'Home', link: '/' },

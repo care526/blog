@@ -1,6 +1,4 @@
-<p 
-    style="text-align: center;font-size: 40px;color:#ebebeb"
->
+<p style="text-align: center;font-size: 40px;color:#ebebeb">
     the meaning of my existence
 </p>
 <img

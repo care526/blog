@@ -1,20 +1,25 @@
 #!/bin/bash
 
 # 待打包目录
-WillBuildDir=`cat ./bash/willBuildDir`
+WillBuildDir=docsWillBuild
 
 # 删除 docsWillBuild 目录
 rm -rf ./$WillBuildDir
 
-# 复制源代码目录为待打包处理目录
-cp -r docs $WillBuildDir
+# 新建待打包目录
+mkdir -p $WillBuildDir/md
+mkdir -p $WillBuildDir/md/images
 
-# 处理 docsWillBuild 目录中的无关文件
-rm -rf ./$WillBuildDir/*----*
+# 移动固定目录
+cp docs/README.md $WillBuildDir/README.md
+cp -r docs/navigate $WillBuildDir/navigate
+cp -r docs/.vuepress $WillBuildDir/.vuepress
 
-## 重命名目录和文件
-node ./bash/rename.js $WillBuildDir dir
-node ./bash/rename.js $WillBuildDir allChild
+# 复制文件到待打包目录
+node ./bash/rename.js
 
-## 打包
-npm run build
+# 更新docs中的data.json
+cp $WillBuildDir/.vuepress/data.json docs/.vuepress/data.json
+
+# # 打包
+npx vuepress $1 $WillBuildDir
