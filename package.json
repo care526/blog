@@ -5,8 +5,9 @@
   "main": "index.js",
   "scripts": {
     "dev": "npx vuepress dev docs",
-    "dev:build": "./bash/build.sh dev",
-    "build": "./bash/build.sh build",
+    "dev:will": "./bash/build.sh dev",
+    "build": "npx vuepress build docs",
+    "build:will": "./bash/build.sh build",
     "sort": "./bash/sort.sh",
     "fileLint": "find ./docs -name *-*-*"
   },
