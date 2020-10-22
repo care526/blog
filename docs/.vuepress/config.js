@@ -34,5 +34,7 @@ module.exports = {
 
     markdown: {
         // lineNumbers: true
-    }
+    },
+
+    sass: { indentedSyntax: true },
 }

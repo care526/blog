@@ -5,9 +5,6 @@
 </template>
 
 <script>
-import G6 from '@antv/g6'
-let data = require('../data.json')
-
 export default {
   data() {
     return {
@@ -27,11 +24,16 @@ export default {
         })
       })
     },
-    resolve() {
+    async resolve() {
+      let data = require('../data.json')
       let willShowData = data
       if (location.hash) {
         const arr = location.hash.slice(1).split(',').map(i => decodeURI(i))
         arr.unshift(data.children)
+        arr.reduce((root, parentNode) => {
+          const Nodes = root.filter(i => i.id === parentNode)
+          return Nodes[0].children
+        })
         willShowData = {
           id: arr[arr.length - 1],
           children: arr.reduce((root, parentNode) => {
@@ -42,6 +44,7 @@ export default {
       }
       const width = document.getElementById('container').scrollWidth - 100
       const height = document.getElementById('container').scrollHeight - 60
+      const G6 = await import('@antv/g6')
       Promise.resolve().then(() => {
         const graph = new G6.TreeGraph({
           container: 'container',
