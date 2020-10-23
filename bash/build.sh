@@ -12,7 +12,7 @@ mkdir -p $WillBuildDir/md/images
 
 # 移动固定目录
 cp docs/README.md $WillBuildDir/README.md
-cp -r docs/navigate $WillBuildDir/navigate
+cp -r docs/customizePages $WillBuildDir/customizePages
 cp -r docs/.vuepress $WillBuildDir/.vuepress
 
 # 复制文件到待打包目录
