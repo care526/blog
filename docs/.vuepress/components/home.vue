@@ -2,7 +2,12 @@
     <div class="my-page">
         <div class="search">
             <div class="ipt">
-                <input placeholder="请输入" v-model="searchVal" type="text">
+                <input
+                    type="text"
+                    placeholder="请输入"
+                    v-model="searchVal"
+                    @keydown.enter="search"
+                >
                 <button class="search-btn" @click="search">百度搜索</button>
             </div>
         </div>
@@ -29,6 +34,7 @@
                     class="tag"
                     v-for="(tag, tagIndex) in data[current.parentIndex].children[current.childIndex].children"
                     :key="tagIndex"
+                    :title="tag.link"
                     @click="go(tag.link)"
                 >
                     {{ tag.text }}
@@ -75,14 +81,14 @@ export default {
 }
 .my-page {
     position: fixed;
-    top: 60px;
+    top: 58px;
     left: 0;
     width: 100vw;
     font-size: 14px;
     height: calc(100vh - 60px);
     margin-top: 0 !important;
     padding: 24px 200px;
-    background: #FFFFFF;
+    background: #efeeee;
     z-index: 11;
 }
 .search {
@@ -124,12 +130,13 @@ export default {
     flex: 1;
     height: 100%;
     padding: 0 24px;
+    overflow-y: scroll;
 }
 .p-category {
     padding: 10px 0;
-    background: #999;
     border-radius: 10px;
     margin-bottom: 24px;
+    box-shadow: 18px 18px 30px rgba(0,0,0,0.1), -18px -18px 30px rgba(255,255,255,1);
 }
 .p-category-name {
     text-align: center;
@@ -145,6 +152,7 @@ export default {
 .p-category-children-name {
     padding: 6px 10px;
     margin-right: 10px;
+    margin-bottom: 10px;
     background: #fff;
     border-radius: 4px;
     cursor: pointer;
