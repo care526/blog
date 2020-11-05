@@ -8,4 +8,4 @@ time=$(date "+%Y-%m-%d")
 
 git add .
 git commit -m $time
-# git push
+git push
