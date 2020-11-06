@@ -9,6 +9,7 @@ const PartConfigs = [
 
 const NavConfigs = [
     { text: 'Home', link: '/' },
+    { text: 'MyPage', link: '/customizePages/home' },
     { text: '前端', items: [
         { text: '基础', items: [
             { text: 'HTML', link: '/customizePages/navigate#前端,HTML' },

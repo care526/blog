@@ -128,3 +128,71 @@ confirm()  // 也是显示一条信息，要求用户点击“确定”或“取
 prompt()  // 显示一条消息，等待用户输入字符串，并返回那个字符串
 ```
 三种方法都会产生代码阻塞
+
+## console
+### console.log()
+`console.log('xxx')`
+### console.info()
+`console.info('xxx')`
+### console.error()
+`console.error('xxx')`
+### console.warn()
+`console.warn('xxx')`
+### console.time()  console.timeEnd()
+接受相同的参数，计算中间的时间差，会对传入的参数转字符串(toString)
+```js
+console.time('xxx')
+// ...
+console.timeEnd('xxx')
+```
+输出：xxx: 1.3456789ms  
+### console.count()
+打印传入的数据，并显示次数，会对传入的参数转字符串(toString)
+```js
+console.count('xxx')
+console.count('xxx')
+```
+输出: xxx: 1  
+      xxx: 2  
+### console.table()
+以表格的形式展示一个对象的数据，其他参数同log方法  
+`console.table({a: 1})`
+### console.group()  console.groupEnd()
+对打印的数据分组，折叠展开  
+```js
+console.group('第一层');
+  console.info(123123);
+  console.group('第二层');
+    console.log('error');
+    console.error('error');
+    console.warn('error');
+  console.groupEnd();
+console.groupEnd();
+```
+### console.trace()
+追溯你的逻辑执行过程  
+```js
+function d(a) {
+  console.trace();
+  return a;
+}
+function b(a) {
+  return c(a);
+}
+function c(a) {
+  return d(a);
+}
+let a = b('123');
+```
+输出：各个函数的名字，不断向上找调用者  
+### console.assert
+当第一个参数为false时，才会打印第二个参数  
+`console.assert(false, 'asdasd')`
+### console.clear
+清空控制台  
+### 为打印设置样式
+会为%c后面的字符添加样式
+```js
+let style = 'background: red';
+console.log('啊实打实的 %c asdasd', style);
+```
