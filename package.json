@@ -9,6 +9,7 @@
     "build": "npx vuepress build docs",
     "build:will": "./bash/build.sh build",
     "push": "./bash/push.sh",
+    "pushGitee": "./bash/pushGitee.sh",
     "sort": "./bash/sort.sh",
     "fileLint": "find ./docs -name *-*-*"
   },
