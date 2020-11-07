@@ -30,6 +30,8 @@ module.exports = {
 
     dest: './dist',
 
+    base: '/blog/',
+
     port: 4000,
 
     markdown: {
