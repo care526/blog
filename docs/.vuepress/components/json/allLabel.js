@@ -23,12 +23,38 @@ export default [
         ]},
     ]},
     { text: "前端", children: [
+        { text: "社区", children: [
+            { text: "掘金", link: "https://juejin.im/" },
+            { text: "思否", link: "https://segmentfault.com/" },
+            { text: "前端乱炖", link: "http://www.html-js.com/" },
+            { text: "云栖社区", link: "https://yq.aliyun.com/" },
+            { text: "W3school", link: "https://www.w3school.com.cn/index.html" },
+            { text: "coderplanets", link: "https://coderplanets.com/home/posts" },
+            { text: "Web前端导航", link: "http://www.alloyteam.com/nav/" },
+            { text: "力扣", link: "https://leetcode-cn.com/" },
+            { text: "", link: "" },
+            { text: "", link: "" },
+            { text: "", link: "" },
+        ]},
+        { text: "好的第三方项目源码", children: [
+            { text: "github", children: [
+                { text: "网易云NodeJS API", link: "https://binaryify.github.io/NeteaseCloudMusicApi/#/" },
+                { text: '前端开发知识结构', link: 'https://github.com/JacksonTian/fks' },
+                { text: '正则表达式', link: 'https://github.com/ziishaned/learn-regex/blob/master/translations/README-cn.md' },
+            ]},
+        ]},
+        { text: "个人博客", children: [
+            { text: "前端", children: [
+                { text: "fouber", link: "https://github.com/fouber/blog" },
+            ]},
+        ]},
         { text: "CSS", children: [
             { text: "CSS速查总表", link: "https://www.tslang.cn/docs/home.html" },
             { text: "Sass", link: "https://www.sass.hk/" },
             { text: "Less", link: "http://lesscss.cn/" },
             { text: "Stylus", link: "https://stylus.bootcss.com/" },
             { text: "兼容性", link: "https://caniuse.com/" },
+            { text: 'CSS 奇技淫巧', link: 'https://github.com/chokcoco/iCSS' }
         ]},
         { text: "Icon", children: [
             { text: "easyicon", link: "https://www.easyicon.net/" },
@@ -91,10 +117,26 @@ export default [
         ]},
     ]},
     { text: "工具", children: [
+        { text: "代码托管平台", children: [
+            { text: "github", link: "https://github.com/" },
+            { text: "gitee", link: "https://gitee.com/" },
+            { text: "coding", link: "https://care526.coding.net/user" },
+        ]},
         { text: "颜色", children: [
             { text: "转换", link: "https://www.sioe.cn/yingyong/yanse-rgb-16/" },
             { text: "图片取色", link: "http://www.jiniannet.com/Page/allcolor" },
 
+        ]},
+        { text: "搜书", children: [
+            { text: "鸠摩", link: "https://www.jiumodiary.com/" },
+            { text: "图灵社区", link: "https://www.ituring.com.cn/book?tab=free" },
+            { text: '好读', link: 'http://haodoo.net/' },
+            { text: '译言图书', link: 'http://book.yeeyan.org/' },
+            { text: '书伴', link: 'https://bookfere.com/' },
+            { text: '千万合集站', link: 'http://www.hejizhan.com/bbs/?page=2234' },
+            { text: '电子书搜索', link: 'https://ebook.chongbuluo.com/' },
+            { text: '免费的编程中文书籍索引', link: 'https://github.com/justjavac/free-programming-books-zh_CN' },
+            { text: '雅书', link: 'https://yabook.blog/' },
         ]},
         { text: "图片", children: [
             { text: "压缩", link: "https://tinypng.com/" },
@@ -130,6 +172,7 @@ export default [
         { text: "邮箱", children: [
             { text: "QQ邮箱", link: "https://mail.qq.com/cgi-bin/frame_html?sid=uJb8VObnzZAyWnAv&r=458f70240b878a97fa5c6de41bdec14e" },
             { text: "临时邮箱", link: "http://24mail.chacuo.net/enus" },
+            { text: "微信企业邮箱", link: "https://exmail.qq.com/" },
         ]},
     ]},
     { text: "Linux", children: [
@@ -193,6 +236,7 @@ export default [
         
         { text: "数据结构", children: [
             { text: "随笔分类 - 数据结构", link: "https://www.cnblogs.com/xiaozhongfeixiang/category/1544341.html" },
+            { text: 'awesome-coding-js', link: 'https://github.com/ConardLi/awesome-coding-js' }
         ]},
     ]},
     { text: "后端", children: [
