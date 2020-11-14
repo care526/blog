@@ -1,5 +1,10 @@
 # 常用的包
 
+## 全局安装的包
+```bash
+npm i -g yarn ts-node @angular/cli @vue/cli create-react-app anywhere
+```
+
 ### 线上依赖
 - good-storage
   更好的使用localStorage和sessionStorage

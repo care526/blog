@@ -90,6 +90,7 @@ npmignore的优先级更高，但是建议使用gitignore
   设置指定的配置项
   ```bash   
   npm config set registry https://registry.npm.taobao.org  # 修改淘宝源 
+  npm config set registry https://registry.npmjs.org/ # 修改官方源
   ```
 #### npmrc文件
 npmrc文件所处位置的优先级：  
