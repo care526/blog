@@ -104,6 +104,7 @@ css重构：样式表性能调优
             .left-img[data-v-34ba45d6] { }
             ```
             缺点：给class多加了一个权重，影响样式的优先级
+                 属性选择器在选择器中的性能是比较差的
         2. react  
             通过css-in-js 将写在js中的css，转为自动生成的随机字符串为className保证唯一
             ```js
@@ -120,8 +121,14 @@ css重构：样式表性能调优
             ```html
             <div className={ style.timePicker}></div>
             ```
+            ```html
+            <div className="67bj12a"></div>
+            ```
+            ```css
+            .67bj12a { }
+            ```
             缺点：占用js运行
-        3. css module
+        3. css module (css-loader)
             通过在改变class的名字来保证唯一性，如 .asd -> .asd_h68ss9hb
         4. 命名空间
             ```css
@@ -200,8 +207,11 @@ css重构：样式表性能调优
             }
             ```
             解释例子：pd_r20: padding-right: 20px;  
-            `<div data-v-pd_r20 data-v-mr_h30>我是文本</div>`  
-            `<div class="pd_r20 mr_h30">我是文本</div>`
+            ```html
+            <div data-v-pd_r20 data-v-mr_h30>我是文本</div>
+            <div class="pd_r20 mr_h30">我是文本</div>
+            ```
+            care-metacss
 
 ## 样式调优   对于浏览器来说
 - 浏览器匹配css的规则  

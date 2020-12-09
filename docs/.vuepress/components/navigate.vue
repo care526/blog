@@ -46,11 +46,64 @@ export default {
       const height = document.getElementById('container').scrollHeight - 60
       const G6 = await import('@antv/g6')
       Promise.resolve().then(() => {
+        // const graph = new G6.TreeGraph({
+        //   container: 'container',
+        //   width,
+        //   height,
+        //   linkCenter: true,
+        //   modes: {
+        //     default: [
+        //       {
+        //         type: 'collapse-expand',
+        //         onChange: function onChange(item, collapsed) {
+        //           const data = item.get('model').data;
+        //           data.collapsed = collapsed;
+        //           return true;
+        //         },
+        //       },
+        //       'drag-canvas',
+        //       'zoom-canvas',
+        //     ],
+        //   },
+        //   defaultNode: {
+        //     size: 32,
+        //     style: {
+        //       fill: '#C6E5FF',
+        //       stroke: '#5B8FF9',
+        //     },
+        //     labelCfg: {
+        //       style: {
+        //         fontSize: 4,
+        //       }
+        //     }
+        //   },
+        //   defaultEdge: {
+        //     style: {
+        //       stroke: '#A3B1BF',
+        //     },
+        //   },
+        //   layout: {
+        //     type: 'dendrogram',
+        //     direction: 'LR',
+        //     nodeSep: 20,
+        //     rankSep: 100,
+        //     radial: true,
+        //   },
+        // });
+
+        // graph.node(
+        //   node => node.id.indexOf('.') === -1 ? node.id : node.id.split('.')[1]
+        // );
+        
+        // graph.data(willShowData);
+        // graph.render();
+        // graph.fitView();
+
+        // --------------------------
         const graph = new G6.TreeGraph({
           container: 'container',
           width,
           height,
-          linkCenter: true,
           modes: {
             default: [
               {
@@ -66,37 +119,70 @@ export default {
             ],
           },
           defaultNode: {
-            size: 32,
-            style: {
-              fill: '#C6E5FF',
-              stroke: '#5B8FF9',
-            },
-            labelCfg: {
-              style: {
-                fontSize: 4,
-              }
-            }
+            size: 26,
+            anchorPoints: [
+              [0, 0.5],
+              [1, 0.5],
+            ],
           },
           defaultEdge: {
-            style: {
-              stroke: '#A3B1BF',
-            },
+            type: 'cubic-horizontal',
           },
           layout: {
-            type: 'dendrogram',
-            direction: 'LR',
-            nodeSep: 20,
-            rankSep: 100,
-            radial: true,
+            type: 'mindmap',
+            direction: 'H',
+            getHeight: () => {
+              return 16;
+            },
+            getWidth: () => {
+              return 16;
+            },
+            getVGap: () => {
+              return 10;
+            },
+            getHGap: () => {
+              return 50;
+            },
           },
         });
 
+        let centerX = 0;
         graph.node(function(node) {
+          const nodeText = node.id.indexOf('.') === -1 ? node.id : node.id.split('.')[1]
           return {
-            label: node.id.indexOf('.') === -1 ? node.id : node.id.split('.')[1]
+            label: nodeText,
+            labelCfg: {
+              position: 
+                node.children && node.children.length > 0
+                  ? 'left'
+                  : node.x > centerX
+                    ? 'right'
+                    : 'left',
+              offset: 5
+            }
           }
-        });
-        
+        }
+          // node => node.id.indexOf('.') === -1 ? node.id : node.id.split('.')[1]
+        //   function (node) {
+        //   if (node.id === 'Modeling Methods') {
+        //     centerX = node.x;
+        //   }
+
+        //   return {
+        //     label: node.id,
+        //     labelCfg: {
+        //       position:
+        //         node.children && node.children.length > 0
+        //           ? 'left'
+        //           : node.x > centerX
+        //             ? 'right'
+        //             : 'left',
+        //       offset: 5,
+        //     },
+        //   };
+        // });
+        );
+        console.log(willShowData)
         graph.data(willShowData);
         graph.render();
         graph.fitView();
@@ -104,7 +190,7 @@ export default {
         graph.on('node:click', (event) => {
           const { item } = event;
           if (item._cfg.id.indexOf('.') === -1) return
-          location.href = location.origin + '/md/' + item._cfg.id.split('.')[0]
+          location.href = location.origin + '/md/' + item._cfg.id.split('.')[0] + '.html'
         });
         this.graph = graph
       });
