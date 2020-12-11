@@ -11,7 +11,7 @@
 
 ## 模版
 组件的命名Vue建议小写中间加“-”， care / care-a
-```
+```js
 export defult {
   name: '',
   mixins: [mixinsA, mixinsB]
@@ -181,11 +181,12 @@ let a = new A({
 ```
 
 ## 父子组件之间的数据和方法传递调用
-```
+```html
 <template>
   <子组件 :bc="abc" ref="care" @change="change"></子组件>
 </template>
-
+```
+```js
 export defult {
   data() {
     return {
@@ -200,14 +201,14 @@ export defult {
 }
 ```
 父元素
-```
+```js
 this.$refs.care.open({
   abc: this.abc,
   success: this.success
 })
 ```
 子元素
-```
+```js
 methods: {
   open(abc ,success = () => {}) {
     this.abc = abc,
