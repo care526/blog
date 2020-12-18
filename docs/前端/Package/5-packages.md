@@ -41,3 +41,15 @@ npm i -g yarn ts-node @angular/cli @vue/cli create-react-app anywhere
   ```bash
   tsc a.ts  # 编译ts文件
   ```
+
+
+
+  ### chalk
+  可以改变终端中输出文字的 颜色 背景 下划线 等  
+  地址：https://github.com/chalk/chalk  
+  ```js
+  // 蓝色，背景红色的下划线文字
+  console.log(
+    chalk.blue.underline.bgRed('Hello world!')
+  );
+  ```
