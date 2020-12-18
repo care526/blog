@@ -46,6 +46,7 @@
 
 <script>
 import allLabel from './json/allLabel.js'
+
 export default {
     data() {
         return {
