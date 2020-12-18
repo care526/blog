@@ -5,6 +5,7 @@ CSS只是一行行单纯的属性描述，写起来相当的费事，而且大�
 
 ## 解决的问题
 用一种专门的编程语言，为CSS增加了一些编程的特性，将CSS作为目标生成文件  
+提供了一些新的功能或功能增强  
 - 变量
 - 嵌套
 - 继承
@@ -12,7 +13,7 @@ CSS只是一行行单纯的属性描述，写起来相当的费事，而且大�
 - 函数
 - 导入
 - 注释
-- 判断，流程控制 
+- 流程控制 
 
 ## 现有的常用预处理器
 1. sass    .sass .scss
@@ -44,7 +45,7 @@ $width: 5em !global;  // 全局变量
    有引号字符串与无引号字符串
    "foo"  'bar'  baz
 3. 颜色
-   blue  #04a3f9  rgba(255,0,0,0.5)
+   blue  #04a3f9  rgba(255,0,0,0.5) hls
 4. 布尔型
    true  false
 5. 空值
@@ -67,16 +68,19 @@ $width: 5em !global;  // 全局变量
 .a {
   .b {}
 }
+.a .b {}
 ```
 ```css
 .a {
   &:hover {}
 }
+.a:hover {}
 ```
 ```css
 .a {
   &-b {}
 }
+.a-b {}
 ```
 ```css
 .a {
@@ -96,6 +100,13 @@ $width: 5em !global;  // 全局变量
 }
 .seriousError {
   @extend .error;
+  border-width: 3px;
+}
+```
+```css
+.seriousError {
+  border: 1px #f00;
+  background-color: #fdd;
   border-width: 3px;
 }
 ```
@@ -127,8 +138,6 @@ $width: 5em !global;  // 全局变量
   padding: 4px;
   margin-top: 10px; }
 ```
-mixin和extend 使用场景的区别    
-mixin更加的灵活可以传参数，动态变化  
 ```scss
 @mixin sexy-border($color, $width) {
   border: {
@@ -139,21 +148,25 @@ mixin更加的灵活可以传参数，动态变化
 }
 p { @include sexy-border(blue, 1in); }
 ```
+mixin和extend 使用场景的区别    
+mixin更加的灵活可以传参数，动态变化  
 
 ### 函数
 - 自带的函数
   hsl(210deg 100% 20%);  
 - 自定义的函数
-    ```
-    @function function-name($args) { 
-        @return value-to-be-returned;
-    }
-    ```
+  ```
+  @function function-name($args) { 
+      @return value-to-be-returned;
+  }
+  ```
 
 ### 导入
 导入sass文件
 css有一个特别不常用的特性，即@import规则，它允许在一个css文件中导入其他css文件。然而，后果是只有执行到@import时，浏览器才会去下载其他css文件，这导致页面加载起来特别慢
-sass也有一个@import规则，但不同的是，sass的@import规则在生成css文件时就把相关文件导入进来。这意味着所有相关的样式被归纳到了同一个css文件中，而无需发起额外的下载请求。另外，所有在被导入文件中定义的变量和混合器（参见2.5节）均可在导入文件中使用。
+
+sass也有一个@import规则，但不同的是，sass的@import规则在生成css文件时就把相关文件导入进来。这意味着所有相关的样式被归纳到了同一个css文件中，而无需发起额外的下载请求。
+另外，所有在被导入文件中定义的变量和混合器（参见2.5节）均可在导入文件中使用。
 使用sass的@import规则并不需要指明被导入文件的全名。你可以省略.sass或.scss文件后缀
 
 局部文件
@@ -163,15 +176,20 @@ _care.sass
 
 反复声明的变量，最后一次的声明会覆盖掉前面的声明
 
-如果这个变量被声明赋值了，那就用它声明的值，否则就用这个默认值
-$fancybox-width: 400px !default;
-
-import也可在{}规则内使用，但是导入的内容只在{}内部生效，同时会连上外面的父属性
+@import也可在{}规则内使用，但是导入的内容只在{}内部生效，同时会连上外面的父属性
+```scss
+.a {
+  @import './b'
+  .asd {
+    // xxxx
+  }
+}
+```
 
 原生的CSS导入
-1.被导入文件的名字以.css结尾；
-2、被导入文件的名字是一个URL地址（比如http://www.sass.hk/css/css.css），由此可用谷歌字体API提供的相应服务；
-3、被导入文件的名字是CSS的url()值。
+1. 被导入文件的名字以.css结尾；
+2. 被导入文件的名字是一个URL地址（比如http://www.sass.hk/css/css.css），由此可用谷歌字体API提供的相应服务；
+3. 被导入文件的名字是CSS的url()值。
 以上三种方式，sass会认为是原生CSS的import引用
 
 ### 注释
@@ -210,18 +228,21 @@ for
 ```scss
 @for $num from 0 through 100 {
 	.w_#{$num} {
-        width: #{$num}px;
-    }
+    width: #{$num}px;
+  }
 }
 ```
 each  
 ```scss
 @each $num in 70, 80, 90, 100, 110, 120 {
-    .fs_#{$num} {
-        font-size: #{$num}px;
-    }
+  .fs_#{$num} {
+    font-size: #{$num}px;
+  }
 }
 ```
 
 
-<!-- ## github css代码组织 及 皮肤变化方案    -->
+## github css代码组织 及 皮肤变化方案   
+通过定义两套css变量
+改变根目录的自定义属性 data-color-mode="dark" | "light"
+来实现变更的目的
