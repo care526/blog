@@ -196,6 +196,7 @@ export default [
         ]},
         { text: "视频网站", children: [
             { text: 'B站', link: 'http://www.bilibili.com/' },
+            { text: '腾讯视频', link: 'https://v.qq.com/' },
             { text: '芒果TV', link: 'https://www.mgtv.com/' },
             { text: 'YouTube', link: 'https://www.youtube.com/' },
             { text: "人人美剧", link: "https://www.meiju22.com/" },
