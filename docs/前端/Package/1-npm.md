@@ -70,6 +70,13 @@ npm unstall XXX --save  # 移除XXX包依赖
   更新npm包，必须更改版本号，否者会报错(建议遵循Semver<语义化版本号>规范)
 .npmignore 和 .gitignore 可以排除一些文件不上传  
 npmignore的优先级更高，但是建议使用gitignore  
+```bash
+# 推送 发布范围内的公共软件包 组织的
+npm publish --access public
+```
+包的地址  
+https://npmjs.com/package/xxxxx  
+
 #### npm模块目录
 - bin：存放可执行二进制文件的目录
 - lib：存放js代码的目录

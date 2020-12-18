@@ -227,6 +227,7 @@ export default [
         { text: "前端", children: [
             { text: "政采云", link: "https://www.zoo.team/" },
             { text: "网易云", link: "https://zhuanlan.zhihu.com/musicfe" },
+            { text: "华为DevUI团队", link: "https://zhuanlan.zhihu.com/devui" },
         ]},
     ]},
     { text: "计算机基础", children: [
