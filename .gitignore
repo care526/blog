@@ -4,4 +4,4 @@ docs/.vuepress/dist
 /dist
 /docsWillBuild
 
-./DS_Store
+.DS_Store
