@@ -67,9 +67,14 @@ replacement：一个要替换的文本string，或者为一个函数（返回一
 $1,$2,.....$99 匹配1~99个regexp中的圆括号子表达式中的文本  
 $& 匹配regexp的子串   
 $$ 美元符号  
-search(regexp) <返回一个数字，不改变原字符串>  
+
+### search(regexp) <返回一个数字，不改变原字符串>  
 regexp如果不是正则，会先传入正则RegExp()构造函数，返回一个RegExp对象  
 返回string中第一个匹配的regexp的子串开始的位置，没有匹配的返回-1（该方法不执行全局匹配，会忽略g标志，也会忽略regxexp的lastIndex属性，总是从string的开始位置开始搜索）  
+```js
+'123'.search(2);  // 1
+'321123'.search(/1/g);  // 2 
+```
 
 
 ### slice(start,end) <返回一个字符串，不改变原字符串>  

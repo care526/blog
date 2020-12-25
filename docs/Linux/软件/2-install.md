@@ -95,3 +95,10 @@ ctrl + `(反引号)   打开终端
 
 5. 初始化root密码
 　　```set password for root@localhost = password('123');```
+
+
+## mac
+- brew
+```bash
+/bin/zsh -c "$(curl -fsSL https://gitee.com/cunkai/HomebrewCN/raw/master/Homebrew.sh)"
+```

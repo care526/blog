@@ -88,6 +88,15 @@ propname：对象指定属性名的字符串
 ps：那些内置对象的预定义的属性（如方法）通常不可枚举，由JS代码添加的属性是可枚举的  
 没有可用于测试继承属性的可枚举型的直接方法  
 
+### Object.setPrototypeOf(obj, prototype | null) <设置obj对象的原型对象>
+```js
+const a = {};
+const A = { a: 'a' };
+// 将A设置为a的原型对象
+Object.setPrototypeOf(a, A);
+console.log(a.a)
+```
+
 ## 检测是否是对象  
 ```
 obj instanceof Array  // 数组的构造函数

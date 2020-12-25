@@ -30,6 +30,13 @@ npm unstall XXX --save  # 移除XXX包依赖
 ### npm update
 更新当前包版本
 
+### npm ls
+查看安装的包
+```bash
+# 查看全局安装的包 
+npm ls -g --depth 0
+```
+
 ### npm run
 会在package.json中去寻找scripts字段，去执行对应的命令
 如：npm run serve  /  npm run build

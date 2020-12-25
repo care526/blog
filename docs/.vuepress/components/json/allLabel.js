@@ -32,7 +32,7 @@ export default [
             { text: "coderplanets", link: "https://coderplanets.com/home/posts" },
             { text: "Web前端导航", link: "http://www.alloyteam.com/nav/" },
             { text: "力扣", link: "https://leetcode-cn.com/" },
-            { text: "", link: "" },
+            { text: "HelloGitHub", link: "https://hellogithub.com/" },
             { text: "", link: "" },
             { text: "", link: "" },
         ]},
@@ -161,6 +161,7 @@ export default [
             
         ]},
         { text: "翻译", children: [
+            { text: "有道翻译", link: "http://fanyi.youdao.com/" },
             { text: "谷歌翻译", link: "https://translate.google.cn/" },
             { text: "百度翻译", link: "https://fanyi.baidu.com/" },
         ]},

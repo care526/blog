@@ -1,5 +1,8 @@
 # Git
 
+## Git相关的软件
+- lazygit
+
 ## Git配置
 ssh-keygen -t rsa -C "71073534@qq.com"　生成SSH Key    
 id_rsa是私匙 id_rsa.pub是公匙（公匙和私匙的作用，属于密码学，百度！）   
