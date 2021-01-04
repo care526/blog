@@ -102,3 +102,12 @@ ctrl + `(反引号)   打开终端
 ```bash
 /bin/zsh -c "$(curl -fsSL https://gitee.com/cunkai/HomebrewCN/raw/master/Homebrew.sh)"
 ```
+
+## Windows
+- 激活系统  
+  ```bash
+  slmgr /skms kms.xspace.in
+  slmgr /ato
+  slmgr.vbs
+  slmgr.vbs -xpr
+  ```

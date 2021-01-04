@@ -8,7 +8,11 @@
                     v-model="searchVal"
                     @keydown.enter="search"
                 >
-                <button class="search-btn" @click="search">百度搜索</button>
+                <!-- <button class="search-btn" @click="search">百度搜索</button> -->
+                <select class="search-btn" v-model="iptType">
+                    <option value ="baidu">百度</option>
+                    <option value ="fanyi">翻译</option>
+                </select>
             </div>
         </div>
         <div class="container">
@@ -50,6 +54,7 @@ import allLabel from './json/allLabel.js'
 export default {
     data() {
         return {
+            iptType: 'baidu',
             searchVal: '',
             data: allLabel,
             current: {
@@ -62,7 +67,12 @@ export default {
     methods: {
         search() {
             if (!this.searchVal) return
-            window.open('https://www.baidu.com/s?ie=utf-8&wd=' + this.searchVal)
+            window.open(
+                {
+                    baidu: `https://www.baidu.com/s?ie=utf-8&wd=${this.searchVal}`,
+                    fanyi: `https://translate.google.cn/?sl=zh-CN&tl=en&text=${this.searchVal}&op=translate`
+                }[this.iptType]
+            )
         },
         currentCategoryClick(parentIndex, childIndex) {
             this.current = { parentIndex, childIndex }
@@ -88,8 +98,8 @@ export default {
     font-size: 14px;
     height: calc(100vh - 60px);
     margin-top: 0 !important;
-    padding: 24px 200px;
-    background: #efeeee;
+    padding-top: 24px;
+    background: rgb(248, 246, 243);
     z-index: 11;
 }
 .search {
@@ -97,7 +107,6 @@ export default {
     align-items: center;
     justify-content: center;
     height: 80px;
-    margin-bottom: 24px;
 }
 .ipt {
     position: relative;
@@ -124,20 +133,21 @@ export default {
     outline: none;
 }
 .container {
-    display: flex;
-    height: calc(100% - 104px);
+    position: relative;
+    height: calc(100% - 78px);
 }
 .p-categorys {
     flex: 1;
     height: 100%;
-    padding: 0 24px;
+    padding: 30px 400px 0 110px;
     overflow-y: scroll;
 }
 .p-category {
     padding: 10px 0;
     border-radius: 10px;
-    margin-bottom: 24px;
-    box-shadow: 18px 18px 30px rgba(0,0,0,0.1), -18px -18px 30px rgba(255,255,255,1);
+    margin-bottom: 50px;
+    box-shadow:  20px 20px 60px #bebebe,
+             -20px -20px 60px #ffffff;
 }
 .p-category-name {
     text-align: center;
@@ -159,9 +169,14 @@ export default {
     cursor: pointer;
 }
 .my-links {
-    padding: 24px;
+    position: absolute;
+    top: 30px;
+    right: 80px;
     width: 250px;
-    background: rosybrown;
+    height: 100%;
+    padding: 24px;
+    box-shadow:  20px 20px 60px #bebebe,
+             -20px -20px 60px #ffffff;
     border-radius: 10px;
 }
 .tag {

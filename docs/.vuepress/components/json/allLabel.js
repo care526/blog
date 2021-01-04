@@ -121,6 +121,7 @@ export default [
             { text: "github", link: "https://github.com/" },
             { text: "gitee", link: "https://gitee.com/" },
             { text: "coding", link: "https://care526.coding.net/user" },
+            { text: "vercel", link: "https://vercel.com/dashboard" },
         ]},
         { text: "颜色", children: [
             { text: "转换", link: "https://www.sioe.cn/yingyong/yanse-rgb-16/" },
@@ -176,6 +177,13 @@ export default [
             { text: "微信企业邮箱", link: "https://exmail.qq.com/" },
         ]},
     ]},
+    { text: "优秀的技术团队", children: [
+        { text: "前端", children: [
+            { text: "政采云", link: "https://www.zoo.team/" },
+            { text: "网易云", link: "https://zhuanlan.zhihu.com/musicfe" },
+            { text: "华为DevUI团队", link: "https://zhuanlan.zhihu.com/devui" },
+        ]},
+    ]},
     { text: "Linux", children: [
         { text: "Linux", children: [
             { text: "Linux中国", link: "https://linux.cn/" },
@@ -223,13 +231,6 @@ export default [
         ]},
         { text: "Linux", children: [
             { text: "deepin", link: "https://www.deepin.org/zh/" },
-        ]},
-    ]},
-    { text: "优秀的技术团队", children: [
-        { text: "前端", children: [
-            { text: "政采云", link: "https://www.zoo.team/" },
-            { text: "网易云", link: "https://zhuanlan.zhihu.com/musicfe" },
-            { text: "华为DevUI团队", link: "https://zhuanlan.zhihu.com/devui" },
         ]},
     ]},
     { text: "计算机基础", children: [
