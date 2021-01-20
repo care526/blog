@@ -3,6 +3,20 @@
 边框　https://www.cnblogs.com/chris-oil/p/5625437.html(nodejs中间件)
 
 
+## box-shadow
+box-shadow: offset-x offset-y blur spread color outset(默认)/inset;  
+offset-x: X轴偏移量(正负都可)  
+offset-y: Y轴偏移量(正负都可)  
+blur    : 阴影模糊半径(只可正)  
+spread  : 阴影扩展(正负都可)  
+color   : 阴影颜色  
+inset   : 投影方式(可选)  
+```css
+box-shadow: 0 0 5px 6px #000;
+box-shadow: 0 0 5px 6px #000 inset;
+box-shadow: 0 0 5px 6px #000, 10px -6px 15px 6px #000;
+```
+多层投影第一个阴影在顶层  
 
 
 ## border
