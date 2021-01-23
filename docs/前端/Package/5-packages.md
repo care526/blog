@@ -53,3 +53,5 @@ npm i -g yarn ts-node @angular/cli @vue/cli create-react-app anywhere
   将本地js，打包为三个平台的文件，没有node环境也可以运行
 - envinfo  
   获取系统信息
+- nodemon
+  监听文件变更，重新运行  
