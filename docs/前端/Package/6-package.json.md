@@ -12,6 +12,8 @@
 
   "homepage":
 
+  "private": true,  // 私有属性，npm将会拒绝发布他，防止意外发布私有储存库
+
   "bugs":
 
   "license": "BSD-3-Clause",  // 包的通用许可证

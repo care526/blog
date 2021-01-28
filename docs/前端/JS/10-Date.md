@@ -16,6 +16,19 @@ Date.now()  // 1607155871860
 +new Date()  // 1607155871860
 ```
 
+## Date.parse()
+获取传入时间的时间戳
+```js
+Date.parse(new Date())
+Date.parse("2020-02-10")  // 在ios上对于"-"连接的时间无效，返回NaN
+```
+
+## xxx.valueOf()
+转换日期类型为时间戳
+```js
+(new Date()).valueOf()
+```
+
 # 获取方法
 ## getTime()
 返回 1970 年 1 月 1 日至今的毫秒数  
