@@ -33,8 +33,6 @@ export default [
             { text: "Web前端导航", link: "http://www.alloyteam.com/nav/" },
             { text: "力扣", link: "https://leetcode-cn.com/" },
             { text: "HelloGitHub", link: "https://hellogithub.com/" },
-            { text: "", link: "" },
-            { text: "", link: "" },
         ]},
         { text: "好的第三方项目源码", children: [
             { text: "github", children: [
@@ -71,6 +69,9 @@ export default [
         { text: "TS", children: [
             { text: "TS文档", link: "https://www.tslang.cn/docs/home.html" },
             { text: "Handbook", link: "https://zhongsp.gitbooks.io/typescript-handbook/content/doc/handbook/Generics.html" },
+        ]},
+        { text: "React", children: [
+            { text: "Create React App中文文档", link: "https://create-react-app.bootcss.com/" },
         ]},
         { text: "Vue", children: [
             { text: "VueJs", link: "https://cn.vuejs.org/v2/api/" },
@@ -193,15 +194,13 @@ export default [
     ]},
     { text: "娱乐", children: [
         { text: "直播", children: [
-            { text: '斗鱼', link: 'https://www.douyu.com' },
-            { text: '虎牙', link: 'https://www.huya.com' },
-            { text: 'twitch', link: 'https://www.twitch.tv/' },
-            { text: 'afreecatv', link: 'http://www.afreecatv.com/?hash=game' },
+            { text: '斗鱼', link: 'https://www.douyu.com/g_LOL' },
+            { text: '虎牙', link: 'https://www.huya.com/g/lol' },
         ]},
         { text: "主播", children: [
             { text: 'PDD', link: 'https://www.douyu.com/101' },
             { text: '包子', link: 'https://www.huya.com/525252' },
-            { text: '宣告', link: 'https://www.kingkong.com.tw/2347773' },
+            { text: '姿态', link: 'https://www.huya.com/333003' },
         ]},
         { text: "视频网站", children: [
             { text: 'B站', link: 'http://www.bilibili.com/' },
