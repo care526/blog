@@ -1,3 +1,5 @@
+# tsconfig.json
+```json
 {
     "extends": "./configs/base",
 
@@ -19,3 +21,4 @@
         "**/*.spec.ts"
     ],
 }
+```
