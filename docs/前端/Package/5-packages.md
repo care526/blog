@@ -41,6 +41,8 @@ npm i -g yarn ts-node @angular/cli @vue/cli create-react-app anywhere
   用于封装get请求，输入对象转化为字符串拼接在url的后面
 - better-scroll
   移动端的滚动库
+- validator.js
+  数据格式校验的库
 
 ## node相关的
 - fs-extra  
