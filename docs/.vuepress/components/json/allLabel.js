@@ -33,6 +33,7 @@ export default [
             { text: "Web前端导航", link: "http://www.alloyteam.com/nav/" },
             { text: "力扣", link: "https://leetcode-cn.com/" },
             { text: "HelloGitHub", link: "https://hellogithub.com/" },
+            { text: "编程导航", link: "https://www.code-nav.cn/recommend" },
         ]},
         { text: "好的第三方项目源码", children: [
             { text: "github", children: [
