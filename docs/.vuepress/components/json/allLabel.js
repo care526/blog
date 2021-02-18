@@ -3,6 +3,7 @@ export default [
         { text: "文档", children: [
             { text: "支付对接", link: "https://www.lcsw.cn/doc/index.html" },
             { text: "分账对接", link: "https://www.lcsw.cn/doc/internal/fenzhang.html" },
+            { text: "客户端线上问题处理记录", link: "https://docs.qq.com/sheet/DTVBNVU9RQ1BmZENZ?groupUin=EqnVZneDn2FTb5%252Fx5fOyfQ%253D%253D&_t=1612593235514&tab=BB08J2" },
         ]},
         { text: "测试环境", children: [
             { text: "商户管理后台", link: "http://test.lcsw.cn:8045/lcsw_saobei/lock_screen.jsp" },
@@ -184,6 +185,7 @@ export default [
             { text: "政采云", link: "https://www.zoo.team/" },
             { text: "网易云", link: "https://zhuanlan.zhihu.com/musicfe" },
             { text: "华为DevUI团队", link: "https://zhuanlan.zhihu.com/devui" },
+            { text: "字节跳动", link: "https://www.zhihu.com/org/zi-jie-qian-duan" },
         ]},
     ]},
     { text: "Linux", children: [
