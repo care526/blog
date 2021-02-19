@@ -183,6 +183,7 @@ export default [
             { text: "政采云", link: "https://www.zoo.team/" },
             { text: "网易云", link: "https://zhuanlan.zhihu.com/musicfe" },
             { text: "华为DevUI团队", link: "https://zhuanlan.zhihu.com/devui" },
+            { text: "360齐舞团", link: "https://weekly.75.team" },
         ]},
     ]},
     { text: "Linux", children: [
