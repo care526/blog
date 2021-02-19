@@ -18,12 +18,14 @@ git init　　初始化版本库
 build/　　  #忽略build目录下的所有文件  
 doc/*.txt   #忽略doc目录下的所有以 .txt 结尾的所有文件  
 
-当某个文件已经添加到git了，中途又添加到忽略文件中，以下代码让忽略文件重新生效
-git rm -r –-cached .
-git add .
-git commit -m "Refresh adding .gitignore file"
+当某个文件已经添加到git了，中途又添加到忽略文件中，以下代码让忽略文件重新生效  
+```bash
+git rm -r –-cached .  
+git add .  
+git commit -m "Refresh adding .gitignore file"  
 
 git rm -rf --cache 文件/文件夹
+```
 
 ## 远程仓库
 git remote add origin git@github.com:care526/learnGit.git　  
@@ -81,8 +83,9 @@ git push --set-upstream origin dev　　在远程库创建分支并推送
 如果当前分支和主分支都提交的修改，但是修改的内容是不同的，我们在合并分支的时候就会发生冲突（相同文件的内容冲突），我们要手动修改两个分支为相同，然后才能合并分支，再删除   
 
 修改某个分支的bug的时候，先在当前分支分一个分支，在分好的分支上进行修改，修改完了合并分支，再删除分出来的分支。
-开发新功能的时候，也是先分一个功能分支，开发实验结束后再合并，删除，流程同bug分支   
+开发新功能的时候，也是先分一个功能分支，开发实验结束后再合并，删除，流程同bug分支    
 
+git 不允许提交空目录。 但是业界有一个hack的方式。 就是在你想要提交的空目录新建一个文件隐藏文件(以.开头)，这样就不是空目录了。 而这个文件名我们一般叫做 .gitkeep  
   
 git push origin master　　推送主分支到远程库   
 git push origin dev　　推送dev分支到远程库   
@@ -106,18 +109,7 @@ git branch --set-upstream dev origin/dev　　建立远程库分支与本地分�
   只要本地的域名配置为和代理（测试服/正式服）的域名一致，那么本地就可以访问代理的接口了
   hosts不要忘记配置了
 
-### 开发阶段
-
-2. 提交代码
-   - 必须要有一个提交的文字模版，规范，如果格式不对，提交不上去
-   - 阶段性提交 最终提交
-    ```
-    <类型>[可选的作用域]: <描述>
-    [可选的正文]
-    [可选的脚注]
-    ```
-
-# git 流程规范
+## git 流程规范
 ![image](./images/gitfenzhi.png)   
 
 是以一个git分支的生命周期来规范
