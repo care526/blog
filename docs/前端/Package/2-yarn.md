@@ -1,9 +1,18 @@
 # yarn
 
-### 设置镜像源
+## 镜像源
+### 查看
 ```bash
-yarn config set registry https://registry.npm.taobao.org --global
-yarn config set disturl https://npm.taobao.org/dist --global
+yarn config get registry
+```
+### 设置
+```bash
+# 临时修改yarn源 
+yarn save package_name --registry https://registry.npm.taobao.org/
+# 淘宝
+yarn config set registry https://registry.npm.taobao.org/
+# 官方
+yarn config set registry https://registry.yarnpkg.com
 ```
 
 ### 初始化一个新项目
