@@ -37,7 +37,7 @@ promise.then(res => {
 ## Promise.resolve
 将现有对象转化为一个直接返回resolve的Promise对象  
 
-## Promise.resolve
+## Promise.reject
 将现有对象转化为一个直接返回reject的Promise对象  
 
 ## 问题
