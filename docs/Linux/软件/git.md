@@ -178,3 +178,7 @@ git branch --set-upstream dev origin/dev　　建立远程库分支与本地分�
      ps：即使是之前撤销的分支重新合并也加1，始终比上一个版本高即可  
 - master合并代码的时候
 - 删除对应开发分支的远程分支
+
+## github
+### 加速服务
+- https://hub.fastgit.org
