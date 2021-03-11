@@ -16,6 +16,7 @@ export default [
             { text: "tapd", link: "https://www.tapd.cn/company/participant_projects?from=left_tree2" },
             { text: '文件管理', link: 'http://test.lcsw.cn:8196/kod/index.php?user/login' },
             { text: '蓝湖', link: 'https://lanhuapp.com/web/#/item?fid=all&commonly=all'},
+            { text: 'Jenkins', link: 'http://192.168.0.243:8080' },
         ]},
         { text: "近期使用", children: [
             { text: '中台接口文档-25', 'link': 'http://192.168.1.25:8080/lcsw/swagger-ui.html' },
