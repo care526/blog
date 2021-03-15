@@ -1,6 +1,7 @@
 <template>
     <div class="my-page">
         <div class="search">
+            <el-button type="primary">主要按钮</el-button>
             <div class="ipt">
                 <input
                     type="text"
