@@ -181,7 +181,7 @@ export default [
             { text: "微信企业邮箱", link: "https://exmail.qq.com/" },
         ]},
     ]},
-    { text: "优秀的技术团队", children: [
+    { text: "技术团队", children: [
         { text: "前端", children: [
             { text: "政采云", link: "https://www.zoo.team/" },
             { text: "网易云", link: "https://zhuanlan.zhihu.com/musicfe" },

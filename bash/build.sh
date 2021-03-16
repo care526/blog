@@ -22,4 +22,4 @@ node ./bash/rename.js
 cp $WillBuildDir/.vuepress/data.json docs/.vuepress/data.json
 
 # # 打包
-npx vuepress $1 $WillBuildDir
+pnpx vuepress $1 $WillBuildDir

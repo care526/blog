@@ -4,9 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "npx vuepress dev docs",
+    "dev": "pnpx vuepress dev docs",
     "dev:will": "./bash/build.sh dev",
-    "build": "npx vuepress build docs",
+    "build": "pnpx vuepress build docs",
     "build:will": "./bash/build.sh build",
     "push": "./bash/push.sh",
     "pushGitee": "./bash/pushGitee.sh",
@@ -25,9 +25,11 @@
   "homepage": "https://github.com/care526/blog#readme",
   "dependencies": {
     "@antv/g6": "^3.8.1",
+    "@carelj/metacss": "^1.0.2",
     "@vuepress/plugin-active-header-links": "^1.4.1",
     "@vuepress/plugin-back-to-top": "^1.5.3",
     "@vuepress/plugin-nprogress": "^1.5.4",
+    "async-validator": "1.11.5",
     "chokidar": "^3.4.0",
     "element-ui": "^2.15.1",
     "sass-loader": "^10.0.3",

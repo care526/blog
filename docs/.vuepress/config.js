@@ -4,7 +4,7 @@ const plugins = require('./plugins')
 
 module.exports = {
     title: "care's blog",
-    description: 'care的知识笔记',
+    description: 'the meaning of my existence',
 
     lineNumbers: true,
 
