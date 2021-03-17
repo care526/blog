@@ -1,4 +1,4 @@
-module.exports = { text: "前端", children: [
+export default { text: "前端", children: [
     { text: "社区", children: [
         { text: "掘金", link: "https://juejin.im/" },
         { text: "思否", link: "https://segmentfault.com/" },
