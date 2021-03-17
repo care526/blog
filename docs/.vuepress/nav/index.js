@@ -8,8 +8,7 @@
 // ]
 
 const NavConfigs = [
-    { text: 'Home', link: '/' },
-    { text: 'MyPage', link: '/customizePages/home' },
+    { text: '网站导航', link: '/customizePages/guide' },
     { text: '前端', items: [
         { text: '基础', items: [
             { text: 'HTML', link: '/customizePages/navigate#前端,HTML' },
@@ -19,7 +18,6 @@ const NavConfigs = [
             { text: 'TS', link: '/customizePages/navigate#前端,TS' },
             { text: 'Node', link: '/customizePages/navigate#前端,Node' },
             { text: 'Package', link: '/customizePages/navigate#前端,Package' },
-            { text: 'Vscode', link: '/customizePages/navigate#前端,Vscode' },
         ] },
         { text: '框架', items: [
             { text: 'React', link: '/customizePages/navigate#前端,React' },
@@ -32,6 +30,7 @@ const NavConfigs = [
             { text: '优化', link: '/customizePages/navigate#前端,优化' },
         ] },
         { text: '其他', items: [
+            { text: 'Vscode', link: '/customizePages/navigate#前端,Vscode' },
             { text: '浏览器', link: '/customizePages/navigate#前端,浏览器' },
             { text: '用户体验', link: '/customizePages/navigate#前端,用户体验' },
             { text: 'HTTP', link: '/customizePages/navigate#前端,HTTP' },
@@ -45,12 +44,20 @@ const NavConfigs = [
         { text: 'Python', link: '/customizePages/navigate#后端,Python' },
         { text: 'Rust', link: '/customizePages/navigate#后端,Rust' },
     ] },
-    { text: '编程思想', link: '/customizePages/navigate#编程思想' },
     { text: 'Linux', items: [
         { text: '所有', link: '/customizePages/navigate#Linux,所有' },
         { text: '软件', link: '/customizePages/navigate#Linux,软件' },
         { text: 'Shell', link: '/customizePages/navigate#Linux,Shell' },
     ] },
+    { text: '计算机基础', items: [
+        { text: '数据结构', link: 'xxxx' },
+        { text: '算法', link: 'xxxx' },
+        { text: '计算机网络', link: 'xxxx' },
+        { text: '编程思想', link: '/customizePages/navigate#编程思想' },
+        { text: '编码规范', link: 'xxxx' },
+    ] },
+    { text: 'About Me', link: '/customizePages/aboutMe' },
+    { text: 'GitHub', link: 'https://github.com/care526' },
 
     // ...PartConfigs.map(Utils.transfrom)
 ]
