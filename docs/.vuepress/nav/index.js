@@ -1,12 +1,3 @@
-// const Utils = require('./utilsForConfig')
-
-// const PartConfigs = [
-//     require('./modules/a.qianduan.config'),
-//     require('./modules/b.houduan.config'),
-//     require('./modules/c.computer.base.config'),
-//     require('./modules/d.linux.config')
-// ]
-
 const NavConfigs = [
     { text: '网站导航', link: '/customizePages/guide' },
     { text: '前端', items: [
@@ -33,7 +24,7 @@ const NavConfigs = [
             { text: 'Vscode', link: '/customizePages/navigate#前端,Vscode' },
             { text: '浏览器', link: '/customizePages/navigate#前端,浏览器' },
             { text: '用户体验', link: '/customizePages/navigate#前端,用户体验' },
-            { text: 'HTTP', link: '/customizePages/navigate#前端,HTTP' },
+            { text: '源码', link: '/customizePages/navigate#前端,源码' },
         ] }
     ] },
     { text: '后端', items: [
@@ -52,14 +43,14 @@ const NavConfigs = [
     { text: '计算机基础', items: [
         { text: '数据结构', link: 'xxxx' },
         { text: '算法', link: 'xxxx' },
-        { text: '计算机网络', link: 'xxxx' },
+        { text: '计算机网络', items: [
+            { text: 'HTTP', link: '/customizePages/navigate#计算机基础,计算机网络,HTTP' },
+        ] },
         { text: '编程思想', link: '/customizePages/navigate#编程思想' },
         { text: '编码规范', link: 'xxxx' },
     ] },
     { text: 'About Me', link: '/customizePages/aboutMe' },
     { text: 'GitHub', link: 'https://github.com/care526' },
-
-    // ...PartConfigs.map(Utils.transfrom)
 ]
 
 module.exports = NavConfigs
