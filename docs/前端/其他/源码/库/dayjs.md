@@ -5,13 +5,13 @@ JS日期时间处理库
 ```js
 // 对外导出的核心对象(函数的本质是对象)
 const dayjs = function(date, c) {
-    const cfg = typeof c === 'object' ? c : {}
-    return new Dayjs(cfg)
+  const cfg = typeof c === 'object' ? c : {}
+  return new Dayjs(cfg)
 }
 
 // 核心类
 class Dayjs {
-    constructor(cfg) {}
+  constructor(cfg) {}
 }
 
 // 指定dayjs的原型为Dayjs的原型
