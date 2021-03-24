@@ -10,6 +10,11 @@ export default {
             ]
         },
         {
+            text: "Rust", children: [
+                { text: "Rust高级编程", link: "https://learnku.com/docs/nomicon/2018" },
+            ]
+        },
+        {
             text: "数据库", children: [
                 { text: "Mysql官方文档", link: "https://dev.mysql.com/doc/refman/8.0/en/entering-queries.html" },
             ]

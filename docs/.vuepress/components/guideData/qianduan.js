@@ -12,6 +12,7 @@ export default {
                 { text: "力扣", link: "https://leetcode-cn.com/" },
                 { text: "HelloGitHub", link: "https://hellogithub.com/" },
                 { text: "编程导航", link: "https://www.code-nav.cn/recommend" },
+                { text: "learnku", link: "https://learnku.com/" }
             ]
         },
         {
