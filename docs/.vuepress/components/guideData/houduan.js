@@ -17,6 +17,7 @@ export default {
         {
             text: "数据库", children: [
                 { text: "Mysql官方文档", link: "https://dev.mysql.com/doc/refman/8.0/en/entering-queries.html" },
+                { text: "TypeORM 中文文档 - find", link: "https://typeorm.biunav.com/zh/find-options.html" },
             ]
         },
         {
