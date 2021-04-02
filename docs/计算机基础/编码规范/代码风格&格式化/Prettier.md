@@ -16,6 +16,7 @@
   "jsxBracketSameLine": false,          // 闭合标签同一行还是另起一行
   "arrowParens": "<always|avoid>",      // 箭头函数的参数两边是否需要括号(始终需要|需要的时候使用)
   "endOfLine": "auto",                  // 行末尾标识，一般用auto，自动识别文件第一行换行标识
+  "htmlWhitespaceSensitivity": "ignore",// 方式结束标签>跑到下一行
 }
 ```
 ### 支持的类型

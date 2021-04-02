@@ -93,6 +93,9 @@ git checkout -b dev origin/dev　　拉取远程库的分支到本地并切换
 git pull　　抓取远程库的新提交到当前工作区
 git fetch   抓取远程库的新提交到本地库  
 git branch --set-upstream dev origin/dev　　建立远程库分支与本地分支的关联   
+git branch -d xxx    删除本地xxx分支(可能会出现警告)  
+git branch -d xxx    删除本地xxx分支(直接删除，不管有无警告)  
+git push origin --delete xxx    删除远程分支  
 当其他人对你要用的分支做了提交，远程库的分支领先于你的本地分支，要先拉取远程库的分支与本地合并，再做开发。如果拉取的分支和当前有冲突，要先解决冲突。 
 
 合并分支的时候，发生冲突，解决完冲突后，已经合并，只需要commit一下就ok了
