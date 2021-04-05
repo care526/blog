@@ -1,6 +1,11 @@
 export default {
     text: "工具", children: [
         {
+            text: "导航网站", children: [
+                { text: "艾特网", link: "https://iiter.cn/"},
+            ]
+        },
+        {
             text: "代码托管平台", children: [
                 { text: "github", link: "https://github.com/" },
                 { text: "gitee", link: "https://gitee.com/" },
@@ -75,6 +80,11 @@ export default {
                 { text: "QQ邮箱", link: "https://mail.qq.com/cgi-bin/frame_html?sid=uJb8VObnzZAyWnAv&r=458f70240b878a97fa5c6de41bdec14e" },
                 { text: "临时邮箱", link: "http://24mail.chacuo.net/enus" },
                 { text: "微信企业邮箱", link: "https://exmail.qq.com/" },
+            ]
+        },
+        {
+            text: "内网穿透", children: [
+                { text: "ngrok", link: "https://dashboard.ngrok.com/get-started/setup" },
             ]
         },
     ]
