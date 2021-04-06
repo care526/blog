@@ -57,3 +57,5 @@ npm i -g yarn ts-node @angular/cli @vue/cli create-react-app anywhere
   获取系统信息
 - nodemon
   监听文件变更，重新运行  
+- @types/node
+  node的类型库

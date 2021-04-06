@@ -46,5 +46,11 @@
   ```
 
 ## cli命令
+```bash
+# 格式化文件
+prettier --write ./xxx.ts
+# 格式化目录下的所有文件
+prettier --write ./src/
+```
 
 # 配置项
