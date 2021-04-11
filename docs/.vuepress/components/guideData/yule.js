@@ -29,6 +29,7 @@ export default {
 				{ text: "Mtime时光网", link: "http://www.mtime.com/" },
 				{ text: "MVCAT电影推荐", link: "https://www.mvcat.com/" },
 				{ text: "美剧天堂", link: "https://www.meijutt.com/" },
+				{ test: "星河影院", link: "https://xinghe.tv/"},
 			]
 		},
 	]
