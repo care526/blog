@@ -185,3 +185,16 @@ git push origin --delete xxx    删除远程分支
 ## github
 ### 加速服务
 - https://hub.fastgit.org
+### SSH Key
+```sh
+git config --global user.name care526
+git config --global user.email 710783534@qq.com
+# 检测是否有SSH Key
+# ~/.ssh/id_rsa.pub 这个文件有没有
+ssh-keygen -t rsa -C 710783534@qq.com
+cat ~/.ssh/id_rsa.pub
+# 添加到Github的中
+# 测试是否成功
+ssh -T git@github.com
+# 只有SSH方式的链接才能用SSH提交
+```

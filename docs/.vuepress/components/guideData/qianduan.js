@@ -42,7 +42,7 @@ export default {
                 { text: "Less", link: "http://lesscss.cn/" },
                 { text: "Stylus", link: "https://stylus.bootcss.com/" },
                 { text: "兼容性", link: "https://caniuse.com/" },
-                { text: 'CSS 奇技淫巧', link: 'https://github.com/chokcoco/iCSS' }
+                { text: 'CSS奇技淫巧', link: 'https://github.com/chokcoco/iCSS' }
             ]
         },
         {
@@ -50,6 +50,7 @@ export default {
                 { text: "easyicon", link: "https://www.easyicon.net/" },
                 { text: "iconfont", link: "https://www.iconfont.cn/home/index" },
                 { text: "iconPark", link: "http://iconpark.bytedance.com/" },
+                { text: "undraw", link: "https://undraw.co/illustrations" },
             ]
         },
         {

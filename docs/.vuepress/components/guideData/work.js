@@ -11,11 +11,13 @@ export default {
             text: "测试环境", children: [
                 { text: "商户管理后台", link: "http://test.lcsw.cn:8045/lcsw_saobei/lock_screen.jsp" },
                 { text: "接口测试", link: "http://test.lcsw.cn:8045/demo/" },
+                { text: "营销管理后台", link: "http://192.168.1.61:4200" },
             ]
         },
         {
             text: "正式环境", children: [
                 { text: "商户管理后台", link: "http://beta.lcsw.cn/lcsw/lock_screen.jsp" },
+                { text: "营销管理后台", link: "https://mkt.lcsw.cn" },
             ]
         },
         {
