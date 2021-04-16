@@ -3,78 +3,200 @@
 ## Git相关的软件
 - lazygit
 
+## 文件
+- .gitignore
+  忽略配置文件
+  ```sh
+  # 忽略单个文件
+  package.json
+  # 忽略目录下的文件、或一组文件
+  doc/a.js
+  doc/*.txt
+  # 忽略单个目录
+  node_modules/
+  # 将匹配到忽略的文件添加到版本控制
+  *.zip # 忽略所以以zip结尾的文件
+  !lib.zip # 将lib.zip添加到版本控制
+  ```
+  > 当某个文件已经添加到git了，中途又添加到忽略文件中，以下代码让忽略文件重新生效  
+  ```sh
+  git rm -r –-cached .  
+  git add .  
+  git commit -m "Refresh adding .gitignore file"  
+
+  git rm -rf --cache 文件/文件夹
+  ```
+- .gitkeep
+  git不会追踪空的目录，一般在空目录中新增一个名为.gitkeep的空文件做记录
+
 ## Git配置
-ssh-keygen -t rsa -C "71073534@qq.com"　生成SSH Key    
-id_rsa是私匙 id_rsa.pub是公匙（公匙和私匙的作用，属于密码学，百度！）   
-git config --global user.name "care526Lj"　配置user.name   
-git config --global user.email "710783534@qq.com"　配置user.email   
+### 全局
+```sh
+# 配置user.name   
+git config --global user.name "care526Lj"
+#配置user.email   
+git config --global user.email "710783534@qq.com"
+```
+### 单个工程
+去掉`--global`
 
-## 项目初始化
-git init　　初始化版本库  
-配置需要版本控制的文件/目录和要忽略的文件/目录  
-在工作目录创建 .gitignore 文件  
-*.zip　 　 ＃忽略所有以 .zip 结尾的文件  
-!lib.zip　 ＃lib.zip文件添加到版本控制  
-build/　　  #忽略build目录下的所有文件  
-doc/*.txt   #忽略doc目录下的所有以 .txt 结尾的所有文件  
+### SSH Key
+```sh
+# 1、git user.name user.email 配置
 
-当某个文件已经添加到git了，中途又添加到忽略文件中，以下代码让忽略文件重新生效  
-```bash
-git rm -r –-cached .  
-git add .  
-git commit -m "Refresh adding .gitignore file"  
+# 2、检测是否有SSH Key
+# ~/.ssh/id_rsa.pub 这个文件有没有
+ssh-keygen -t rsa -C 710783534@qq.com
+cat ~/.ssh/id_rsa.pub
 
-git rm -rf --cache 文件/文件夹
+# 3、添加到Github的中
+
+# 4、测试是否成功
+ssh -T git@github.com
+```
+ps: 只有SSH方式的链接才能用SSH提交
+
+## github加速域名
+- https://hub.fastgit.org
+
+## 一个Git项目
+### 初始化
+git init
+#### 在已有的git项目中添加远程仓库
+```sh
+# ssh
+git remote add origin git@github.com:care526/learnGit.git　  
+# https
+git remote add origin https://github.com/care526/learnGit.git
+```
+origin 是远程库的默认 name，也可以改成别的名字  
+#### 拉取远程仓库到本地
+```sh
+git clone git@github.com:care526/learnGit.git
+git clone https://github.com/care526/learnGit.git
+```
+***
+![image](./images/clipboard.png)   
+### 工作区
+> 查看修改
+```sh
+git status # 查看当前的修改了那些文件    
+git diff filename # 查看具体修改了什么内容， filename是文件名  
+```
+> 撤销修改
+如果文件先添加到暂存区了，那么会不会撤销暂存区的修改  
+只会去除工作区的变更
+```sh
+git checkout a.js # 还原一个文件
+git checkout . # 还原所有文件
+```
+> 添加文件到暂存区
+```sh
+git add xxx # 添加某文件到暂存区，可使用多次添加多个文件   
+# 添加所有文件   
+git add .　　
+git add -A
+```
+### 暂存区
+> 回退文件到工作区
+```sh
+git reset HEAD about.html # 回退一个文件
+git reset HEAD # 回退暂存区所有
+```
+### 版本库
+> 提交到版本库
+```
+# 提交(单行的提交记录)   
+git commit -m "xxx"
+# 提交(多行的提交记录)
+git commit -m "
+header: xxx
+body: xxx
+footer: xxx
+"
+```
+> 查看版本
+```sh
+git log # 查看版本推送更迭历史记录   
+git log --pretty=oneline # 同上，简化输出    
+git log --graph --pretty=oneline --abbrev-commit # 同上，还可以看到分支的合并情况    
+git log --stat --summary # 查看每一次版本的大致变动情况       
+git show dfb02e6e4f2f7b573337763e5c0013802e392818 # 查看该版本的更新信息，也可以只写该版本的前几位dfb02e   
+git show HEAD^ # 查看 HEAD 的父版本更新细节   
+git show HEAD^^ # 查看 HEAD 的祖父版本更新细节      
+git show HEAD~4 # 查看 HEAD 的上四个版本更新细节 
+git reflog # 查看每一次的记录    
+```
+> 打Tag
+```sh
+git tag v0.1 dfb02 # 对dfb02版本生成一个自定义的版本号，对未来发布有好处   
+```
+> 回退版本
+```sh
+git reset --hard HEAD^ # 回退到上个版本   
+git reset --hard HEAD^^ # 回退到上上个版本（^的个数以此类推）   
+git reset --hard HEAD~10 # 回退到上10个版本（免得 ^ 写的太长）   
+git reset --hard commit_id # 回退到指定版本，commit_id是某个版本号（版本号很长，可以只写前面几位）  
+git revert -n commit_id 
+```
+- reset 会使会退版本之后的都清除  
+- revert 只会将该版本的修改从分支中去掉，保留其他版本的变动，然后生成一个最新的版本，其他版本都在该版本之后 
+> 分支操作
+```sh
+# 查看本地分支
+git branch
+# 查看本地和远程的分支(本地最近一次拉取的远程)
+git branch -a
+```
+### 远程库
+```sh
+# 分支的第一次提交
+git push --set-upstream origin dev
+git push -u origin master # 第一次提交要加-u,之后可以省略
+# 分支的提交
+git push
+git push origin master # 指定分支
+```
+> 分支强行覆盖远程分支
+```sh
+#强制将本地代码覆盖远端的代码，会将之前的提交记录都清除，所以在实际开发中是不要使用的
+git push --force origin master 
+git push -f origin master 
+```
+> 删除远程分支
+```sh
+git push origin --delete master
 ```
 
-## 远程仓库
-git remote add origin git@github.com:care526/learnGit.git　  
-为当前仓库添加远程仓库，后面的一长串是该远程仓库的地址  
-也可以用https的地址，如https://github.com/care526/learnGit.git  
-origin是远程库的默认name，也可以改成别的名字  
 
-## 克隆
-git clone .git name  由某版本库克隆生成一个新的目录     
-git clone git@github.com:care526/learnGit.git　克隆远程库到本地   
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 ## 版本提交／查看／回退／撤销    
-![image](./images/clipboard.png)   
-git add xxx　　添加某文件到暂存区，可使用多次添加多个文件   
-git add .　　添加所有文件   
-git commit -m "xxx"　　将添加到暂存区的文件更新同步到版本库   
-git push -u origin master　　将本地库的内容推送到远程库（第一次提交要加-u,之后可以省略）  
-git push -f XXXXXX   强制将本地代码覆盖远端的代码，会将之前的提交记录都清除，所以在实际开发中是不要使用的
-
-git status　　查看当前的修改了那些文件    
-git diff filename　　查看具体修改了什么内容， filename是文件名  
-git log　　查看版本推送更迭历史记录   
-git log --pretty=oneline　　同上，简化输出    
-git log --graph --pretty=oneline --abbrev-commit　　同上，还可以看到分支的合并情况    
-git log --stat --summary　查看每一次版本的大致变动情况       
-git show dfb02e6e4f2f7b573337763e5c0013802e392818（版本号）　查看该版本的更新信息，也可以只写该版本的前几位dfb02e   
-git show HEAD^ ## 查看 HEAD 的父版本更新细节   
-git show HEAD^^ ## 查看 HEAD 的祖父版本更新细节      
-git show HEAD~4 ## 查看 HEAD 的上四个版本更新细节    
-git tag v0.1 dfb02　对dfb02版本生成一个自定义的版本号，对未来发布有好处   
-git reflog　　查看每一次的记录      
-
-git reset --hard HEAD^　　回退到上个版本   
-git reset --hard HEAD^^　 回退到上上个版本（^的个数以此类推）   
-git reset --hard HEAD~10 回退到上10个版本（免得 ^ 写的太长）   
-git reset --hard commit_id 回退到指定版本，commit_id是某个版本号（版本号很长，可以只写前面几位）   
-// reset 会使会退版本之后的都清除
-git revert -n 版本号
-// revert 只会将该版本的修改从分支中去掉，保留其他版本的变动，然后生成一个最新的版本，其他版本都在该版本之后
-
-git checkout -- a.txt　　将a.txt的修改撤销，a.txt会自动回到修改前的状态   
-两种情况，如果已经add了，那么将会回到暂存区里的文件内容，如果没有，将回到工作区修改前的状态，总之，就是回到最近的一次的git commit 或 git add的状态   
-git reset HEAD filename　　将某个文件从暂存区的修改回退到工作区（如果是上面的第二种情况，就先用这个命令回到暂存区的修改状态，再回到工作区的修改状态）   
 git rm filename　　删除某个文件，之后再commit就行了（如果用rm删除，要先git add . 再git commit）   
 
 ## 分支
 创建分支的目的是在不影响主分支的情况下进行开发，在分支完成的时候将分支的内容和主分支合并即可   
-git checkout filePath   还原未提交的该文件到上次提交   
-git checkout .   还原未提交的所有文件到上次提交  
+ 
 git checkout -b dev　　创建dev分支，并切换到该分支（等于上面两个命令之和）   
 git merge dev　　合并dev分支到当前分支   
 git merge --no-ff -m "XXX" dev　　将dev分支合并到当前分支（不采用Fast forward模式），并创建commit描述，提交一次，XXX是这次提交的修改内容   
@@ -94,7 +216,7 @@ git pull　　抓取远程库的新提交到当前工作区
 git fetch   抓取远程库的新提交到本地库  
 git branch --set-upstream dev origin/dev　　建立远程库分支与本地分支的关联   
 git branch -d xxx    删除本地xxx分支(可能会出现警告)  
-git branch -d xxx    删除本地xxx分支(直接删除，不管有无警告)  
+git branch -D xxx    删除本地xxx分支(直接删除，不管有无警告)  
 git push origin --delete xxx    删除远程分支  
 当其他人对你要用的分支做了提交，远程库的分支领先于你的本地分支，要先拉取远程库的分支与本地合并，再做开发。如果拉取的分支和当前有冲突，要先解决冲突。 
 
@@ -181,20 +303,3 @@ git push origin --delete xxx    删除远程分支
      ps：即使是之前撤销的分支重新合并也加1，始终比上一个版本高即可  
 - master合并代码的时候
 - 删除对应开发分支的远程分支
-
-## github
-### 加速服务
-- https://hub.fastgit.org
-### SSH Key
-```sh
-git config --global user.name care526
-git config --global user.email 710783534@qq.com
-# 检测是否有SSH Key
-# ~/.ssh/id_rsa.pub 这个文件有没有
-ssh-keygen -t rsa -C 710783534@qq.com
-cat ~/.ssh/id_rsa.pub
-# 添加到Github的中
-# 测试是否成功
-ssh -T git@github.com
-# 只有SSH方式的链接才能用SSH提交
-```
