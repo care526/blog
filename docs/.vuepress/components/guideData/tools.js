@@ -2,7 +2,7 @@ export default {
     text: "工具", children: [
         {
             text: "导航网站", children: [
-                { text: "艾特网", link: "https://iiter.cn/"},
+                { text: "艾特网", link: "https://iiter.cn/" },
             ]
         },
         {
@@ -22,6 +22,7 @@ export default {
         },
         {
             text: "搜书", children: [
+                { text: 'bookstack', link: 'https://www.bookstack.cn/' },
                 { text: "鸠摩", link: "https://www.jiumodiary.com/" },
                 { text: "图灵社区", link: "https://www.ituring.com.cn/book?tab=free" },
                 { text: '好读', link: 'http://haodoo.net/' },
