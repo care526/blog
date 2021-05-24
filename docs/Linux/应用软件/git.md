@@ -62,7 +62,16 @@ ps: 只有SSH方式的链接才能用SSH提交
 ## 一个Git项目
 ### 初始化
 git init
-#### 在已有的git项目中添加远程仓库
+### 远程库操作
+> 查看远程库地址
+```sh
+git remote -v
+```
+> 删除项目关联的远程库
+```sh
+git remote rm origin
+```
+> 在已有的git项目中添加远程仓库
 ```sh
 # ssh
 git remote add origin git@github.com:care526/learnGit.git　  
