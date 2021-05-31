@@ -88,5 +88,10 @@ export default {
                 { text: "ngrok", link: "https://dashboard.ngrok.com/get-started/setup" },
             ]
         },
+        {
+            text: 'VPN', children: [
+                { text: "顺丰资源", link: "https://sfzy889.blogspot.com/" },
+            ]
+        }
     ]
 };
