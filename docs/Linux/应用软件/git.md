@@ -103,6 +103,21 @@ git add -A
 git reset HEAD about.html # 回退一个文件
 git reset HEAD # 回退暂存区所有
 ```
+> 暂存文件的变更
+```sh
+git stash
+git stash save "save message"
+git stash list
+git stash show
+git stash show stash@{0}
+git stash show -p
+git stash show stash@{0} -p
+git stash apply
+git stash pop
+git stash drop
+git stash clear
+```
+ps: git stash不会暂存没有加到git版本控制中的文件
 ### 版本库
 > 提交到版本库
 ```
@@ -134,6 +149,7 @@ git tag v0.1 dfb02 # 对dfb02版本生成一个自定义的版本号，对未来
 > 回退版本
 ```sh
 git reset --hard HEAD^ # 回退到上个版本   
+git reset --soft 5029f0cc08cf # 回退到某个版本，并将变更放到暂存区 
 git reset --hard HEAD^^ # 回退到上上个版本（^的个数以此类推）   
 git reset --hard HEAD~10 # 回退到上10个版本（免得 ^ 写的太长）   
 git reset --hard commit_id # 回退到指定版本，commit_id是某个版本号（版本号很长，可以只写前面几位）  
@@ -168,9 +184,22 @@ git push -f origin master
 git push origin --delete master
 ```
 
+## 利用linux的管道，做一些复合操作
+> 删除master以外的所有分支(执行前需在master分支，没有变更)
+```sh
+git branch | grep -v "master" | xargs git branch -D
+```
+ps: 
+> 删除master以外的所有分支(无论是否有变更，是否在master分支)
+```sh
+git stash && git checkout master && git branch | grep -v "master" | xargs git branch -D
+```
 
 
 
+
+
+git reset 的用法
 
 
 
