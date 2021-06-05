@@ -8,7 +8,7 @@
     "dev:will": "./bash/build.sh dev",
     "build": "pnpx vuepress build docs",
     "build:will": "./bash/build.sh build",
-    "push": "./bash/push.sh",
+    "push": "./bash/care526.sh",
     "pushGitee": "./bash/pushGitee.sh",
     "sort": "./bash/sort.sh",
     "fileLint": "find ./docs -name *-*-*"
