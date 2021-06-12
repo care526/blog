@@ -11,7 +11,7 @@ export default {
 				{ text: 'PDD', link: 'https://www.douyu.com/101' },
 				{ text: '包子', link: 'https://www.huya.com/525252' },
 				{ text: '姿态', link: 'https://www.huya.com/333003' },
-				{ text: 'KZH盲僧', link: 'https://www.douyu.com/topic/s11cb_0?rid=7261911' },
+				{ text: 'KZH盲僧', link: 'https://www.douyu.com/7261911' },
 				{ text: '空大的劫', link: 'https://www.douyu.com/1237105' },
 				{ text: '莎莉-马佳佳', link: 'https://www.huya.com/majiajia' },
 				{ text: '青蛙', link: 'https://www.huya.com/qingwa666' },
@@ -29,7 +29,7 @@ export default {
 				{ text: "Mtime时光网", link: "http://www.mtime.com/" },
 				{ text: "MVCAT电影推荐", link: "https://www.mvcat.com/" },
 				{ text: "美剧天堂", link: "https://www.meijutt.com/" },
-				{ test: "星河影院", link: "https://xinghe.tv/"},
+				{ test: "星河影院", link: "https://xinghe.tv/" },
 			]
 		},
 	]
