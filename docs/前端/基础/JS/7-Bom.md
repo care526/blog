@@ -30,7 +30,7 @@ Document对象的location属性也引用到了Location对象
 - pathname 
   url的路径部分
 - search
-  从?开始的url的query部分
+  从?(#前面的第一个?)开始的url的query部分
 #### 方法
 - assign(url)
   载入新的文档，可以通过后退按钮返回上一个文档

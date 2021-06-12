@@ -59,3 +59,17 @@ npm i -g yarn ts-node @angular/cli @vue/cli create-react-app anywhere
   监听文件变更，重新运行  
 - @types/node
   node的类型库
+
+# Monorepo
+- Yarn Workspaces
+- Bit
+- Nx
+- Rush
+- Lerna
+- Bazel
+- Buck
+- Pants
+- Please
+- Oao
+- Bolt
+[相关文章](https://blog.51cto.com/u_15080034/2589002)
