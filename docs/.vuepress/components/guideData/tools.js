@@ -32,6 +32,7 @@ export default {
                 { text: '电子书搜索', link: 'https://ebook.chongbuluo.com/' },
                 { text: '免费的编程中文书籍索引', link: 'https://github.com/justjavac/free-programming-books-zh_CN' },
                 { text: '雅书', link: 'https://yabook.blog/' },
+                { text: 'awesome', link: 'https://github.com/imarvinle/awesome-cs-books' },
             ]
         },
         {

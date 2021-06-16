@@ -3,6 +3,8 @@ export default {
         {
             text: "React", children: [
                 { text: "Create React App中文文档", link: "https://create-react-app.bootcss.com/" },
+                { text: "Ant Design", link: "https://ant.design/components/overview-cn/" },
+                { text: "Zarm", link: "https://zarm.design/#/components/button" },
             ]
         },
         {
@@ -17,6 +19,8 @@ export default {
                 { text: "Vant", link: "https://youzan.github.io/vant/#/zh-CN/" },
                 { text: "iview", link: "http://v1.iviewui.com/docs/introduce" },
                 { text: "NutUI", link: "https://nutui.jd.com/#/index" },
+                { text: "Zarm", link: "https://zarm-vue.gitee.io/#/documents/quick-start" },
+                { text: "Naive UI", link: "https://www.naiveui.com/zh-CN/os-theme" },
             ]
         },
         {
