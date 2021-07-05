@@ -33,6 +33,7 @@ export default {
                     text: "前端", children: [
                         { text: "fouber", link: "https://github.com/fouber/blog" },
                         { text: "Li Mei", link: "https://limeii.github.io" },
+                        { text: "麻凯倩", link: "http://makaiqian.com/" },
                     ]
                 },
             ]

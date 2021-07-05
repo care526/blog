@@ -33,7 +33,8 @@ npm i -g yarn ts-node @angular/cli @vue/cli create-react-app anywhere
 - dayjs  
   日期相关的库，不大
 - big.js  
-  精确计算的库
+  精确计算的库  
+  原理：将所有的待计算小数转成整数去计算，然后再按照扩大的倍数缩小
 - good-storage  
   更好的使用localStorage和sessionStorage
 - qs  
@@ -43,6 +44,8 @@ npm i -g yarn ts-node @angular/cli @vue/cli create-react-app anywhere
   移动端的滚动库
 - validator.js
   数据格式校验的库
+- zx
+  google开发的方便写脚本的库
 
 ## node相关的
 - fs-extra  

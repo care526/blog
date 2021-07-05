@@ -4,7 +4,9 @@ export default {
             text: "React", children: [
                 { text: "Create React App中文文档", link: "https://create-react-app.bootcss.com/" },
                 { text: "Ant Design", link: "https://ant.design/components/overview-cn/" },
+                { text: "ChatUI", link: "https://chatui.io" },
                 { text: "Zarm", link: "https://zarm.design/#/components/button" },
+                { text: "Recoil", link: "https://www.recoiljs.cn" },
             ]
         },
         {

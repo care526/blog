@@ -7,7 +7,7 @@ import linux from './linux';
 import yule from './yule';
 import tools from './tools';
 import work from './work';
-
+import software from './software';
 
 export default [
   qianduan,
@@ -19,4 +19,5 @@ export default [
   yule,
   tools,
   work,
+  software,
 ];

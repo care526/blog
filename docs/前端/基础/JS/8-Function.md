@@ -18,3 +18,40 @@ this的指向：
 1- 不能使用new来调用箭头函数，会报错
 2- 没有原型对象prototype
 
+
+## bind
+> 返回一个指定了未来执行上下文的新绑定函数
+```ts
+const baseNum = 10;
+function add(x: number, y: number) {
+  return this.baseNum + x + y;
+}
+add(2, 3); // 15
+const add1 = add.bind({ baseNum: 1 });
+add1(2, 3); // 6
+// 接受额外参数，成为预设值。这种函数也叫偏函数
+const add2 = add.bind({ baseNum: 1 }, 2);
+add2(3); // 6
+```
+
+## call
+> 修改函数执行时的上下文
+```ts
+const baseNum = 10;
+function add(x: number, y: number) {
+  return this.baseNum + x + y;
+}
+add(2, 3); // 15
+getName.call({ baseNum: 1 }, 2, 3); // 6
+```
+
+## apply
+> 修改函数执行时的上下文，只是传参数和call不同
+```ts
+const baseNum = 10;
+function add(x: number, y: number) {
+  return this.baseNum + x + y;
+}
+add(2, 3); // 15
+getName.apply({ baseNum: 1 }, [2, 3]); // 6
+```
