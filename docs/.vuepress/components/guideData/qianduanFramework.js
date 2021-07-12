@@ -7,6 +7,7 @@ export default {
                 { text: "ChatUI", link: "https://chatui.io" },
                 { text: "Zarm", link: "https://zarm.design/#/components/button" },
                 { text: "Recoil", link: "https://www.recoiljs.cn" },
+                { text: "MATERIAL-UI", link: "https://material-ui.com/zh/" },
             ]
         },
         {
@@ -45,5 +46,12 @@ export default {
                 { text: "文档2", link: "https://docs.nestjs.cn/" },
             ]
         },
+        {
+            text: "UI设计规范", children: [
+                { text: "Fluent UI", link: "https://developer.microsoft.com/zh-cn/fluentui#/" },
+                { text: "antd", link: "https://ant.design/docs/spec/introduce-cn" },
+                { text: "material", link: "https://material.io/" },
+            ]
+        }
     ],
 };

@@ -18,14 +18,17 @@
   *.zip # 忽略所以以zip结尾的文件
   !lib.zip # 将lib.zip添加到版本控制
   ```
+  ```sh
+  git rm filename # 删除文件 
+  ```
   > 当某个文件已经添加到git了，中途又添加到忽略文件中，以下代码让忽略文件重新生效  
   ```sh
   git rm -r –-cached .  
   git add .  
   git commit -m "Refresh adding .gitignore file"  
-
   git rm -rf --cache 文件/文件夹
   ```
+
 - .gitkeep
   git不会追踪空的目录，一般在空目录中新增一个名为.gitkeep的空文件做记录
 
@@ -159,6 +162,7 @@ git tag v0.1 dfb02 # 对dfb02版本生成一个自定义的版本号，对未来
 ```sh
 git reset --hard HEAD^ # 回退到上个版本   
 git reset --soft 5029f0cc08cf # 回退到某个版本，并将变更放到暂存区 
+git reset --mixed 5029f0cc08cf # 同--soft，但是不会把变更放到暂存区
 git reset --hard HEAD^^ # 回退到上上个版本（^的个数以此类推）   
 git reset --hard HEAD~10 # 回退到上10个版本（免得 ^ 写的太长）   
 git reset --hard commit_id # 回退到指定版本，commit_id是某个版本号（版本号很长，可以只写前面几位）  
@@ -167,30 +171,55 @@ git revert -n commit_id
 - reset 会使会退版本之后的都清除  
 - revert 只会将该版本的修改从分支中去掉，保留其他版本的变动，然后生成一个最新的版本，其他版本都在该版本之后 
 > 分支操作
+#### branch
+> 分支查看、关联、删除
 ```sh
-# 查看本地分支
-git branch
-# 查看本地和远程的分支(本地最近一次拉取的远程)
-git branch -a
+git branch # 查看本地分支
+git branch -a # 查看本地和远程的分支(本地最近一次拉取的远程)
+git branch -d xxx # 删除本地xxx分支(可能会出现警告)  
+git branch -D xxx # 删除本地xxx分支(直接删除，不管有无警告)  
+git branch --set-upstream xxx origin/xxx # 建立远程库分支与本地分支的关联   
 ```
-### 远程库
+#### fetch
+> 抓取远程库的新提交到本地库
 ```sh
-# 分支的第一次提交
-git push --set-upstream origin dev
+git fetch
+```
+#### checkout
+> 创建分支
+```sh
+git checkout -b xxx # 基于当前分支拉一个新分支
+git checkout -b xxx origin xxx # 拉取远程分支到本地并切换
+git checkout xxx # 同上，简写
+```
+#### switch
+> 切换分支
+```sh
+git switch xxx # 切换到指定的分支
+```
+#### merge
+> 合并两个不同的分支
+```sh
+git merge xxx # 合并xxx分支到当前分支(有冲突的话需要解冲突再提交一次)
+git merge --squash xxx # 只合并xxx和当前分支的差异项，并展示出来。不管有无冲突都需要重新提交一次(有冲突的话需要解冲突)
+git merge --no-ff -m "XXX" xxx # 将xxx分支合并到当前分支(不采用Fast forward模式)，并创建commit描述，提交一次，XXX是这次提交的修改内容   
+```
+#### rebase
+> 将当前分支变基到指定的分支，相当于新创建若干次提交记录(如果有的话)，commitId和之前是不同的
+```sh
+git rebase xxx
+git rebase --continue # 如果上一步有冲突需要解冲突后执行该命令
+```
+### push
+> 推送、删除远程分支
+```sh
+git push --set-upstream origin dev # 分支的第一次提交
 git push -u origin master # 第一次提交要加-u,之后可以省略
-# 分支的提交
-git push
-git push origin master # 指定分支
-```
-> 分支强行覆盖远程分支
-```sh
-#强制将本地代码覆盖远端的代码，会将之前的提交记录都清除，所以在实际开发中是不要使用的
-git push --force origin master 
-git push -f origin master 
-```
-> 删除远程分支
-```sh
-git push origin --delete master
+git push # 提交当前分支到远程，如果没有提前拉取，会报错合并失败
+git push origin master # 将当前分支推送到指定分支
+git push --force # 强制用本地分支覆盖远端分支(后面还是可以接其他选项)
+git push -f # 同上，简写
+git push origin --delete xxx # 删除远端的指定分支
 ```
 
 ## 利用linux的管道，做一些复合操作
@@ -208,21 +237,6 @@ git stash && git checkout master && git branch | grep -v "master" | xargs git br
 
 
 
-git reset 的用法
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -230,14 +244,10 @@ git reset 的用法
 
 
 ## 版本提交／查看／回退／撤销    
-git rm filename　　删除某个文件，之后再commit就行了（如果用rm删除，要先git add . 再git commit）   
 
 ## 分支
 创建分支的目的是在不影响主分支的情况下进行开发，在分支完成的时候将分支的内容和主分支合并即可   
  
-git checkout -b dev　　创建dev分支，并切换到该分支（等于上面两个命令之和）   
-git merge dev　　合并dev分支到当前分支   
-git merge --no-ff -m "XXX" dev　　将dev分支合并到当前分支（不采用Fast forward模式），并创建commit描述，提交一次，XXX是这次提交的修改内容   
 git push --set-upstream origin dev　　在远程库创建分支并推送   
 
 如果当前分支和主分支都提交的修改，但是修改的内容是不同的，我们在合并分支的时候就会发生冲突（相同文件的内容冲突），我们要手动修改两个分支为相同，然后才能合并分支，再删除   
@@ -245,17 +255,6 @@ git push --set-upstream origin dev　　在远程库创建分支并推送
 修改某个分支的bug的时候，先在当前分支分一个分支，在分好的分支上进行修改，修改完了合并分支，再删除分出来的分支。
 开发新功能的时候，也是先分一个功能分支，开发实验结束后再合并，删除，流程同bug分支    
 
-git 不允许提交空目录。 但是业界有一个hack的方式。 就是在你想要提交的空目录新建一个文件隐藏文件(以.开头)，这样就不是空目录了。 而这个文件名我们一般叫做 .gitkeep  
-  
-git push origin master　　推送主分支到远程库   
-git push origin dev　　推送dev分支到远程库   
-git checkout -b dev origin/dev　　拉取远程库的分支到本地并切换   
-git pull　　抓取远程库的新提交到当前工作区
-git fetch   抓取远程库的新提交到本地库  
-git branch --set-upstream dev origin/dev　　建立远程库分支与本地分支的关联   
-git branch -d xxx    删除本地xxx分支(可能会出现警告)  
-git branch -D xxx    删除本地xxx分支(直接删除，不管有无警告)  
-git push origin --delete xxx    删除远程分支  
 当其他人对你要用的分支做了提交，远程库的分支领先于你的本地分支，要先拉取远程库的分支与本地合并，再做开发。如果拉取的分支和当前有冲突，要先解决冲突。 
 
 合并分支的时候，发生冲突，解决完冲突后，已经合并，只需要commit一下就ok了
