@@ -44,6 +44,7 @@ export default {
             text: "NestJs", children: [
                 { text: "文档1", link: "https://nestjs.bootcss.com" },
                 { text: "文档2", link: "https://docs.nestjs.cn/" },
+                { text: "文档3", link: "https://www.bookstack.cn/read/nestjs-7-zh/introduction.md" },
             ]
         },
         {

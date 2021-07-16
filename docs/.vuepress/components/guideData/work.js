@@ -36,5 +36,11 @@ export default {
                 { text: "营销中台原型", link: "https://org.modao.cc/app/2c0df809615574d6c4633a963df680fd0e4fd8b3?simulator_type=device&sticky#screen=skghnj1yt7xerrc" },
             ]
         },
+        {
+            text: "我的服务器", children: [
+                { text: 'docker管理', 'link': 'http://115.29.243.9:9000/#/home' },
+                { text: 'gogs', 'link': 'http://115.29.243.9:10080/' },
+            ]
+        }
     ]
 };
