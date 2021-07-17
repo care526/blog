@@ -8,7 +8,7 @@ export default {
         {
             text: "React", children: [
                 {
-                    text: "Create React App中文文档",
+                    text: "Create React App",
                     link: "https://create-react-app.bootcss.com/",
                     logo: 'https://create-react-app.dev/img/logo.svg'
                 },
@@ -16,7 +16,7 @@ export default {
                 { text: "ChatUI", link: "https://chatui.io", logo: 'https://gw.alicdn.com/tfs/TB1ZY1ycUD1gK0jSZFGXXbd3FXa-142-142.png' },
                 { text: "Zarm", link: "https://zarm.design/#/components/button", 'logo': 'https://zarm-vue.gitee.io/favicon.ico' },
                 { text: "Recoil", link: "https://www.recoiljs.cn", logo: 'https://www.recoiljs.cn/img/logo.svg' },
-                { text: "MATERIAL-UI", link: "https://material-ui.com/zh/" },
+                { text: "MATERIAL-UI", link: "https://material-ui.com/zh/", logo: 'https://material-ui.com/static/logo_raw.svg' },
             ]
         },
         {
@@ -58,8 +58,8 @@ export default {
         },
         {
             text: "UI设计规范", children: [
-                { text: "Fluent UI", link: "https://developer.microsoft.com/zh-cn/fluentui#/" },
-                { text: "antd", link: "https://ant.design/docs/spec/introduce-cn" },
+                { text: "Fluent UI", link: "https://developer.microsoft.com/zh-cn/fluentui#/", logo: 'https://developer.microsoft.com/favicon.ico' },
+                { text: "antd", link: "https://ant.design/docs/spec/introduce-cn", logo: 'https://gw.alipayobjects.com/zos/rmsportal/KDpgvguMpGfqaHPjicRK.svg' },
                 { text: "material", link: "https://material.io/" },
             ]
         }
