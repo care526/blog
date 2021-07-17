@@ -44,6 +44,10 @@ npm i -g yarn ts-node @angular/cli @vue/cli create-react-app anywhere
   移动端的滚动库
 - validator.js
   数据格式校验的库
+- uuid
+  随机字符串生成器
+- nanoid
+  随机字符串生成器
 - zx
   google开发的方便写脚本的库
 

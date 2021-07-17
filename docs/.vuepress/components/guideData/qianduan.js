@@ -97,6 +97,7 @@ export default {
                 { text: "Express", link: "http://expressjs.jser.us/4x_zh-cn/api.html" },
                 { text: "Express文档翻译", link: "https://www.zybuluo.com/XiangZhou/note/208532" },
                 { text: "Egg", link: "https://eggjs.org/zh-cn/" },
+                { text: "Neon", link: "https://neon-bindings.com/", logo: 'https://neon-bindings.com/logo/letter-logo-alpha.png' }
             ]
         },
         {
