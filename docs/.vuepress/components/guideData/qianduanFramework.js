@@ -33,6 +33,7 @@ export default {
                 { text: "NutUI", link: "https://nutui.jd.com/#/index", logo: 'https://nutui.jd.com/3x/assets/logo-red.022bc3e5.png' },
                 { text: "Zarm", link: "https://zarm-vue.gitee.io/#/documents/quick-start", 'logo': 'https://zarm-vue.gitee.io/favicon.ico' },
                 { text: "Naive UI", link: "https://www.naiveui.com/zh-CN/os-theme", logo: 'https://www.naiveui.com/assets/naivelogo.93278402.svg' },
+                { text: "Artirly Vue Admin", link: "https://artiely.gitee.io/antd-admin/#/analysis", logo: 'https://artiely.gitee.io/antd-admin/static/img/logo.c0bae758.svg' },
             ]
         },
         {
