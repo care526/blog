@@ -26,7 +26,9 @@ export default {
                 { text: '文件管理', link: 'http://test.lcsw.cn:8196/kod/index.php?user/login' },
                 { text: '蓝湖', link: 'https://lanhuapp.com/web/#/item?fid=all&commonly=all' },
                 { text: 'Jenkins', link: 'http://192.168.0.243:8080' },
-                { text: 'docker可视化', link: 'http:115.29.243.9:9000' }
+                { text: 'docker可视化', link: 'http:115.29.243.9:9000' },
+                { text: '微信公众平台', link: 'https://mp.weixin.qq.com', logo: 'https://res.wx.qq.com/a/wx_fed/assets/res/NTI4MWU5.ico' },
+                { text: '支付宝开放平台', link: 'https://open.alipay.com/platform/home.htm' }
             ]
         },
         {

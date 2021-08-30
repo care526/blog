@@ -22,6 +22,7 @@ export default {
         },
         {
             text: "搜书", children: [
+                { text: '微信读书', link: 'https://weread.qq.com' },
                 { text: 'bookstack', link: 'https://www.bookstack.cn/' },
                 { text: "鸠摩", link: "https://www.jiumodiary.com/" },
                 { text: "图灵社区", link: "https://www.ituring.com.cn/book?tab=free" },
@@ -40,6 +41,7 @@ export default {
                 { text: "压缩", link: "https://tinypng.com/" },
                 { text: "草料二维码", link: "https://cli.im/" },
                 { text: "代码图片生成", link: "https://carbon.now.sh/" },
+                { text: "视频压缩", link: "https://www.flexclip.com/cn/tools/compress-video" }
             ]
         },
         {

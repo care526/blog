@@ -10,7 +10,6 @@ export default {
       text: "其他", children: [
         { text: "木及简历", link: "https://resume.mdedit.online", logo: 'https://s3.qiufengh.com/muji/muji-logo-v2.jpg', title: 'Web' },
       ],
-
     },
   ]
 };
