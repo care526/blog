@@ -13,6 +13,7 @@ export default {
                     logo: 'https://create-react-app.dev/img/logo.svg'
                 },
                 { text: "Ant Design", link: "https://ant.design/components/overview-cn/", logo: 'https://gw.alipayobjects.com/zos/rmsportal/KDpgvguMpGfqaHPjicRK.svg' },
+                { text: "React Suite", link: "https://rsuitejs.com/", logo: "https://user-images.githubusercontent.com/1203827/39177217-3c49254c-47e1-11e8-9380-760c9e25c48e.png" },
                 { text: "ChatUI", link: "https://chatui.io", logo: 'https://gw.alicdn.com/tfs/TB1ZY1ycUD1gK0jSZFGXXbd3FXa-142-142.png' },
                 { text: "Zarm", link: "https://zarm.design/#/components/button", 'logo': 'https://zarm-vue.gitee.io/favicon.ico' },
                 { text: "Recoil", link: "https://www.recoiljs.cn", logo: 'https://www.recoiljs.cn/img/logo.svg' },
@@ -62,6 +63,7 @@ export default {
                 { text: "Fluent UI", link: "https://developer.microsoft.com/zh-cn/fluentui#/", logo: 'https://developer.microsoft.com/favicon.ico' },
                 { text: "antd", link: "https://ant.design/docs/spec/introduce-cn", logo: 'https://gw.alipayobjects.com/zos/rmsportal/KDpgvguMpGfqaHPjicRK.svg' },
                 { text: "material", link: "https://material.io/" },
+                { text: "apple", link: "https://developer.apple.com/design/" }
             ]
         }
     ],
