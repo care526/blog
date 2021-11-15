@@ -62,6 +62,7 @@ export default {
             text: "UI设计规范", children: [
                 { text: "Fluent UI", link: "https://developer.microsoft.com/zh-cn/fluentui#/", logo: 'https://developer.microsoft.com/favicon.ico' },
                 { text: "antd", link: "https://ant.design/docs/spec/introduce-cn", logo: 'https://gw.alipayobjects.com/zos/rmsportal/KDpgvguMpGfqaHPjicRK.svg' },
+                { text: "arco", link: "https://arco.design/", logo: '' },
                 { text: "material", link: "https://material.io/" },
                 { text: "apple", link: "https://developer.apple.com/design/" }
             ]
