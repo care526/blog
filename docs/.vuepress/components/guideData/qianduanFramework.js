@@ -46,6 +46,11 @@ export default {
             ]
         },
         {
+            text: "Other", children: [
+                { text: "Modernjs", link: "https://modernjs.dev/", logo: '' },
+            ]
+        },
+        {
             text: "uni-app", children: [
                 { text: "文档", link: "https://uniapp.dcloud.io/", logo: 'https://img-cdn-qiniu.dcloud.net.cn/uniapp/doc/icon.png?v=1556263038786' },
                 { text: "uView", link: "https://www.uviewui.com/components/intro.html", logo: "https://www.uviewui.com/common/logo.png" },
