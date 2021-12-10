@@ -46,30 +46,32 @@ ps：有效值之外，样式无变化。以上数值类型均可以百分数代
   `` 
 
 ## 滚动条
-/* 定义滚动条高宽及背景 高宽分别对应横竖滚动条的尺寸 */  
-::-webkit-scrollbar  
-{  
-    width: 16px;  /* 滚动条宽度 */
-    height: 16px;  /* 滚动条高度 */
+```css
+/* 定义整个滚动条高宽及背景 高宽分别对应横竖滚动条的尺寸 */  
+::-webkit-scrollbar {
+  width: 16px;  /* 滚动条宽度 */
+  height: 16px;  /* 滚动条高度 */
 }  
-  
 /* 定义滚动条轨道 内阴影+圆角 */  
-::-webkit-scrollbar-track  
-{  
-    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);  
-    border-radius: 10px;  /* 滚动条的背景区域的圆角*/
-    background-color: red; /* 滚动条的背景颜色*/  
+::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);  
+  border-radius: 10px;  /* 滚动条的背景区域的圆角*/
+  background-color: red; /* 滚动条的背景颜色*/  
 }  
-  
 /* 定义滑块 内阴影+圆角*/  
-::-webkit-scrollbar-thumb  
-{  
-    border-radius: 10px;  /* 滚动条的圆角 */
-    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);  
-    background-color: **green**;  /* 滚动条的背景颜色 */
+::-webkit-scrollbar-thumb {
+  border-radius: 10px;  /* 滚动条的圆角 */
+  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);  
+  background-color: **green**;  /* 滚动条的背景颜色 */
 }
-
-火狐不支持自定义滚动条样式  
+/* 定义滚动条的上下按钮 */
+::-webkit-scrollbar-button {}
+/* 定义没有滑块的轨道部分 */
+::-webkit-scrollbar-track-piece {}
+/* 定义垂直和水平滚动条交汇的部分 */
+::-webkit-scrollbar-corner {}
+```
+ps: 火狐不支持自定义滚动条样式  
 
 ## 单位
 ### 相对尺寸
