@@ -271,6 +271,25 @@ git push --set-upstream origin dev　　在远程库创建分支并推送
   只要本地的域名配置为和代理（测试服/正式服）的域名一致，那么本地就可以访问代理的接口了
   hosts不要忘记配置了
 
+## 子仓库
+> 克隆带有子仓库的仓库
+```bash
+git clone --recursive http://xxx.git
+```
+> 添加子仓库
+```bash
+git submodule add http://xxx.git [./src/cdk]
+# 将 http://xxx.git 仓库作为子仓库 添加到当前项目，目录为 ./src/cdk
+```
+> 子仓库代码推送
+先推子仓库的代码，然后提交父仓库的改动
+> 拉取完整的仓库
+拉取父仓库，后
+```bash
+git submodule init
+git submodule update
+```
+
 ## git 流程规范
 ![image](./images/gitfenzhi.png)   
 
